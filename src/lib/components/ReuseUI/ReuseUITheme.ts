@@ -39,22 +39,22 @@ export interface ReuseUITheme extends Record<string, unknown> {
     };
     size: BadgeSizes;
   };
-  //   card: {
-  //     base: string;
-  //     children: string;
-  //     horizontal: {
-  //       off: string;
-  //       on: string;
-  //     };
-  //     href: string;
-  //     img: {
-  //       base: string;
-  //       horizontal: {
-  //         off: string;
-  //         on: string;
-  //       };
-  //     };
-  //   };
+  card: {
+    base: string;
+    children: string;
+    horizontal: {
+      off: string;
+      on: string;
+    };
+    href: string;
+    img: {
+      base: string;
+      horizontal: {
+        off: string;
+        on: string;
+      };
+    };
+  };
   darkThemeToggle: {
     base: string;
     icon: string;
