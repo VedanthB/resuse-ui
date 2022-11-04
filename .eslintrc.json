@@ -1,13 +1,12 @@
 {
   "extends": [
-    "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:import/typescript",
-    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
     "plugin:prettier/recommended",
-    "prettier"
+    "prettier/prettier",
+    "plugin:storybook/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -17,14 +16,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "@typescript-eslint",
-    "import",
-    "jsx-a11y",
-    "react-hooks",
-    "prettier"
-  ],
+  "plugins": ["react", "@typescript-eslint", "import", "jsx-a11y", "react-hooks", "prettier"],
   "settings": {
     "react": {
       "version": "detect"
@@ -55,6 +47,8 @@
       {
         "typeof": false
       }
-    ]
+    ],
+    "react/react-in-jsx-scope": ["off"],
+    "react/no-unescaped-entities": ["warn"]
   }
 }
