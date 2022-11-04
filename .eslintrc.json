@@ -47,6 +47,8 @@
       {
         "typeof": false
       }
-    ]
+    ],
+    "react/react-in-jsx-scope": ["off"],
+    "react/no-unescaped-entities": ["warn"]
   }
 }
