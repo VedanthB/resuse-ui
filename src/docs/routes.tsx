@@ -25,6 +25,7 @@ import {
   HiUser,
 } from 'react-icons/hi';
 import { MdColorLens, MdTab } from 'react-icons/md';
+import AccordionPage from './pages/AccordionPage';
 import DashboardPage from './pages/DashboardPage';
 
 export type ComponentCardItem = {
@@ -60,17 +61,17 @@ export const routes: RouteProps[] = [
   //       images: { light: 'alerts-light.svg', dark: 'alerts-dark.svg' },
   //     },
   //   },
-  //   {
-  //     title: 'Accordion',
-  //     icon: HiCreditCard,
-  //     href: '/accordion',
-  //     component: <AccordionPage />,
-  //     group: false,
-  //     card: {
-  //       className: 'w-56',
-  //       images: { light: 'accordion-light.svg', dark: 'accordion-dark.svg' },
-  //     },
-  //   },
+  {
+    title: 'Accordion',
+    icon: HiCreditCard,
+    href: '/accordion',
+    component: <AccordionPage />,
+    group: false,
+    card: {
+      className: 'w-56',
+      images: { light: 'accordion-light.svg', dark: 'accordion-dark.svg' },
+    },
+  },
   //   {
   //     title: 'Avatar',
   //     icon: HiUser,
