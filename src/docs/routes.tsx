@@ -1,30 +1,30 @@
 import type { ComponentProps, FC, ReactNode } from 'react';
-import { AiOutlineLoading3Quarters } from 'react-icons/ai';
-import { BiNotification } from 'react-icons/bi';
-import { BsCreditCard2FrontFill, BsImages } from 'react-icons/bs';
-import { FaBars, FaSpinner } from 'react-icons/fa';
-import { FiNavigation } from 'react-icons/fi';
+// import { AiOutlineLoading3Quarters } from 'react-icons/ai';
+// import { BiNotification } from 'react-icons/bi';
+// import { BsCreditCard2FrontFill, BsImages } from 'react-icons/bs';
+// import { FaBars, FaSpinner } from 'react-icons/fa';
+// import { FiNavigation } from 'react-icons/fi';
 import {
-  HiAnnotation,
-  HiArrowCircleDown,
-  HiBadgeCheck,
-  HiBell,
-  HiChevronDoubleRight,
-  HiClipboardList,
-  HiCollection,
+  // HiAnnotation,
+  // HiArrowCircleDown,
+  // HiBadgeCheck,
+  // HiBell,
+  // HiChevronDoubleRight,
+  // HiClipboardList,
+  // HiCollection,
   HiCreditCard,
-  HiDeviceTablet,
-  HiDuplicate,
+  // HiDeviceTablet,
+  // HiDuplicate,
   HiHome,
-  HiMinus,
-  HiOutlineChevronDoubleRight,
-  HiOutlineClock,
-  HiPencilAlt,
-  HiStar,
-  HiTable,
-  HiUser,
+  // HiMinus,
+  // HiOutlineChevronDoubleRight,
+  // HiOutlineClock,
+  // HiPencilAlt,
+  // HiStar,
+  // HiTable,
+  // HiUser,
 } from 'react-icons/hi';
-import { MdColorLens, MdTab } from 'react-icons/md';
+// import { MdColorLens, MdTab } from 'react-icons/md';
 import AccordionPage from './pages/AccordionPage';
 import DashboardPage from './pages/DashboardPage';
 
