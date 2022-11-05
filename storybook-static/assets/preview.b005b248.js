@@ -1,2 +1,0 @@
-var a=Object.defineProperty;var e=(o,r)=>a(o,"name",{value:r,configurable:!0});import{j as t,a as n,F as c}from"./jsx-runtime.ac038bdd.js";import"./iframe.bff406d4.js";function s(){return t("div",{})}e(s,"Style");s.__docgenInfo={description:"",methods:[],displayName:"Style"};const m=[o=>n(c,{children:[t(s,{}),t(o,{})]})],p={actions:{argTypesRegex:"^on[A-Z].*"},controls:{matchers:{color:/(background|color)$/i,date:/Date$/}}};export{m as decorators,p as parameters};
-//# sourceMappingURL=preview.b005b248.js.map
