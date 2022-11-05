@@ -15,7 +15,8 @@
     "preview": "vite preview",
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic --project-token=2219897ca7eb"
   },
   "repository": {
     "type": "git",
@@ -47,6 +48,7 @@
     "@vitejs/plugin-react": "^2.2.0",
     "autoprefixer": "^10.4.13",
     "babel-loader": "^8.3.0",
+    "chromatic": "^6.11.4",
     "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
@@ -73,5 +75,7 @@
     "react-element-to-jsx-string": "^15.0.0",
     "react-icons": "^4.6.0",
     "react-syntax-highlighter": "^15.5.0"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "resuse-ui@1.0.0"
 }
