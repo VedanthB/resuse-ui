@@ -22,13 +22,6 @@ export interface AccordionProps extends PropsWithChildren<ComponentProps<'div'>>
   children: ReactElement<AccordionPanelProps> | ReactElement<AccordionPanelProps>[];
 }
 
-export interface AccordionProps extends PropsWithChildren<ComponentProps<'div'>> {
-  alwaysOpen?: boolean;
-  arrowIcon?: FC<ComponentProps<'svg'>>;
-  children: ReactElement<AccordionPanelProps> | ReactElement<AccordionPanelProps>[];
-  flush?: boolean;
-}
-
 const AccordionComponent: FC<AccordionProps> = ({
   alwaysOpen = false,
   arrowIcon = HiChevronDown,
@@ -52,6 +45,8 @@ const AccordionComponent: FC<AccordionProps> = ({
       ),
     [alwaysOpen, arrowIcon, children, flush, isOpen],
   );
+
+  console.log(panels);
 
   const theme = useTheme().theme.accordion;
 
