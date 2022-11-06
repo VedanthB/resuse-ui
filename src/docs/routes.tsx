@@ -7,7 +7,7 @@ import type { ComponentProps, FC, ReactNode } from 'react';
 import {
   // HiAnnotation,
   // HiArrowCircleDown,
-  // HiBadgeCheck,
+  HiBadgeCheck,
   // HiBell,
   // HiChevronDoubleRight,
   // HiClipboardList,
@@ -26,6 +26,7 @@ import {
 } from 'react-icons/hi';
 // import { MdColorLens, MdTab } from 'react-icons/md';
 import AccordionPage from './pages/AccordionPage';
+import BadgesPage from './pages/BadgePage';
 import DashboardPage from './pages/DashboardPage';
 
 export type ComponentCardItem = {
@@ -83,17 +84,17 @@ export const routes: RouteProps[] = [
   //       images: { light: 'avatar-light.svg', dark: 'avatar-dark.svg' },
   //     },
   //   },
-  //   {
-  //     title: 'Badges',
-  //     icon: HiBadgeCheck,
-  //     href: '/badges',
-  //     component: <BadgesPage />,
-  //     group: false,
-  //     card: {
-  //       className: 'w-28',
-  //       images: { light: 'badges-light.svg', dark: 'badges-dark.svg' },
-  //     },
-  //   },
+  {
+    title: 'Badges',
+    icon: HiBadgeCheck,
+    href: '/badges',
+    component: <BadgesPage />,
+    group: false,
+    card: {
+      className: 'w-28',
+      images: { light: 'badges-light.svg', dark: 'badges-dark.svg' },
+    },
+  },
   //   {
   //     title: 'Breadcrumb',
   //     icon: HiChevronDoubleRight,

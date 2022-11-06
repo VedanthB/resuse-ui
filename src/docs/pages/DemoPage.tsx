@@ -17,13 +17,30 @@ export type CodeExample = {
   codeStringifierOptions?: Options;
 };
 
-export type DemoPageProps = {
-  examples: CodeExample[];
+export type PageContent = {
+  title: string;
+  description: string;
+  usage: () => string;
 };
 
-export const DemoPage: FC<DemoPageProps> = ({ examples }) => {
+export type DemoPageProps = {
+  examples: CodeExample[];
+  pageContent: PageContent;
+};
+
+// TODO: add a table here with prop details
+export const DemoPage: FC<DemoPageProps> = ({ examples, pageContent }) => {
   return (
     <div className='mx-auto flex max-w-4xl flex-col gap-8 dark:text-white'>
+      <span className='text-3xl font-bold'>{pageContent.title}</span>
+      <span className='py-4 text-xl'>{pageContent.description}</span>
+      <span className='text-2xl font-bold'>Usage</span>
+      <Card>
+        <SyntaxHighlighter language='tsx' style={dracula}>
+          {pageContent.usage()}
+        </SyntaxHighlighter>
+      </Card>
+
       {examples.map(
         (
           { title, content, code, showCode = true, codeClassName, codeStringifierOptions },
