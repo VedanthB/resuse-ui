@@ -8,6 +8,7 @@ const container = document.getElementById('root');
 
 if (container) {
   const root = createRoot(container);
+
   const theme = {
     sidebar: {
       base: 'h-full bg-inherit',

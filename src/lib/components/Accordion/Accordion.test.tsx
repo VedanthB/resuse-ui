@@ -4,9 +4,16 @@ import { FC } from 'react';
 import { HiOutlineArrowCircleDown } from 'react-icons/hi';
 import { describe, expect, it } from 'vitest';
 import { ReuseUI } from '../ReuseUI';
-
 import type { AccordionProps } from './Accordion';
 import { Accordion } from './Accordion';
+
+const accordion = () => screen.getByTestId('ReuseUI-accordion');
+
+const content = () => screen.getAllByTestId('ReuseUI-accordion-content');
+
+const headings = () => screen.getAllByTestId('ReuseUI-accordion-heading');
+
+const titles = () => screen.getAllByRole('button');
 
 describe('Components / Accordion', () => {
   describe('A11y', () => {
@@ -246,11 +253,3 @@ const TestAccordion: FC<Omit<AccordionProps, 'children'>> = (props) => (
     </Accordion.Panel>
   </Accordion>
 );
-
-const accordion = () => screen.getByTestId('ReuseUI-accordion');
-
-const content = () => screen.getAllByTestId('ReuseUI-accordion-content');
-
-const headings = () => screen.getAllByTestId('ReuseUI-accordion-heading');
-
-const titles = () => screen.getAllByRole('button');
