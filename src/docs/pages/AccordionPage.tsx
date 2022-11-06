@@ -1,12 +1,20 @@
 import type { FC } from 'react';
 import { HiOutlineArrowCircleDown } from 'react-icons/hi';
 import { Accordion } from '../../lib';
-import { CodeExample, DemoPage } from './DemoPage';
+import { CodeExample, DemoPage, PageContent } from './DemoPage';
 
 const AccordionPage: FC = () => {
+  const pageContent: PageContent = {
+    title: 'Accordion',
+    description:
+      'The accordion component is a collection of vertically collapsing header and body elements that can be used to show and hide information based on the Tailwind CSS utility classes and JavaScript from ReuseUI. A popular use case would be the "Frequently Asked Questions" section of a website or page when you can show questions and answers for each child element.',
+    usage: () => `import { Accordion } from 'reuseui-react';`,
+  };
+
   const examples: CodeExample[] = [
     {
       title: 'Default accordion',
+      content: '',
       code: (
         <Accordion>
           <Accordion.Panel>
@@ -92,6 +100,7 @@ const AccordionPage: FC = () => {
     },
     {
       title: 'Always open',
+      content: '',
       code: (
         <Accordion alwaysOpen>
           <Accordion.Panel>
@@ -177,6 +186,7 @@ const AccordionPage: FC = () => {
     },
     {
       title: 'Flush accordion',
+      content: '',
       code: (
         <Accordion flush>
           <Accordion.Panel>
@@ -262,6 +272,7 @@ const AccordionPage: FC = () => {
     },
     {
       title: 'Arrow style',
+      content: '',
       code: (
         <Accordion arrowIcon={HiOutlineArrowCircleDown}>
           <Accordion.Panel>
@@ -347,7 +358,7 @@ const AccordionPage: FC = () => {
     },
   ];
 
-  return <DemoPage examples={examples} />;
+  return <DemoPage examples={examples} pageContent={pageContent} />;
 };
 
 export default AccordionPage;
