@@ -21,6 +21,7 @@ export const Card: FC<CardProps> = ({
   const theme = useTheme().theme.card;
 
   const Component = typeof href === 'undefined' ? 'div' : 'a';
+
   const theirProps = props as object;
 
   return (
@@ -42,6 +43,7 @@ export const Card: FC<CardProps> = ({
           src={imgSrc}
         />
       )}
+
       <div className={theme.children}>{children}</div>
     </Component>
   );

@@ -7,6 +7,7 @@ import type { RefObject } from 'react';
 /**
  * @see https://floating-ui.com/docs/middleware
  */
+
 export const getMiddleware = ({
   arrowRef,
   placement,
