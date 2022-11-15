@@ -32,7 +32,7 @@ export const Card: FC<CardProps> = ({
         href && theme.href,
         className,
       )}
-      data-testid='flowbite-card'
+      data-testid='ReuseUI-card'
       href={href}
       {...theirProps}
     >
