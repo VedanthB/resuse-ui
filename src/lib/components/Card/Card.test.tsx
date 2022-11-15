@@ -46,4 +46,109 @@ describe('Components / Card', () => {
       expect(card()).toContainElement(img);
     });
   });
+
+  describe('Theme', () => {
+    it('should use `base` classes', () => {
+      const theme = {
+        card: { base: 'text-blue-100' },
+      };
+
+      render(
+        <ReuseUI theme={{ theme }}>
+          <Card />
+        </ReuseUI>,
+      );
+
+      expect(card()).toHaveClass('text-blue-100');
+    });
+
+    it('should use `children` classes', () => {
+      const theme = {
+        card: { children: 'text-blue-900' },
+      };
+
+      render(
+        <ReuseUI theme={{ theme }}>
+          <Card>
+            <span aria-label='The content'>Some content</span>
+          </Card>
+        </ReuseUI>,
+      );
+
+      const children = screen.getByLabelText('The content');
+
+      expect(children.parentElement).toHaveClass('text-blue-900');
+    });
+
+    it('should use `horizontal` classes', () => {
+      const theme = {
+        card: {
+          horizontal: {
+            off: 'text-blue-200',
+            on: 'text-blue-300',
+          },
+        },
+      };
+
+      render(
+        <ReuseUI theme={{ theme }}>
+          <Card />
+          <Card horizontal />
+        </ReuseUI>,
+      );
+
+      const normalCard = cards()[0];
+      const horizontalCard = cards()[1];
+
+      expect(normalCard).toHaveClass('text-blue-200');
+      expect(horizontalCard).toHaveClass('text-blue-300');
+    });
+
+    it('should use `href` classes', () => {
+      const theme = {
+        card: {
+          href: 'text-blue-700',
+        },
+      };
+
+      render(
+        <ReuseUI theme={{ theme }}>
+          <Card href='#'>My card</Card>
+        </ReuseUI>,
+      );
+
+      expect(card()).toHaveClass('text-blue-700');
+    });
+
+    it('should use `img` classes', () => {
+      const theme = {
+        card: {
+          img: {
+            base: 'text-blue-400',
+            horizontal: {
+              off: 'bg-blue-500',
+              on: 'bg-blue-600',
+            },
+          },
+        },
+      };
+
+      render(
+        <ReuseUI theme={{ theme }}>
+          <Card imgAlt='Card with image' imgSrc='https://picsum.photos/500/300' />
+          <Card
+            horizontal
+            imgAlt='Horizontal card with image'
+            imgSrc='https://picsum.photos/500/300'
+          />
+        </ReuseUI>,
+      );
+
+      const cardWithImage = screen.getByAltText('Card with image');
+      const horizontalCardWithImage = screen.getByAltText('Horizontal card with image');
+
+      expect(cardWithImage).toHaveClass('text-blue-400 bg-blue-500');
+      expect(horizontalCardWithImage).toHaveClass('bg-blue-600');
+    });
+  });
 });
