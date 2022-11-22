@@ -2,6 +2,8 @@ import classNames from 'classnames';
 import type { ComponentProps, FC, PropsWithChildren } from 'react';
 import type { ReuseUIPositions, ReuseUISizes } from '../ReuseUI/ReuseUITheme';
 import { useTheme } from '../ReuseUI';
+import AvatarGroup from './AvatarGroup';
+import AvatarGroupCounter from './AvatarGroupCounter';
 
 export interface AvatarProps extends PropsWithChildren<ComponentProps<'div'>> {
   alt?: string;
@@ -103,4 +105,7 @@ const AvatarComponent: FC<AvatarProps> = ({
 
 AvatarComponent.displayName = 'Avatar';
 
-export const Avatar = Object.assign(AvatarComponent, {});
+export const Avatar = Object.assign(AvatarComponent, {
+  Group: AvatarGroup,
+  Counter: AvatarGroupCounter,
+});
