@@ -22,10 +22,11 @@ import {
   // HiPencilAlt,
   // HiStar,
   // HiTable,
-  // HiUser,
+  HiUser,
 } from 'react-icons/hi';
 // import { MdColorLens, MdTab } from 'react-icons/md';
 import AccordionPage from './pages/AccordionPage';
+import AvatarPage from './pages/AvatarPage';
 import BadgesPage from './pages/BadgePage';
 import DashboardPage from './pages/DashboardPage';
 
@@ -73,17 +74,17 @@ export const routes: RouteProps[] = [
       images: { light: 'accordion-light.svg', dark: 'accordion-dark.svg' },
     },
   },
-  //   {
-  //     title: 'Avatar',
-  //     icon: HiUser,
-  //     href: '/avatar',
-  //     component: <AvatarPage />,
-  //     group: false,
-  //     card: {
-  //       className: 'w-40',
-  //       images: { light: 'avatar-light.svg', dark: 'avatar-dark.svg' },
-  //     },
-  //   },
+  {
+    title: 'Avatar',
+    icon: HiUser,
+    href: '/avatar',
+    component: <AvatarPage />,
+    group: false,
+    card: {
+      className: 'w-40',
+      images: { light: 'avatar-light.svg', dark: 'avatar-dark.svg' },
+    },
+  },
   {
     title: 'Badges',
     icon: HiBadgeCheck,
