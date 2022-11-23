@@ -8,6 +8,7 @@ export * from './Spinner';
 export * from './Tooltip';
 export * from './Accordion';
 export * from './Card';
+export * from './Avatar';
 
 export type DeepPartial<T> = T extends object
   ? {

@@ -1,4 +1,5 @@
 import { DeepPartial } from '..';
+import { AvatarSizes } from '../Avatar/Avatar';
 import { BadgeColors, BadgeSizes } from '../Badge';
 import type { ReuseUIFloatingTheme } from '../Floating';
 
@@ -27,6 +28,36 @@ export interface ReuseUITheme extends Record<string, unknown> {
       heading: string;
       open: ReuseUIBoolean;
     };
+  };
+  avatar: {
+    base: string;
+    bordered: string;
+    img: {
+      off: string;
+      on: string;
+      placeholder: string;
+    };
+    rounded: string;
+    size: AvatarSizes;
+    stacked: string;
+    status: {
+      away: string;
+      base: string;
+      busy: string;
+      offline: string;
+      online: string;
+    };
+    statusPosition: ReuseUIPositions;
+    initials: {
+      base: string;
+      text: string;
+    };
+  };
+  avatarGroupCounter: {
+    base: string;
+  };
+  avatarGroup: {
+    base: string;
   };
   badge: {
     base: string;
