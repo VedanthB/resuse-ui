@@ -1,7 +1,7 @@
 import type { ComponentProps, FC, ReactNode } from 'react';
 // import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 // import { BiNotification } from 'react-icons/bi';
-// import { BsCreditCard2FrontFill, BsImages } from 'react-icons/bs';
+import { BsCreditCard2FrontFill, BsImages } from 'react-icons/bs';
 // import { FaBars, FaSpinner } from 'react-icons/fa';
 // import { FiNavigation } from 'react-icons/fi';
 import {
@@ -28,6 +28,7 @@ import {
 import AccordionPage from './pages/AccordionPage';
 import AvatarPage from './pages/AvatarPage';
 import BadgesPage from './pages/BadgePage';
+import CardPage from './pages/CardPage';
 import DashboardPage from './pages/DashboardPage';
 
 export type ComponentCardItem = {
@@ -129,17 +130,17 @@ export const routes: RouteProps[] = [
   //       images: { light: 'button-group-light.svg', dark: 'button-group-dark.svg' },
   //     },
   //   },
-  //   {
-  //     title: 'Card',
-  //     icon: BsCreditCard2FrontFill,
-  //     href: '/card',
-  //     component: <CardPage />,
-  //     group: false,
-  //     card: {
-  //       className: 'w-36',
-  //       images: { light: 'card-light.svg', dark: 'card-dark.svg' },
-  //     },
-  //   },
+  {
+    title: 'Card',
+    icon: BsCreditCard2FrontFill,
+    href: '/card',
+    component: <CardPage />,
+    group: false,
+    card: {
+      className: 'w-36',
+      images: { light: 'card-light.svg', dark: 'card-dark.svg' },
+    },
+  },
   //   {
   //     title: 'Carousel',
   //     icon: BsImages,
