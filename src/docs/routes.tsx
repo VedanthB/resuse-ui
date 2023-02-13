@@ -1,7 +1,8 @@
 import type { ComponentProps, FC, ReactNode } from 'react';
 // import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 // import { BiNotification } from 'react-icons/bi';
-import { BsCreditCard2FrontFill, BsImages } from 'react-icons/bs';
+// BsImages
+import { BsCreditCard2FrontFill } from 'react-icons/bs';
 // import { FaBars, FaSpinner } from 'react-icons/fa';
 // import { FiNavigation } from 'react-icons/fi';
 import {
