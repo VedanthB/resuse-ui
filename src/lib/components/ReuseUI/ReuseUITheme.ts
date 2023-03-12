@@ -1,3 +1,4 @@
+import { ReuseUIAccordionTheme } from './../Accordion/Accordion';
 import { DeepPartial } from '..';
 import { AvatarSizes } from '../Avatar/Avatar';
 import { BadgeColors, BadgeSizes } from '../Badge';
@@ -9,26 +10,7 @@ import { SpinnerColors, SpinnerSizes } from '../Spinner';
 export type CustomReuseUITheme = DeepPartial<ReuseUITheme>;
 
 export interface ReuseUITheme extends Record<string, unknown> {
-  accordion: {
-    base: string;
-    content: {
-      base: string;
-    };
-    flush: ReuseUIBoolean;
-    title: {
-      arrow: {
-        base: string;
-        open: {
-          off: string;
-          on: string;
-        };
-      };
-      base: string;
-      flush: ReuseUIBoolean;
-      heading: string;
-      open: ReuseUIBoolean;
-    };
-  };
+  accordion: ReuseUIAccordionTheme;
   avatar: {
     base: string;
     bordered: string;

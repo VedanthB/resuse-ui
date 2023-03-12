@@ -1,24 +1,43 @@
 import classNames from 'classnames';
 import type { ComponentProps, FC } from 'react';
+import { mergeDeep } from '../../helpers/mergeDeep';
+import { DeepPartial } from '..';
 import { useTheme } from '../ReuseUI';
-import { ReuseUIHeadingLevel } from '../ReuseUI/ReuseUITheme';
+import { ReuseUIBoolean, ReuseUIHeadingLevel } from '../ReuseUI/ReuseUITheme';
 
 import { useAccordionContext } from './AccordionPanelContext';
+
+export interface ReuseUIAccordionTitleTheme {
+  arrow: {
+    base: string;
+    open: {
+      off: string;
+      on: string;
+    };
+  };
+  base: string;
+  flush: ReuseUIBoolean;
+  heading: string;
+  open: ReuseUIBoolean;
+}
 
 export interface AccordionTitleProps extends ComponentProps<'button'> {
   arrowIcon?: FC<ComponentProps<'svg'>>;
   as?: ReuseUIHeadingLevel;
+  theme?: DeepPartial<ReuseUIAccordionTitleTheme>;
 }
 
 export const AccordionTitle: FC<AccordionTitleProps> = ({
   as: Heading = 'h2',
   children,
   className,
+  theme: customTheme = {},
+
   ...props
 }): JSX.Element => {
   const { arrowIcon: ArrowIcon, flush, isOpen, setOpen } = useAccordionContext();
 
-  const theme = useTheme().theme.accordion.title;
+  const theme = mergeDeep(useTheme().theme.accordion.title, customTheme);
 
   const onClick = () => typeof setOpen !== 'undefined' && setOpen();
 
