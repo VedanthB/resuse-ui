@@ -22,7 +22,7 @@ export const ReuseUI: FC<ReuseUIProps> = ({ children, theme = {} }) => {
   const { theme: customTheme = {}, dark, usePreferences = true } = theme;
   const [mode, setMode, toggleMode] = useThemeMode(usePreferences);
 
-  const mergedTheme = mergeDeep<ReuseUITheme>(defaultTheme, customTheme);
+  const mergedTheme = mergeDeep(defaultTheme, customTheme);
 
   useEffect(() => {
     if (dark) {
