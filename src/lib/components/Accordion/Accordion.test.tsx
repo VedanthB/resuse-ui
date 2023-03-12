@@ -15,6 +15,25 @@ const headings = () => screen.getAllByTestId('ReuseUI-accordion-heading');
 
 const titles = () => screen.getAllByRole('button');
 
+const TestAccordion: FC<Omit<AccordionProps, 'children'>> = (props) => (
+  <Accordion arrowIcon={HiOutlineArrowCircleDown} {...props}>
+    <Accordion.Panel>
+      <Accordion.Title as='h3' className='text-blue-300' id='accordion-title'>
+        Title
+      </Accordion.Title>
+      <Accordion.Content aria-labelledby='accordion-title' className='text-blue-300'>
+        <p>Content</p>
+      </Accordion.Content>
+    </Accordion.Panel>
+    <Accordion.Panel>
+      <Accordion.Title>Title</Accordion.Title>
+      <Accordion.Content>
+        <p>Content</p>
+      </Accordion.Content>
+    </Accordion.Panel>
+  </Accordion>
+);
+
 describe('Components / Accordion', () => {
   describe('A11y', () => {
     it('should use `aria-label` if provided', () => {
@@ -117,7 +136,9 @@ describe('Components / Accordion', () => {
       it('should use custom `base` classes', () => {
         const theme = {
           accordion: {
-            base: 'text-4xl',
+            root: {
+              base: 'text-4xl',
+            },
           },
         };
 
@@ -133,9 +154,11 @@ describe('Components / Accordion', () => {
       it('should use custom `flush` classes', () => {
         const theme = {
           accordion: {
-            flush: {
-              off: 'text-4xl',
-              on: 'text-3xl',
+            root: {
+              flush: {
+                off: 'text-4xl',
+                on: 'text-3xl',
+              },
             },
           },
         };
@@ -234,22 +257,3 @@ describe('Components / Accordion', () => {
     });
   });
 });
-
-const TestAccordion: FC<Omit<AccordionProps, 'children'>> = (props) => (
-  <Accordion arrowIcon={HiOutlineArrowCircleDown} {...props}>
-    <Accordion.Panel>
-      <Accordion.Title as='h3' className='text-blue-300' id='accordion-title'>
-        Title
-      </Accordion.Title>
-      <Accordion.Content aria-labelledby='accordion-title' className='text-blue-300'>
-        <p>Content</p>
-      </Accordion.Content>
-    </Accordion.Panel>
-    <Accordion.Panel>
-      <Accordion.Title>Title</Accordion.Title>
-      <Accordion.Content>
-        <p>Content</p>
-      </Accordion.Content>
-    </Accordion.Panel>
-  </Accordion>
-);

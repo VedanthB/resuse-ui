@@ -71,6 +71,7 @@ export const Floating: FC<FloatingProps> = ({
     open,
     placement: getPlacement({ placement }),
   });
+
   const {
     context,
     floating,
