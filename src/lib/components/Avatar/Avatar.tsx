@@ -1,24 +1,78 @@
 import classNames from 'classnames';
-import type { ComponentProps, FC, PropsWithChildren } from 'react';
-import type { ReuseUIPositions, ReuseUISizes } from '../ReuseUI/ReuseUITheme';
-import { useTheme } from '../ReuseUI';
+import type { ComponentProps, FC, PropsWithChildren, ReactElement } from 'react';
+import { DeepPartial } from '..';
+import { mergeDeep } from '../../helpers/mergeDeep';
+import type { ReuseUIColors, ReuseUIPositions, ReuseUISizes } from '../ReuseUI/ReuseUITheme';
+import { useTheme } from '../ReuseUI/ThemeContext';
 import AvatarGroup from './AvatarGroup';
 import AvatarGroupCounter from './AvatarGroupCounter';
 
-export interface AvatarProps extends PropsWithChildren<ComponentProps<'div'>> {
+export interface ReuseUIAvatarTheme {
+  root: ReuseUIAvatarRootTheme;
+  img: ReuseUIAvatarImageTheme;
+  status: ReuseUIAvatarStatusTheme;
+  initials: ReuseUIAvatarInitialsTheme;
+}
+
+export interface ReuseUIAvatarRootTheme {
+  base: string;
+  bordered: string;
+  color: AvatarColors;
+  rounded: string;
+  size: AvatarSizes;
+  stacked: string;
+  statusPosition: ReuseUIPositions;
+}
+
+export interface ReuseUIAvatarImageTheme {
+  off: string;
+  on: string;
+  placeholder: string;
+}
+
+export interface ReuseUIAvatarStatusTheme {
+  away: string;
+  base: string;
+  busy: string;
+  offline: string;
+  online: string;
+}
+
+export interface ReuseUIAvatarInitialsTheme {
+  base: string;
+  text: string;
+}
+
+export interface AvatarColors
+  extends Pick<
+    ReuseUIColors,
+    'failure' | 'gray' | 'info' | 'pink' | 'purple' | 'success' | 'warning'
+  > {
+  [key: string]: string;
+}
+
+export interface AvatarSizes extends Pick<ReuseUISizes, 'xs' | 'sm' | 'md' | 'lg' | 'xl'> {
+  [key: string]: string;
+}
+
+export interface AvatarImageProps {
+  alt?: string;
+  className: string;
+  'data-testid': string;
+}
+
+export interface AvatarProps extends PropsWithChildren<Omit<ComponentProps<'div'>, 'color'>> {
   alt?: string;
   bordered?: boolean;
-  img?: string;
+  img?: string | ((props: AvatarImageProps) => ReactElement);
+  color?: keyof AvatarColors;
   rounded?: boolean;
   size?: keyof AvatarSizes;
   stacked?: boolean;
   status?: 'away' | 'busy' | 'offline' | 'online';
   statusPosition?: keyof ReuseUIPositions;
   placeholderInitials?: string;
-}
-
-export interface AvatarSizes extends Pick<ReuseUISizes, 'xs' | 'sm' | 'md' | 'lg' | 'xl'> {
-  [key: string]: string;
+  theme?: DeepPartial<ReuseUIAvatarTheme>;
 }
 
 const AvatarComponent: FC<AvatarProps> = ({
@@ -26,6 +80,7 @@ const AvatarComponent: FC<AvatarProps> = ({
   bordered = false,
   children,
   img,
+  color = 'light',
   rounded = false,
   size = 'md',
   stacked = false,
@@ -33,47 +88,55 @@ const AvatarComponent: FC<AvatarProps> = ({
   statusPosition = 'top-left',
   placeholderInitials = '',
   className,
+  theme: customTheme = {},
   ...props
 }) => {
-  const theme = useTheme().theme.avatar;
+  const theme = mergeDeep(useTheme().theme.avatar, customTheme);
 
   const imgClassName = classNames(
-    bordered && theme.bordered,
-    rounded && theme.rounded,
-    stacked && theme.stacked,
+    bordered && theme.root.bordered,
+    bordered && theme.root.color[color],
+    rounded && theme.root.rounded,
+    stacked && theme.root.stacked,
     theme.img.on,
-    theme.size[size],
+    theme.root.size[size],
   );
 
+  const imgProps = {
+    alt,
+    className: classNames(imgClassName, theme.img.on),
+    'data-testid': 'ReuseUI-avatar-img',
+  };
   return (
-    <div className={classNames(theme.base, className)} data-testid='ReuseUI-avatar' {...props}>
+    <div className={classNames(theme.root.base, className)} data-testid='ReuseUI-avatar' {...props}>
       <div className='relative'>
         {img ? (
-          <img
-            className={classNames(imgClassName, theme.img.on)}
-            src={img}
-            alt={alt}
-            data-testid='ReuseUI-avatar-img'
-          />
+          typeof img === 'string' ? (
+            <img {...imgProps} src={img} />
+          ) : (
+            img(imgProps)
+          )
         ) : placeholderInitials ? (
           <div
             className={classNames(
               theme.img.off,
               theme.initials.base,
-              bordered && theme.bordered,
-              rounded && theme.rounded,
-              stacked && theme.stacked,
+              rounded && theme.root.rounded,
+              stacked && theme.root.stacked,
+              bordered && theme.root.bordered,
+              bordered && theme.root.color[color],
             )}
+            data-testid='ReuseUI-avatar-initials-placeholder'
           >
             <span
               className={classNames(theme.initials.text)}
-              data-testid='ReuseUI-avatar-initials-placeholder'
+              data-testid='ReuseUI-avatar-initials-placeholder-text'
             >
               {placeholderInitials}
             </span>
           </div>
         ) : (
-          <div className={classNames(imgClassName, theme.img.off)}>
+          <div className={classNames(imgClassName, theme.img.off)} data-testid='ReuseUI-avatar-img'>
             <svg
               className={theme.img.placeholder}
               fill='currentColor'
@@ -90,15 +153,16 @@ const AvatarComponent: FC<AvatarProps> = ({
         )}
         {status && (
           <span
+            data-testid='ReuseUI-avatar-status'
             className={classNames(
               theme.status.base,
               theme.status[status],
-              theme.statusPosition[statusPosition],
+              theme.root.statusPosition[statusPosition],
             )}
           />
         )}
       </div>
-      {children && <div> {children} </div>}
+      {children && <div>{children}</div>}
     </div>
   );
 };
