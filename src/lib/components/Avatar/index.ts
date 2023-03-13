@@ -1,3 +1,3 @@
 export * from './Avatar';
-export type { AvatarGroupProps } from './AvatarGroup';
-export type { AvatarGroupCounterProps } from './AvatarGroupCounter';
+export type { AvatarGroupProps, ReuseUIAvatarGroupTheme } from './AvatarGroup';
+export type { AvatarGroupCounterProps, ReuseUIAvatarGroupCounterTheme } from './AvatarGroupCounter';

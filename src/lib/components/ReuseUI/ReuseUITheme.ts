@@ -1,6 +1,7 @@
+import { ReuseUIAvatarGroupCounterTheme } from './../Avatar/AvatarGroupCounter';
+import { ReuseUIAvatarTheme } from './../Avatar/Avatar';
 import { ReuseUIAccordionTheme } from './../Accordion/Accordion';
-import { DeepPartial } from '..';
-import { AvatarSizes } from '../Avatar/Avatar';
+import { DeepPartial, ReuseUIAvatarGroupTheme } from '..';
 import { BadgeColors, BadgeSizes } from '../Badge';
 import type { ReuseUIFloatingTheme } from '../Floating';
 
@@ -11,36 +12,9 @@ export type CustomReuseUITheme = DeepPartial<ReuseUITheme>;
 
 export interface ReuseUITheme extends Record<string, unknown> {
   accordion: ReuseUIAccordionTheme;
-  avatar: {
-    base: string;
-    bordered: string;
-    img: {
-      off: string;
-      on: string;
-      placeholder: string;
-    };
-    rounded: string;
-    size: AvatarSizes;
-    stacked: string;
-    status: {
-      away: string;
-      base: string;
-      busy: string;
-      offline: string;
-      online: string;
-    };
-    statusPosition: ReuseUIPositions;
-    initials: {
-      base: string;
-      text: string;
-    };
-  };
-  avatarGroupCounter: {
-    base: string;
-  };
-  avatarGroup: {
-    base: string;
-  };
+  avatar: ReuseUIAvatarTheme;
+  avatarGroupCounter: ReuseUIAvatarGroupCounterTheme;
+  avatarGroup: ReuseUIAvatarGroupTheme;
   badge: {
     base: string;
     color: BadgeColors;
