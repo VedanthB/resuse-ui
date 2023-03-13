@@ -2,7 +2,6 @@ import { ReuseUIAvatarGroupCounterTheme } from './../Avatar/AvatarGroupCounter';
 import { ReuseUIAvatarTheme } from './../Avatar/Avatar';
 import { ReuseUIAccordionTheme } from './../Accordion/Accordion';
 import { DeepPartial, ReuseUIAvatarGroupTheme } from '..';
-import { AvatarSizes } from '../Avatar/Avatar';
 import { BadgeColors, BadgeSizes } from '../Badge';
 import type { ReuseUIFloatingTheme } from '../Floating';
 
