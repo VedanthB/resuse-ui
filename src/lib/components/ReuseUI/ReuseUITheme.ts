@@ -1,8 +1,8 @@
+import { ReuseUIBadgeTheme } from './../Badge/Badge';
 import { ReuseUIAvatarGroupCounterTheme } from './../Avatar/AvatarGroupCounter';
 import { ReuseUIAvatarTheme } from './../Avatar/Avatar';
 import { ReuseUIAccordionTheme } from './../Accordion/Accordion';
 import { DeepPartial, ReuseUIAvatarGroupTheme } from '..';
-import { BadgeColors, BadgeSizes } from '../Badge';
 import type { ReuseUIFloatingTheme } from '../Floating';
 
 import type { SidebarCTAColors } from '../Sidebar/SidebarCTA';
@@ -15,17 +15,7 @@ export interface ReuseUITheme extends Record<string, unknown> {
   avatar: ReuseUIAvatarTheme;
   avatarGroupCounter: ReuseUIAvatarGroupCounterTheme;
   avatarGroup: ReuseUIAvatarGroupTheme;
-  badge: {
-    base: string;
-    color: BadgeColors;
-    href: string;
-    icon: {
-      off: string;
-      on: string;
-      size: BadgeSizes;
-    };
-    size: BadgeSizes;
-  };
+  badge: ReuseUIBadgeTheme;
   card: {
     base: string;
     children: string;
