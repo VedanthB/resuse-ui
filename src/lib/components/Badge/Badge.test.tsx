@@ -28,9 +28,11 @@ describe('Components / Badge', () => {
     it('should use custom colors', () => {
       const theme = {
         badge: {
-          color: {
-            primary:
-              'bg-blue-100 text-blue-800 dark:bg-blue-200 dark:text-blue-800 group-hover:bg-blue-200 dark:group-hover:bg-blue-300',
+          root: {
+            color: {
+              primary:
+                'bg-blue-100 text-blue-800 dark:bg-blue-200 dark:text-blue-800 group-hover:bg-blue-200 dark:group-hover:bg-blue-300',
+            },
           },
         },
       };
@@ -51,15 +53,17 @@ describe('Components / Badge', () => {
     it('should custom sizes', () => {
       const theme = {
         badge: {
+          root: {
+            size: {
+              xxl: 'text-2xl',
+            },
+          },
           icon: {
             off: 'rounded-lg p-1',
             on: 'rounded-full p-5',
             size: {
               xxl: 'w-6 h-6',
             },
-          },
-          size: {
-            xxl: 'text-2xl',
           },
         },
       };
