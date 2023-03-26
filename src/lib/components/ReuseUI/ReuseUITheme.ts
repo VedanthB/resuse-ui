@@ -1,3 +1,4 @@
+import { ReuseUICardTheme } from './../Card/Card';
 import { ReuseUIBadgeTheme } from './../Badge/Badge';
 import { ReuseUIAvatarGroupCounterTheme } from './../Avatar/AvatarGroupCounter';
 import { ReuseUIAvatarTheme } from './../Avatar/Avatar';
@@ -16,22 +17,8 @@ export interface ReuseUITheme extends Record<string, unknown> {
   avatarGroupCounter: ReuseUIAvatarGroupCounterTheme;
   avatarGroup: ReuseUIAvatarGroupTheme;
   badge: ReuseUIBadgeTheme;
-  card: {
-    base: string;
-    children: string;
-    horizontal: {
-      off: string;
-      on: string;
-    };
-    href: string;
-    img: {
-      base: string;
-      horizontal: {
-        off: string;
-        on: string;
-      };
-    };
-  };
+  card: ReuseUICardTheme;
+
   darkThemeToggle: {
     base: string;
     icon: string;
