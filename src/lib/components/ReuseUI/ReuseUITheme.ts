@@ -3,9 +3,8 @@ import { ReuseUIBadgeTheme } from './../Badge/Badge';
 import { ReuseUIAvatarGroupCounterTheme } from './../Avatar/AvatarGroupCounter';
 import { ReuseUIAvatarTheme } from './../Avatar/Avatar';
 import { ReuseUIAccordionTheme } from './../Accordion/Accordion';
-import { DeepPartial, ReuseUIAvatarGroupTheme } from '..';
+import { DeepPartial, ReuseUIAvatarGroupTheme, ReuseUIDarkThemeToggleTheme } from '..';
 import type { ReuseUIFloatingTheme } from '../Floating';
-
 import type { SidebarCTAColors } from '../Sidebar/SidebarCTA';
 import { SpinnerColors, SpinnerSizes } from '../Spinner';
 
@@ -18,11 +17,7 @@ export interface ReuseUITheme extends Record<string, unknown> {
   avatarGroup: ReuseUIAvatarGroupTheme;
   badge: ReuseUIBadgeTheme;
   card: ReuseUICardTheme;
-
-  darkThemeToggle: {
-    base: string;
-    icon: string;
-  };
+  darkThemeToggle: ReuseUIDarkThemeToggleTheme;
   navbar: {
     base: string;
     rounded: ReuseUIBoolean;
