@@ -7,7 +7,6 @@ import { DarkThemeToggle } from './DarkThemeToggle';
 describe('Dark theme toggle', () => {
   it('should toggle the theme when `Space` is pressed', async () => {
     const user = userEvent.setup();
-
     render(
       <ReuseUI>
         <DarkThemeToggle />
@@ -21,10 +20,8 @@ describe('Dark theme toggle', () => {
     expect(screen.queryByLabelText('Currently dark mode')).toBeInTheDocument();
   });
 
-  // TODO: make this test pass
   it('should toggle the theme with `usePreferences` is false', async () => {
     const user = userEvent.setup();
-
     render(
       <ReuseUI theme={{ usePreferences: false }}>
         <DarkThemeToggle />
