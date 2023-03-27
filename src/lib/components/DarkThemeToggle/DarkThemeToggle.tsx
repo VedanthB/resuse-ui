@@ -2,13 +2,18 @@ import classNames from 'classnames';
 import type { ComponentProps, FC } from 'react';
 import { useContext } from 'react';
 import { HiMoon, HiSun } from 'react-icons/hi';
-import { useTheme } from '../ReuseUI';
-import { ThemeContext } from '../ReuseUI/ThemeContext';
+import { ThemeContext, useTheme } from '../ReuseUI/ThemeContext';
+
+export interface ReuseUIDarkThemeToggleTheme {
+  base: string;
+  icon: string;
+}
 
 export type DarkThemeToggleProps = ComponentProps<'button'>;
 
 export const DarkThemeToggle: FC<DarkThemeToggleProps> = ({ className, ...props }) => {
   const theme = useTheme().theme.darkThemeToggle;
+
   const { mode, toggleMode } = useContext(ThemeContext);
 
   return (
