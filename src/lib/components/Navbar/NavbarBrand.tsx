@@ -1,14 +1,34 @@
 import classNames from 'classnames';
-import type { ComponentProps, FC, PropsWithChildren } from 'react';
-import { useTheme } from '../ReuseUI';
+import type { ComponentProps, ElementType, FC, PropsWithChildren } from 'react';
+import type { LinkProps } from 'react-router-dom';
+import { DeepPartial } from '..';
+import { mergeDeep } from '../../helpers/mergeDeep';
+import { useTheme } from '../ReuseUI/ThemeContext';
 
-export type NavbarBrandProps = PropsWithChildren<ComponentProps<'a'>>;
+export interface ReuseUINavbarBrandTheme {
+  base: string;
+}
 
-export const NavbarBrand: FC<NavbarBrandProps> = ({ children, href, className, ...props }) => {
-  const theme = useTheme().theme.navbar;
+export interface NavbarBrandProps
+  extends PropsWithChildren<ComponentProps<'a'>>,
+    Partial<Pick<LinkProps, 'to'>> {
+  theme?: DeepPartial<ReuseUINavbarBrandTheme>;
+  as?: ElementType;
+  href?: string;
+}
+
+export const NavbarBrand: FC<NavbarBrandProps> = ({
+  theme: customTheme = {},
+  children,
+  className,
+  as: Component = 'a',
+  ...props
+}) => {
+  const theme = mergeDeep(useTheme().theme.navbar.brand, customTheme);
+
   return (
-    <a href={href} className={classNames(theme.brand, className)} {...props}>
+    <Component className={classNames(theme.base, className)} {...props}>
       {children}
-    </a>
+    </Component>
   );
 };

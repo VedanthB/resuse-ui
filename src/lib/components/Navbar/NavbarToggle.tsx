@@ -1,16 +1,24 @@
 import classNames from 'classnames';
 import type { ComponentProps, FC } from 'react';
 import { GoThreeBars } from 'react-icons/go';
-import { useTheme } from '../ReuseUI';
-
+import { DeepPartial } from '..';
+import { mergeDeep } from '../../helpers/mergeDeep';
+import { useTheme } from '../ReuseUI/ThemeContext';
 import { useNavbarContext } from './NavbarContext';
+
+export interface ReuseUINavbarToggleTheme {
+  base: string;
+  icon: string;
+}
 
 export interface NavbarToggleProps extends ComponentProps<'button'> {
   barIcon?: FC<ComponentProps<'svg'>>;
+  theme?: DeepPartial<ReuseUINavbarToggleTheme>;
 }
 
 export const NavbarToggle: FC<NavbarToggleProps> = ({
   barIcon: BarIcon = GoThreeBars,
+  theme: customTheme = {},
   className,
   ...props
 }) => {
@@ -20,7 +28,7 @@ export const NavbarToggle: FC<NavbarToggleProps> = ({
     setIsOpen(!isOpen);
   };
 
-  const theme = useTheme().theme.navbar.toggle;
+  const theme = mergeDeep(useTheme().theme.navbar.toggle, customTheme);
 
   return (
     <button

@@ -1,3 +1,4 @@
+import { ReuseUINavbarTheme } from './../Navbar/Navbar';
 import { ReuseUICardTheme } from './../Card/Card';
 import { ReuseUIBadgeTheme } from './../Badge/Badge';
 import { ReuseUIAvatarGroupCounterTheme } from './../Avatar/AvatarGroupCounter';
@@ -18,30 +19,7 @@ export interface ReuseUITheme extends Record<string, unknown> {
   badge: ReuseUIBadgeTheme;
   card: ReuseUICardTheme;
   darkThemeToggle: ReuseUIDarkThemeToggleTheme;
-  navbar: {
-    base: string;
-    rounded: ReuseUIBoolean;
-    bordered: ReuseUIBoolean;
-    inner: {
-      base: string;
-      fluid: ReuseUIBoolean;
-    };
-    brand: string;
-    collapse: {
-      base: string;
-      list: string;
-      hidden: ReuseUIBoolean;
-    };
-    link: {
-      base: string;
-      active: ReuseUIBoolean;
-      disabled: ReuseUIBoolean;
-    };
-    toggle: {
-      base: string;
-      icon: string;
-    };
-  };
+  navbar: ReuseUINavbarTheme;
   sidebar: {
     base: string;
     collapsed: ReuseUIBoolean;
