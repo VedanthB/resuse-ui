@@ -1,5 +1,8 @@
 import classNames from 'classnames';
-import { ComponentProps, ElementType, FC, forwardRef, PropsWithChildren, useId } from 'react';
+import type { ComponentProps, ElementType, FC, PropsWithChildren, ReactNode } from 'react';
+import { forwardRef, useId } from 'react';
+import type { DeepPartial } from '..';
+import { mergeDeep } from '../../helpers/mergeDeep';
 import { Badge } from '../Badge';
 import type { ReuseUIColors } from '../ReuseUI/ReuseUITheme';
 import { useTheme } from '../ReuseUI/ThemeContext';
@@ -7,30 +10,86 @@ import { Tooltip } from '../Tooltip';
 import { useSidebarContext } from './SidebarContext';
 import { useSidebarItemContext } from './SidebarItemContext';
 
+export interface ReuseUISidebarItemTheme {
+  active: string;
+  base: string;
+  collapsed: {
+    insideCollapse: string;
+    noIcon: string;
+  };
+  content: {
+    base: string;
+  };
+  icon: {
+    base: string;
+    active: string;
+  };
+  label: string;
+}
+
 export interface SidebarItemProps
-  extends PropsWithChildren<Omit<ComponentProps<'div'>, 'ref'> & Record<string, unknown>> {
+  extends PropsWithChildren,
+    Omit<ComponentProps<'div'>, 'ref'>,
+    Record<string, unknown> {
   active?: boolean;
   as?: ElementType;
   href?: string;
   icon?: FC<ComponentProps<'svg'>>;
   label?: string;
   labelColor?: keyof SidebarItemLabelColors;
+  theme?: DeepPartial<ReuseUISidebarItemTheme>;
 }
 
 export interface SidebarItemLabelColors extends Pick<ReuseUIColors, 'gray'> {
   [key: string]: string;
 }
 
+const ListItem: FC<
+  PropsWithChildren<{ id: string; isCollapsed: boolean; tooltipChildren: ReactNode | undefined }>
+> = ({ id, isCollapsed, tooltipChildren, children: wrapperChildren }) => (
+  <li>
+    {isCollapsed ? (
+      <Tooltip
+        content={<TooltipContent id={id}>{tooltipChildren}</TooltipContent>}
+        placement='right'
+      >
+        {wrapperChildren}
+      </Tooltip>
+    ) : (
+      wrapperChildren
+    )}
+  </li>
+);
+
+const TooltipContent: FC<PropsWithChildren<{ id: string }>> = ({ id, children }) => (
+  <Children id={id}>{children}</Children>
+);
+
+const Children: FC<PropsWithChildren<{ id: string }>> = ({ id, children }) => {
+  const theme = useTheme().theme.sidebar.item;
+
+  return (
+    <span
+      data-testid='ReuseUI-sidebar-item-content'
+      id={`ReuseUI-sidebar-item-${id}`}
+      className={classNames(theme.content.base)}
+    >
+      {children}
+    </span>
+  );
+};
+
 const SidebarItem = forwardRef<Element, SidebarItemProps>(
   (
     {
+      active: isActive,
       as: Component = 'a',
       children,
+      className,
       icon: Icon,
-      active: isActive,
       label,
       labelColor = 'info',
-      className,
+      theme: customTheme = {},
       ...props
     },
     ref,
@@ -38,60 +97,41 @@ const SidebarItem = forwardRef<Element, SidebarItemProps>(
     const id = useId();
     const { isCollapsed } = useSidebarContext();
     const { isInsideCollapse } = useSidebarItemContext();
-    const theme = useTheme().theme.sidebar.item;
-
-    const ListItem: FC<PropsWithChildren> = ({ children: wrapperChildren }) => (
-      <li>
-        {isCollapsed ? (
-          <Tooltip content={<TooltipContent>{children}</TooltipContent>} placement='right'>
-            {wrapperChildren}
-          </Tooltip>
-        ) : (
-          wrapperChildren
-        )}
-      </li>
-    );
-
-    const TooltipContent: FC<PropsWithChildren> = ({ children }) => <Children>{children}</Children>;
-
-    const Children: FC<PropsWithChildren> = ({ children }) => (
-      <span
-        className={classNames(theme.content.base)}
-        data-testid='ReuseUI-sidebar-item-content'
-        id={`ReuseUI-sidebar-item-${id}`}
-      >
-        {children}
-      </span>
-    );
+    const theme = mergeDeep(useTheme().theme.sidebar.item, customTheme);
 
     return (
-      <ListItem>
+      <ListItem id={id} isCollapsed={isCollapsed} tooltipChildren={children}>
         <Component
           aria-labelledby={`ReuseUI-sidebar-item-${id}`}
+          ref={ref}
           className={classNames(
             theme.base,
             isActive && theme.active,
-            !isCollapsed && isInsideCollapse && theme.collapsed.insideCollapse,
+            !isCollapsed && isInsideCollapse && theme.collapsed?.insideCollapse,
             className,
           )}
-          ref={ref}
           {...props}
         >
           {Icon && (
             <Icon
               aria-hidden
-              className={classNames(theme.icon.base, isActive && theme.icon.active)}
               data-testid='ReuseUI-sidebar-item-icon'
+              className={classNames(theme.icon?.base, isActive && theme.icon?.active)}
             />
           )}
           {isCollapsed && !Icon && (
-            <span className={theme.collapsed.noIcon}>
+            <span className={theme.collapsed?.noIcon}>
               {(children as string).charAt(0).toLocaleUpperCase() ?? '?'}
             </span>
           )}
-          {!isCollapsed && <Children>{children}</Children>}
+          {!isCollapsed && <Children id={id}>{children}</Children>}
           {!isCollapsed && label && (
-            <Badge color={labelColor} hidden={isCollapsed}>
+            <Badge
+              color={labelColor}
+              data-testid='ReuseUI-sidebar-label'
+              hidden={isCollapsed}
+              className={theme.label}
+            >
               {label}
             </Badge>
           )}
