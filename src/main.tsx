@@ -11,8 +11,10 @@ if (container) {
 
   const theme = {
     sidebar: {
-      base: 'h-full bg-inherit',
-      inner: 'h-full overflow-y-auto overflow-x-hidden rounded bg-inherit py-4 px-3',
+      root: {
+        base: 'h-full bg-inherit',
+        inner: 'h-full overflow-y-auto overflow-x-hidden rounded bg-inherit py-4 px-3',
+      },
     },
   };
 
