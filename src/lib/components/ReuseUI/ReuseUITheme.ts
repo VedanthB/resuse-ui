@@ -1,17 +1,21 @@
-import { ReuseUINavbarTheme } from './../Navbar/Navbar';
-import { ReuseUICardTheme } from './../Card/Card';
-import { ReuseUIBadgeTheme } from './../Badge/Badge';
-import { ReuseUIAvatarGroupCounterTheme } from './../Avatar/AvatarGroupCounter';
-import { ReuseUIAvatarTheme } from './../Avatar/Avatar';
-import { ReuseUIAccordionTheme } from './../Accordion/Accordion';
-import { DeepPartial, ReuseUIAvatarGroupTheme, ReuseUIDarkThemeToggleTheme } from '..';
+import {
+  DeepPartial,
+  ReuseUIAccordionTheme,
+  ReuseUIAvatarGroupCounterTheme,
+  ReuseUIAvatarGroupTheme,
+  ReuseUIAvatarTheme,
+  ReuseUIBadgeTheme,
+  ReuseUICardTheme,
+  ReuseUIDarkThemeToggleTheme,
+  ReuseUINavbarTheme,
+  ReuseUISidebarTheme,
+} from '..';
 import type { ReuseUIFloatingTheme } from '../Floating';
-import type { SidebarCTAColors } from '../Sidebar/SidebarCTA';
 import { SpinnerColors, SpinnerSizes } from '../Spinner';
 
 export type CustomReuseUITheme = DeepPartial<ReuseUITheme>;
 
-export interface ReuseUITheme extends Record<string, unknown> {
+export interface ReuseUITheme {
   accordion: ReuseUIAccordionTheme;
   avatar: ReuseUIAvatarTheme;
   avatarGroupCounter: ReuseUIAvatarGroupCounterTheme;
@@ -20,49 +24,7 @@ export interface ReuseUITheme extends Record<string, unknown> {
   card: ReuseUICardTheme;
   darkThemeToggle: ReuseUIDarkThemeToggleTheme;
   navbar: ReuseUINavbarTheme;
-  sidebar: {
-    base: string;
-    collapsed: ReuseUIBoolean;
-    inner: string;
-    collapse: {
-      button: string;
-      icon: {
-        base: string;
-        open: ReuseUIBoolean;
-      };
-      label: {
-        base: string;
-        icon: string;
-      };
-      list: string;
-    };
-    cta: {
-      base: string;
-      color: SidebarCTAColors;
-    };
-    item: {
-      active: string;
-      base: string;
-      collapsed: {
-        insideCollapse: string;
-        noIcon: string;
-      };
-      content: {
-        base: string;
-      };
-      icon: {
-        base: string;
-        active: string;
-      };
-    };
-    items: string;
-    itemGroup: string;
-    logo: {
-      base: string;
-      collapsed: ReuseUIBoolean;
-      img: string;
-    };
-  };
+  sidebar: ReuseUISidebarTheme;
   spinner: {
     base: string;
     color: SpinnerColors;

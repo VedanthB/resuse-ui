@@ -197,11 +197,13 @@ const theme: ReuseUITheme = {
     },
   },
   sidebar: {
-    base: 'h-full',
-    inner: 'h-full overflow-y-auto overflow-x-hidden rounded bg-white py-4 px-3 dark:bg-gray-800',
-    collapsed: {
-      on: 'w-16',
-      off: 'w-64',
+    root: {
+      base: 'h-full',
+      collapsed: {
+        on: 'w-16',
+        off: 'w-64',
+      },
+      inner: 'h-full overflow-y-auto overflow-x-hidden rounded bg-white py-4 px-3 dark:bg-gray-800',
     },
     collapse: {
       button:
@@ -249,6 +251,7 @@ const theme: ReuseUITheme = {
         base: 'h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white',
         active: 'text-gray-700 dark:text-gray-100',
       },
+      label: '',
     },
     items: '',
     itemGroup:
