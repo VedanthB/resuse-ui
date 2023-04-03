@@ -1,11 +1,15 @@
-import { ReuseUISidebarTheme } from '../Sidebar';
-import { ReuseUINavbarTheme } from '../Navbar';
-import { ReuseUICardTheme } from '../Card';
-import { ReuseUIBadgeTheme } from '../Badge';
-import { ReuseUIAvatarGroupCounterTheme } from '../Avatar';
-import { ReuseUIAvatarTheme } from '../Avatar';
-import { ReuseUIAccordionTheme } from '../Accordion';
-import { DeepPartial, ReuseUIAvatarGroupTheme, ReuseUIDarkThemeToggleTheme } from '..';
+import {
+  DeepPartial,
+  ReuseUIAccordionTheme,
+  ReuseUIAvatarGroupCounterTheme,
+  ReuseUIAvatarGroupTheme,
+  ReuseUIAvatarTheme,
+  ReuseUIBadgeTheme,
+  ReuseUICardTheme,
+  ReuseUIDarkThemeToggleTheme,
+  ReuseUINavbarTheme,
+  ReuseUISidebarTheme,
+} from '..';
 import type { ReuseUIFloatingTheme } from '../Floating';
 import { SpinnerColors, SpinnerSizes } from '../Spinner';
 
@@ -21,21 +25,21 @@ export interface ReuseUITheme {
   darkThemeToggle: ReuseUIDarkThemeToggleTheme;
   navbar: ReuseUINavbarTheme;
   sidebar: ReuseUISidebarTheme;
-  // spinner: {
-  //   base: string;
-  //   color: SpinnerColors;
-  //   light: {
-  //     off: {
-  //       base: string;
-  //       color: SpinnerColors;
-  //     };
-  //     on: {
-  //       base: string;
-  //       color: SpinnerColors;
-  //     };
-  //   };
-  //   size: SpinnerSizes;
-  // };
+  spinner: {
+    base: string;
+    color: SpinnerColors;
+    light: {
+      off: {
+        base: string;
+        color: SpinnerColors;
+      };
+      on: {
+        base: string;
+        color: SpinnerColors;
+      };
+    };
+    size: SpinnerSizes;
+  };
   tooltip: ReuseUIFloatingTheme;
 }
 
