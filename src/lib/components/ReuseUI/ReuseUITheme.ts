@@ -1,10 +1,10 @@
-import { ReuseUISidebarTheme } from './../Sidebar/Sidebar';
-import { ReuseUINavbarTheme } from './../Navbar/Navbar';
-import { ReuseUICardTheme } from './../Card/Card';
-import { ReuseUIBadgeTheme } from './../Badge/Badge';
-import { ReuseUIAvatarGroupCounterTheme } from './../Avatar/AvatarGroupCounter';
-import { ReuseUIAvatarTheme } from './../Avatar/Avatar';
-import { ReuseUIAccordionTheme } from './../Accordion/Accordion';
+import { ReuseUISidebarTheme } from '../Sidebar';
+import { ReuseUINavbarTheme } from '../Navbar';
+import { ReuseUICardTheme } from '../Card';
+import { ReuseUIBadgeTheme } from '../Badge';
+import { ReuseUIAvatarGroupCounterTheme } from '../Avatar';
+import { ReuseUIAvatarTheme } from '../Avatar';
+import { ReuseUIAccordionTheme } from '../Accordion';
 import { DeepPartial, ReuseUIAvatarGroupTheme, ReuseUIDarkThemeToggleTheme } from '..';
 import type { ReuseUIFloatingTheme } from '../Floating';
 import { SpinnerColors, SpinnerSizes } from '../Spinner';
@@ -21,7 +21,6 @@ export interface ReuseUITheme extends Record<string, unknown> {
   darkThemeToggle: ReuseUIDarkThemeToggleTheme;
   navbar: ReuseUINavbarTheme;
   sidebar: ReuseUISidebarTheme;
-
   spinner: {
     base: string;
     color: SpinnerColors;
