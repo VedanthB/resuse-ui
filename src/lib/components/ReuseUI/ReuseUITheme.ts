@@ -11,7 +11,7 @@ import { SpinnerColors, SpinnerSizes } from '../Spinner';
 
 export type CustomReuseUITheme = DeepPartial<ReuseUITheme>;
 
-export interface ReuseUITheme extends Record<string, unknown> {
+export interface ReuseUITheme {
   accordion: ReuseUIAccordionTheme;
   avatar: ReuseUIAvatarTheme;
   avatarGroupCounter: ReuseUIAvatarGroupCounterTheme;
@@ -21,21 +21,21 @@ export interface ReuseUITheme extends Record<string, unknown> {
   darkThemeToggle: ReuseUIDarkThemeToggleTheme;
   navbar: ReuseUINavbarTheme;
   sidebar: ReuseUISidebarTheme;
-  spinner: {
-    base: string;
-    color: SpinnerColors;
-    light: {
-      off: {
-        base: string;
-        color: SpinnerColors;
-      };
-      on: {
-        base: string;
-        color: SpinnerColors;
-      };
-    };
-    size: SpinnerSizes;
-  };
+  // spinner: {
+  //   base: string;
+  //   color: SpinnerColors;
+  //   light: {
+  //     off: {
+  //       base: string;
+  //       color: SpinnerColors;
+  //     };
+  //     on: {
+  //       base: string;
+  //       color: SpinnerColors;
+  //     };
+  //   };
+  //   size: SpinnerSizes;
+  // };
   tooltip: ReuseUIFloatingTheme;
 }
 
