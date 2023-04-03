@@ -1,37 +1,46 @@
 import classNames from 'classnames';
 import type { ComponentProps, FC, PropsWithChildren } from 'react';
 import { useId } from 'react';
-import { useTheme } from '../ReuseUI';
-
+import type { DeepPartial } from '..';
+import { mergeDeep } from '../../helpers/mergeDeep';
+import type { ReuseUIBoolean } from '../ReuseUI/ReuseUITheme';
+import { useTheme } from '../ReuseUI/ThemeContext';
 import { useSidebarContext } from './SidebarContext';
 
-export interface SidebarLogoProps extends PropsWithChildren<ComponentProps<'a'>> {
-  className?: string;
+export interface ReuseUISidebarLogoTheme {
+  base: string;
+  collapsed: ReuseUIBoolean;
+  img: string;
+}
+
+export interface SidebarLogoProps extends PropsWithChildren, ComponentProps<'a'> {
   href: string;
   img: string;
   imgAlt?: string;
+  theme?: DeepPartial<ReuseUISidebarLogoTheme>;
 }
 
 const SidebarLogo: FC<SidebarLogoProps> = ({
   children,
+  className,
   href,
   img,
   imgAlt = '',
-  className,
+  theme: customTheme = {},
   ...props
 }) => {
   const id = useId();
   const { isCollapsed } = useSidebarContext();
-  const theme = useTheme().theme.sidebar.logo;
+  const theme = mergeDeep(useTheme().theme.sidebar.logo, customTheme);
 
   return (
     <a
       aria-labelledby={`ReuseUI-sidebar-logo-${id}`}
-      className={classNames(theme.base, className)}
       href={href}
+      className={classNames(theme.base, className)}
       {...props}
     >
-      <img alt={imgAlt} className={theme.img} src={img} />
+      <img alt={imgAlt} src={img} className={theme.img} />
       <span
         className={theme.collapsed[isCollapsed ? 'on' : 'off']}
         id={`ReuseUI-sidebar-logo-${id}`}
