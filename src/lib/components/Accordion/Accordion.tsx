@@ -40,7 +40,7 @@ const AccordionComponent: FC<AccordionProps> = ({
   className,
   theme: customTheme = {},
   ...props
-}): JSX.Element => {
+}) => {
   const [isOpen, setOpen] = useState(collapseAll ? -1 : 0);
 
   const panels = useMemo(
