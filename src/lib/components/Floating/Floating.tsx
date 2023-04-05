@@ -1,65 +1,68 @@
 import type { Placement } from '@floating-ui/core';
 import {
   autoUpdate,
+  safePolygon,
   useClick,
   useFloating,
   useFocus,
   useHover,
   useInteractions,
   useRole,
-} from '@floating-ui/react-dom-interactions';
+} from '@floating-ui/react';
 import classNames from 'classnames';
 import type { ComponentProps, FC, PropsWithChildren, ReactNode } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { getArrowPlacement, getMiddleware, getPlacement } from '../../helpers/floating';
 
 export interface ReuseUIFloatingTheme {
-  target: string;
-  base: string;
+  arrow: ReuseUIFloatingArrowTheme;
   animation: string;
+  base: string;
+  content: string;
   hidden: string;
+  style: {
+    auto: string;
+    dark: string;
+    light: string;
+  };
+  target: string;
+}
+
+export interface ReuseUIFloatingArrowTheme {
+  base: string;
+  placement: string;
   style: {
     dark: string;
     light: string;
     auto: string;
   };
-  content: string;
-  arrow: {
-    base: string;
-    style: {
-      dark: string;
-      light: string;
-      auto: string;
-    };
-    placement: string;
-  };
 }
 
 export interface FloatingProps extends PropsWithChildren<Omit<ComponentProps<'div'>, 'style'>> {
-  content: ReactNode;
-  theme: ReuseUIFloatingTheme;
-  placement?: 'auto' | Placement;
-  trigger?: 'hover' | 'click';
-  style?: 'dark' | 'light' | 'auto';
   animation?: false | `duration-${number}`;
   arrow?: boolean;
   closeRequestKey?: string;
+  content: string;
+  placement?: 'auto' | Placement;
+  style?: 'dark' | 'light' | 'auto';
+  theme: ReuseUIFloatingTheme;
+  trigger?: 'hover' | 'click';
 }
 
 /**
  * @see https://floating-ui.com/docs/react-dom-interactions
  */
 export const Floating: FC<FloatingProps> = ({
-  children,
-  content,
-  theme,
   animation = 'duration-300',
   arrow = true,
+  children,
+  className,
+  closeRequestKey,
+  content,
   placement = 'top',
   style = 'dark',
+  theme,
   trigger = 'hover',
-  closeRequestKey,
-  className,
   ...props
 }) => {
   const arrowRef = useRef<HTMLDivElement>(null);
@@ -87,7 +90,10 @@ export const Floating: FC<FloatingProps> = ({
   const { getFloatingProps, getReferenceProps } = useInteractions([
     useClick(context, { enabled: trigger === 'click' }),
     useFocus(context),
-    useHover(context, { enabled: trigger === 'hover' }),
+    useHover(context, {
+      enabled: trigger === 'hover',
+      handleClose: safePolygon(),
+    }),
     useRole(context, { role: 'tooltip' }),
   ]);
 
