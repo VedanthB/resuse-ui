@@ -10,7 +10,7 @@ import {
   useRole,
 } from '@floating-ui/react';
 import classNames from 'classnames';
-import type { ComponentProps, FC, PropsWithChildren, ReactNode } from 'react';
+import type { ComponentProps, FC, PropsWithChildren } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { getArrowPlacement, getMiddleware, getPlacement } from '../../helpers/floating';
 

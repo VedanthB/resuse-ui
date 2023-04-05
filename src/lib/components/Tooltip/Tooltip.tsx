@@ -1,5 +1,5 @@
 import type { Placement } from '@floating-ui/core';
-import type { ComponentProps, FC, PropsWithChildren, ReactNode } from 'react';
+import type { ComponentProps, FC, PropsWithChildren } from 'react';
 import type { DeepPartial } from '..';
 import { mergeDeep } from '../../helpers/mergeDeep';
 import type { ReuseUIFloatingTheme } from '../Floating';
@@ -11,7 +11,7 @@ export type ReuseUITooltipTheme = ReuseUIFloatingTheme;
 export interface TooltipProps extends PropsWithChildren<Omit<ComponentProps<'div'>, 'style'>> {
   animation?: false | `duration-${number}`;
   arrow?: boolean;
-  content: ReactNode;
+  content: string;
   placement?: 'auto' | Placement;
   style?: 'dark' | 'light' | 'auto';
   theme?: DeepPartial<ReuseUITooltipTheme>;
