@@ -11,7 +11,7 @@ export type ReuseUITooltipTheme = ReuseUIFloatingTheme;
 export interface TooltipProps extends PropsWithChildren<Omit<ComponentProps<'div'>, 'style'>> {
   animation?: false | `duration-${number}`;
   arrow?: boolean;
-  content: string;
+  content: any;
   placement?: 'auto' | Placement;
   style?: 'dark' | 'light' | 'auto';
   theme?: DeepPartial<ReuseUITooltipTheme>;
