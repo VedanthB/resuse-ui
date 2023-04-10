@@ -18,7 +18,7 @@ export const AccordionContent: FC<AccordionContentProps> = ({
   className,
   theme: customTheme = {},
   ...props
-}): JSX.Element => {
+}) => {
   const { isOpen } = useAccordionContext();
 
   const theme = mergeDeep(useTheme().theme.accordion.content, customTheme);
