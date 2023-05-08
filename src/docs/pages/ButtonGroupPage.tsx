@@ -1,6 +1,6 @@
 import type { FC } from 'react';
-import { Button } from '~/lib/components/Button';
 import { HiAdjustments, HiCloudDownload, HiUserCircle } from 'react-icons/hi';
+import { Button } from '~/lib';
 import type { CodeExample, PageContent } from './DemoPage';
 import { DemoPage } from './DemoPage';
 
