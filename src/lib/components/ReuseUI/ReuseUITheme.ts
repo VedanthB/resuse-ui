@@ -10,6 +10,7 @@ import {
   ReuseUINavbarTheme,
   ReuseUISidebarTheme,
 } from '..';
+import { ReuseUIBreadcrumbTheme } from '../Breadcrumb';
 import type { ReuseUIFloatingTheme } from '../Floating';
 import { SpinnerColors, SpinnerSizes } from '../Spinner';
 
@@ -40,6 +41,7 @@ export interface ReuseUITheme {
     };
     size: SpinnerSizes;
   };
+  breadcrumb: ReuseUIBreadcrumbTheme;
   tooltip: ReuseUIFloatingTheme;
 }
 
