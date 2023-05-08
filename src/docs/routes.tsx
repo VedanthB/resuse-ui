@@ -10,7 +10,7 @@ import {
   // HiArrowCircleDown,
   HiBadgeCheck,
   // HiBell,
-  // HiChevronDoubleRight,
+  HiChevronDoubleRight,
   // HiClipboardList,
   // HiCollection,
   HiCreditCard,
@@ -29,6 +29,7 @@ import {
 import AccordionPage from './pages/AccordionPage';
 import AvatarPage from './pages/AvatarPage';
 import BadgesPage from './pages/BadgePage';
+import BreadcrumbPage from './pages/BreadcrumbPage';
 import CardPage from './pages/CardPage';
 import DashboardPage from './pages/DashboardPage';
 
@@ -98,17 +99,17 @@ export const routes: RouteProps[] = [
       images: { light: 'badges-light.svg', dark: 'badges-dark.svg' },
     },
   },
-  //   {
-  //     title: 'Breadcrumb',
-  //     icon: HiChevronDoubleRight,
-  //     href: '/breadcrumb',
-  //     component: <BreadcrumbPage />,
-  //     group: false,
-  //     card: {
-  //       className: 'w-64',
-  //       images: { light: 'breadcrumb-light.svg', dark: 'breadcrumb-dark.svg' },
-  //     },
-  //   },
+  {
+    title: 'Breadcrumb',
+    icon: HiChevronDoubleRight,
+    href: '/breadcrumb',
+    component: <BreadcrumbPage />,
+    group: false,
+    card: {
+      className: 'w-64',
+      images: { light: 'breadcrumb-light.svg', dark: 'breadcrumb-dark.svg' },
+    },
+  },
   //   {
   //     title: 'Buttons',
   //     icon: HiCollection,
