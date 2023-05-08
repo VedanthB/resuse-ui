@@ -9,7 +9,7 @@ import {
   // HiAnnotation,
   // HiArrowCircleDown,
   HiBadgeCheck,
-  // HiBell,
+  HiBell,
   HiChevronDoubleRight,
   // HiClipboardList,
   HiCollection,
@@ -27,6 +27,7 @@ import {
 } from 'react-icons/hi';
 // import { MdColorLens, MdTab } from 'react-icons/md';
 import AccordionPage from './pages/AccordionPage';
+import AlertsPage from './pages/AlertsPage';
 import AvatarPage from './pages/AvatarPage';
 import BadgesPage from './pages/BadgePage';
 import BreadcrumbPage from './pages/BreadcrumbPage';
@@ -57,17 +58,17 @@ export const routes: RouteProps[] = [
     component: <DashboardPage />,
     group: false,
   },
-  //   {
-  //     title: 'Alerts',
-  //     icon: HiBell,
-  //     href: '/alerts',
-  //     component: <AlertsPage />,
-  //     group: false,
-  //     card: {
-  //       className: 'w-56',
-  //       images: { light: 'alerts-light.svg', dark: 'alerts-dark.svg' },
-  //     },
-  //   },
+  {
+    title: 'Alerts',
+    icon: HiBell,
+    href: '/alerts',
+    component: <AlertsPage />,
+    group: false,
+    card: {
+      className: 'w-56',
+      images: { light: 'alerts-light.svg', dark: 'alerts-dark.svg' },
+    },
+  },
   {
     title: 'Accordion',
     icon: HiCreditCard,

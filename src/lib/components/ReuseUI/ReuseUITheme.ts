@@ -1,25 +1,29 @@
 import {
   DeepPartial,
   ReuseUIAccordionTheme,
+  ReuseUIAlertTheme,
   ReuseUIAvatarGroupCounterTheme,
   ReuseUIAvatarGroupTheme,
   ReuseUIAvatarTheme,
   ReuseUIBadgeTheme,
+  ReuseUIBreadcrumbTheme,
+  ReuseUIButtonGroupTheme,
+  ReuseUIButtonTheme,
   ReuseUICardTheme,
   ReuseUIDarkThemeToggleTheme,
   ReuseUINavbarTheme,
   ReuseUISidebarTheme,
+  ReuseUIFloatingTheme,
+  SpinnerColors,
+  SpinnerSizes,
 } from '..';
-import { ReuseUIBreadcrumbTheme } from '../Breadcrumb';
-import { ReuseUIButtonGroupTheme, ReuseUIButtonTheme } from '../Button';
-import type { ReuseUIFloatingTheme } from '../Floating';
-import { SpinnerColors, SpinnerSizes } from '../Spinner';
 
 export type CustomReuseUITheme = DeepPartial<ReuseUITheme>;
 
 export interface ReuseUITheme {
   accordion: ReuseUIAccordionTheme;
   avatar: ReuseUIAvatarTheme;
+  alert: ReuseUIAlertTheme;
   avatarGroupCounter: ReuseUIAvatarGroupCounterTheme;
   avatarGroup: ReuseUIAvatarGroupTheme;
   badge: ReuseUIBadgeTheme;
