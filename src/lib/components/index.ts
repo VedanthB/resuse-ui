@@ -9,6 +9,8 @@ export * from './Tooltip';
 export * from './Accordion';
 export * from './Card';
 export * from './Avatar';
+export * from './Button';
+export * from './Breadcrumb';
 
 export type DeepPartial<T> = T extends object
   ? {

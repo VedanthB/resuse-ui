@@ -11,6 +11,7 @@ import {
   ReuseUISidebarTheme,
 } from '..';
 import { ReuseUIBreadcrumbTheme } from '../Breadcrumb';
+import { ReuseUIButtonGroupTheme, ReuseUIButtonTheme } from '../Button';
 import type { ReuseUIFloatingTheme } from '../Floating';
 import { SpinnerColors, SpinnerSizes } from '../Spinner';
 
@@ -22,6 +23,8 @@ export interface ReuseUITheme {
   avatarGroupCounter: ReuseUIAvatarGroupCounterTheme;
   avatarGroup: ReuseUIAvatarGroupTheme;
   badge: ReuseUIBadgeTheme;
+  button: ReuseUIButtonTheme;
+  buttonGroup: ReuseUIButtonGroupTheme;
   card: ReuseUICardTheme;
   darkThemeToggle: ReuseUIDarkThemeToggleTheme;
   navbar: ReuseUINavbarTheme;
