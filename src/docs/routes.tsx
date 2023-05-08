@@ -12,10 +12,10 @@ import {
   // HiBell,
   HiChevronDoubleRight,
   // HiClipboardList,
-  // HiCollection,
+  HiCollection,
   HiCreditCard,
   // HiDeviceTablet,
-  // HiDuplicate,
+  HiDuplicate,
   HiHome,
   // HiMinus,
   // HiOutlineChevronDoubleRight,
@@ -30,6 +30,8 @@ import AccordionPage from './pages/AccordionPage';
 import AvatarPage from './pages/AvatarPage';
 import BadgesPage from './pages/BadgePage';
 import BreadcrumbPage from './pages/BreadcrumbPage';
+import ButtonGroupPage from './pages/ButtonGroupPage';
+import ButtonsPage from './pages/ButtonsPage';
 import CardPage from './pages/CardPage';
 import DashboardPage from './pages/DashboardPage';
 
@@ -110,28 +112,28 @@ export const routes: RouteProps[] = [
       images: { light: 'breadcrumb-light.svg', dark: 'breadcrumb-dark.svg' },
     },
   },
-  //   {
-  //     title: 'Buttons',
-  //     icon: HiCollection,
-  //     href: '/buttons',
-  //     component: <ButtonsPage />,
-  //     group: false,
-  //     card: {
-  //       className: 'w-24',
-  //       images: { light: 'buttons.svg', dark: 'buttons.svg' },
-  //     },
-  //   },
-  //   {
-  //     title: 'Button group',
-  //     icon: HiDuplicate,
-  //     href: '/button-group',
-  //     component: <ButtonGroupPage />,
-  //     group: false,
-  //     card: {
-  //       className: 'w-56',
-  //       images: { light: 'button-group-light.svg', dark: 'button-group-dark.svg' },
-  //     },
-  //   },
+  {
+    title: 'Buttons',
+    icon: HiCollection,
+    href: '/buttons',
+    component: <ButtonsPage />,
+    group: false,
+    card: {
+      className: 'w-24',
+      images: { light: 'buttons.svg', dark: 'buttons.svg' },
+    },
+  },
+  {
+    title: 'Button group',
+    icon: HiDuplicate,
+    href: '/button-group',
+    component: <ButtonGroupPage />,
+    group: false,
+    card: {
+      className: 'w-56',
+      images: { light: 'button-group-light.svg', dark: 'button-group-dark.svg' },
+    },
+  },
   {
     title: 'Card',
     icon: BsCreditCard2FrontFill,
