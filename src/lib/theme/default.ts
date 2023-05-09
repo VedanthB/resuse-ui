@@ -358,6 +358,11 @@ const theme: ReuseUITheme = {
       snap: 'snap-x',
     },
   },
+  checkbox: {
+    root: {
+      base: 'h-4 w-4 rounded border border-gray-300 bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600',
+    },
+  },
   darkThemeToggle: {
     base: 'rounded-lg p-2.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700',
     icon: 'h-5 w-5',
