@@ -1,6 +1,7 @@
 import type { ComponentProps, FC, ReactNode } from 'react';
 // import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 // import { BiNotification } from 'react-icons/bi';
+import { BsImages } from 'react-icons/bs';
 // BsImages
 import { BsCreditCard2FrontFill } from 'react-icons/bs';
 // import { FaBars, FaSpinner } from 'react-icons/fa';
@@ -35,6 +36,7 @@ import ButtonGroupPage from './pages/ButtonGroupPage';
 import ButtonsPage from './pages/ButtonsPage';
 import CardPage from './pages/CardPage';
 import DashboardPage from './pages/DashboardPage';
+import CarouselPage from './pages/CarouselPage';
 
 export type ComponentCardItem = {
   className: string;
@@ -146,17 +148,17 @@ export const routes: RouteProps[] = [
       images: { light: 'card-light.svg', dark: 'card-dark.svg' },
     },
   },
-  //   {
-  //     title: 'Carousel',
-  //     icon: BsImages,
-  //     href: '/carousel',
-  //     component: <CarouselPage />,
-  //     group: false,
-  //     card: {
-  //       className: 'w-48',
-  //       images: { light: 'carousel-light.svg', dark: 'carousel-dark.svg' },
-  //     },
-  //   },
+  {
+    title: 'Carousel',
+    icon: BsImages,
+    href: '/carousel',
+    component: <CarouselPage />,
+    group: false,
+    card: {
+      className: 'w-48',
+      images: { light: 'carousel-light.svg', dark: 'carousel-dark.svg' },
+    },
+  },
   //   {
   //     title: 'Dropdown',
   //     icon: HiArrowCircleDown,

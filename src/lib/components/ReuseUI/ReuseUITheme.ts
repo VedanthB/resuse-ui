@@ -16,6 +16,7 @@ import {
   ReuseUIFloatingTheme,
   SpinnerColors,
   SpinnerSizes,
+  ReuseUICarouselTheme,
 } from '..';
 
 export type CustomReuseUITheme = DeepPartial<ReuseUITheme>;
@@ -30,6 +31,7 @@ export interface ReuseUITheme {
   button: ReuseUIButtonTheme;
   buttonGroup: ReuseUIButtonGroupTheme;
   card: ReuseUICardTheme;
+  carousel: ReuseUICarouselTheme;
   darkThemeToggle: ReuseUIDarkThemeToggleTheme;
   navbar: ReuseUINavbarTheme;
   sidebar: ReuseUISidebarTheme;
