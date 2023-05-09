@@ -42,7 +42,7 @@ export interface FloatingProps extends PropsWithChildren<Omit<ComponentProps<'di
   animation?: false | `duration-${number}`;
   arrow?: boolean;
   closeRequestKey?: string;
-  content: string;
+  content: any;
   placement?: 'auto' | Placement;
   style?: 'dark' | 'light' | 'auto';
   theme: ReuseUIFloatingTheme;
