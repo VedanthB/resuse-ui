@@ -15,6 +15,7 @@ export * from './Alert';
 export * from './Alert';
 export * from './Carousel';
 export * from './Dropdown';
+export * from './Checkbox';
 
 export type DeepPartial<T> = T extends object
   ? {
