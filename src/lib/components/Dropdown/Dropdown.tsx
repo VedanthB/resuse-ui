@@ -9,7 +9,6 @@ import {
 } from 'react-icons/hi';
 import type { DeepPartial } from '..';
 import { mergeDeep } from '../../helpers/mergeDeep';
-
 import type { ButtonProps } from '../Button';
 import { Button } from '../Button';
 import type { FloatingProps, ReuseUIFloatingTheme } from '../Floating';

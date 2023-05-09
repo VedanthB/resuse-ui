@@ -8,7 +8,7 @@ import { BsCreditCard2FrontFill } from 'react-icons/bs';
 // import { FiNavigation } from 'react-icons/fi';
 import {
   // HiAnnotation,
-  // HiArrowCircleDown,
+  HiArrowCircleDown,
   HiBadgeCheck,
   HiBell,
   HiChevronDoubleRight,
@@ -37,6 +37,7 @@ import ButtonsPage from './pages/ButtonsPage';
 import CardPage from './pages/CardPage';
 import DashboardPage from './pages/DashboardPage';
 import CarouselPage from './pages/CarouselPage';
+import DropdownPage from './pages/DropdownPage';
 
 export type ComponentCardItem = {
   className: string;
@@ -159,17 +160,17 @@ export const routes: RouteProps[] = [
       images: { light: 'carousel-light.svg', dark: 'carousel-dark.svg' },
     },
   },
-  //   {
-  //     title: 'Dropdown',
-  //     icon: HiArrowCircleDown,
-  //     href: '/dropdown',
-  //     component: <DropdownPage />,
-  //     group: false,
-  //     card: {
-  //       className: 'w-28',
-  //       images: { light: 'dropdown-light.svg', dark: 'dropdown-dark.svg' },
-  //     },
-  //   },
+  {
+    title: 'Dropdown',
+    icon: HiArrowCircleDown,
+    href: '/dropdown',
+    component: <DropdownPage />,
+    group: false,
+    card: {
+      className: 'w-28',
+      images: { light: 'dropdown-light.svg', dark: 'dropdown-dark.svg' },
+    },
+  },
   //   {
   //     title: 'Forms',
   //     icon: HiPencilAlt,
