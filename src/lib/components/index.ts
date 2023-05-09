@@ -12,6 +12,8 @@ export * from './Avatar';
 export * from './Button';
 export * from './Breadcrumb';
 export * from './Alert';
+export * from './Alert';
+export * from './Carousel';
 
 export type DeepPartial<T> = T extends object
   ? {
