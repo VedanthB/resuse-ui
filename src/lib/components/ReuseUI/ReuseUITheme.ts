@@ -17,6 +17,7 @@ import {
   SpinnerColors,
   SpinnerSizes,
   ReuseUICarouselTheme,
+  ReuseUIDropdownTheme,
 } from '..';
 
 export type CustomReuseUITheme = DeepPartial<ReuseUITheme>;
@@ -33,6 +34,7 @@ export interface ReuseUITheme {
   card: ReuseUICardTheme;
   carousel: ReuseUICarouselTheme;
   darkThemeToggle: ReuseUIDarkThemeToggleTheme;
+  dropdown: ReuseUIDropdownTheme;
   navbar: ReuseUINavbarTheme;
   sidebar: ReuseUISidebarTheme;
   spinner: {
