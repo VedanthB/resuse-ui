@@ -19,6 +19,9 @@ import {
   ReuseUICarouselTheme,
   ReuseUIDropdownTheme,
   ReuseUICheckboxTheme,
+  ReuseUITextInputTheme,
+  ReuseUIFileInputTheme,
+  ReuseUIHelperTextTheme,
 } from '..';
 
 export type CustomReuseUITheme = DeepPartial<ReuseUITheme>;
@@ -35,11 +38,14 @@ export interface ReuseUITheme {
   card: ReuseUICardTheme;
   carousel: ReuseUICarouselTheme;
   checkbox: ReuseUICheckboxTheme;
-
   darkThemeToggle: ReuseUIDarkThemeToggleTheme;
   dropdown: ReuseUIDropdownTheme;
   navbar: ReuseUINavbarTheme;
   sidebar: ReuseUISidebarTheme;
+  fileInput: ReuseUIFileInputTheme;
+  textInput: ReuseUITextInputTheme;
+  helperText: ReuseUIHelperTextTheme;
+
   spinner: {
     base: string;
     color: SpinnerColors;

@@ -16,6 +16,9 @@ export * from './Alert';
 export * from './Carousel';
 export * from './Dropdown';
 export * from './Checkbox';
+export * from './HelperText';
+export * from './TextInput';
+export * from './FileInput';
 
 export type DeepPartial<T> = T extends object
   ? {
