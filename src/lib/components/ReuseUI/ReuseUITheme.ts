@@ -24,6 +24,7 @@ import {
   ReuseUIHelperTextTheme,
   ReuseUIToggleSwitchTheme,
   ReuseUITextareaTheme,
+  ReuseUILabelTheme,
 } from '..';
 
 export type CustomReuseUITheme = DeepPartial<ReuseUITheme>;
@@ -49,7 +50,7 @@ export interface ReuseUITheme {
   helperText: ReuseUIHelperTextTheme;
   toggleSwitch: ReuseUIToggleSwitchTheme;
   textarea: ReuseUITextareaTheme;
-
+  label: ReuseUILabelTheme;
   spinner: {
     base: string;
     color: SpinnerColors;
