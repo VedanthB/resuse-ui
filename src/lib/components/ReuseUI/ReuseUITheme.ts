@@ -22,6 +22,7 @@ import {
   ReuseUITextInputTheme,
   ReuseUIFileInputTheme,
   ReuseUIHelperTextTheme,
+  ReuseUIToggleSwitchTheme,
 } from '..';
 
 export type CustomReuseUITheme = DeepPartial<ReuseUITheme>;
@@ -45,6 +46,7 @@ export interface ReuseUITheme {
   fileInput: ReuseUIFileInputTheme;
   textInput: ReuseUITextInputTheme;
   helperText: ReuseUIHelperTextTheme;
+  toggleSwitch: ReuseUIToggleSwitchTheme;
 
   spinner: {
     base: string;
