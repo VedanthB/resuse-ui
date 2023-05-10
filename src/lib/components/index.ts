@@ -20,6 +20,7 @@ export * from './HelperText';
 export * from './TextInput';
 export * from './FileInput';
 export * from './ToggleSwitch';
+export * from './TextArea';
 
 export type DeepPartial<T> = T extends object
   ? {
