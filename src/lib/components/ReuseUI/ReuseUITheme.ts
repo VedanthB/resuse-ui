@@ -25,6 +25,7 @@ import {
   ReuseUIToggleSwitchTheme,
   ReuseUITextareaTheme,
   ReuseUILabelTheme,
+  ReuseUIRadioTheme,
 } from '..';
 
 export type CustomReuseUITheme = DeepPartial<ReuseUITheme>;
@@ -44,6 +45,7 @@ export interface ReuseUITheme {
   darkThemeToggle: ReuseUIDarkThemeToggleTheme;
   dropdown: ReuseUIDropdownTheme;
   navbar: ReuseUINavbarTheme;
+  radio: ReuseUIRadioTheme;
   sidebar: ReuseUISidebarTheme;
   fileInput: ReuseUIFileInputTheme;
   textInput: ReuseUITextInputTheme;

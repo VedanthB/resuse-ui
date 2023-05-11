@@ -22,6 +22,7 @@ export * from './FileInput';
 export * from './ToggleSwitch';
 export * from './TextArea';
 export * from './Label';
+export * from './Radio';
 
 export type DeepPartial<T> = T extends object
   ? {
