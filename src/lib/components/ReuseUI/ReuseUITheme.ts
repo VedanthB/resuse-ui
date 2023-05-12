@@ -26,6 +26,7 @@ import {
   ReuseUITextareaTheme,
   ReuseUILabelTheme,
   ReuseUIRadioTheme,
+  ReuseUIRangeSliderTheme,
 } from '..';
 
 export type CustomReuseUITheme = DeepPartial<ReuseUITheme>;
@@ -46,6 +47,7 @@ export interface ReuseUITheme {
   dropdown: ReuseUIDropdownTheme;
   navbar: ReuseUINavbarTheme;
   radio: ReuseUIRadioTheme;
+  rangeSlider: ReuseUIRangeSliderTheme;
   sidebar: ReuseUISidebarTheme;
   fileInput: ReuseUIFileInputTheme;
   textInput: ReuseUITextInputTheme;

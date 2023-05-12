@@ -23,6 +23,7 @@ export * from './ToggleSwitch';
 export * from './TextArea';
 export * from './Label';
 export * from './Radio';
+export * from './RangeSlider';
 
 export type DeepPartial<T> = T extends object
   ? {
