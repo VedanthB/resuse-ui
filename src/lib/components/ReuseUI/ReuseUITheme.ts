@@ -27,6 +27,7 @@ import {
   ReuseUILabelTheme,
   ReuseUIRadioTheme,
   ReuseUIRangeSliderTheme,
+  ReuseUISelectTheme,
 } from '..';
 
 export type CustomReuseUITheme = DeepPartial<ReuseUITheme>;
@@ -70,6 +71,7 @@ export interface ReuseUITheme {
     };
     size: SpinnerSizes;
   };
+  select: ReuseUISelectTheme;
   breadcrumb: ReuseUIBreadcrumbTheme;
   tooltip: ReuseUIFloatingTheme;
 }

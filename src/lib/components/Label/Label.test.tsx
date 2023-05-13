@@ -1,39 +1,17 @@
 import { render } from '@testing-library/react';
-import { HiLockClosed } from 'react-icons/hi';
+import { HiGlobe, HiLockClosed } from 'react-icons/hi';
 import { describe, expect, it } from 'vitest';
 import { Button } from '../Button';
 import { Checkbox } from '../Checkbox';
 import { FileInput } from '../FileInput';
-// import { Radio } from '../Radio';
-// import { RangeSlider } from '../RangeSlider';
-// import { Select } from '../Select';
-// import { Textarea } from '../TextArea';
+import { Radio } from '../Radio';
+import { RangeSlider } from '../RangeSlider';
+import { Textarea } from '../TextArea';
 import { TextInput } from '../TextInput';
 import { ToggleSwitch } from '../ToggleSwitch';
 import { Label } from './Label';
+import { Select } from '../Select';
 
-describe.concurrent('Components / Label', () => {
-  describe.concurrent('A11y', () => {
-    it('should provide accessible name to any form control associated by `htmlFor`', () => {
-      const inputLabels = [
-        'Your email',
-        'Your password',
-        'Remember me',
-        'Enable notifications',
-        'Upload file',
-        // 'United States',
-        'Your message',
-        // 'Price',
-      ];
-
-      const { getByLabelText } = render(<TestForm />);
-
-      inputLabels.forEach((label) => expect(getByLabelText(label)).toHaveAccessibleName(label));
-    });
-  });
-});
-
-// TODO:pass these tests after added the components
 const TestForm = (): JSX.Element => (
   <form>
     <div>
@@ -57,7 +35,7 @@ const TestForm = (): JSX.Element => (
       <Checkbox id='remember' />
       <Label htmlFor='remember'>Remember me</Label>
     </div>
-    {/* <div>
+    <div>
       <Label htmlFor='countries'>Select your country</Label>
       <Select
         addon={<span>Or just pick any country</span>}
@@ -70,7 +48,7 @@ const TestForm = (): JSX.Element => (
         <option>France</option>
         <option>Germany</option>
       </Select>
-    </div> */}
+    </div>
     <div>
       <Label htmlFor='file'>Upload file</Label>
       <FileInput
@@ -78,7 +56,7 @@ const TestForm = (): JSX.Element => (
         helperText='A profile picture is useful to confirm your are logged into your account'
       />
     </div>
-    {/* <fieldset>
+    <fieldset>
       <legend>Choose your favorite country</legend>
       <div>
         <Radio id='united-state' name='countries' value='USA' defaultChecked />
@@ -108,7 +86,28 @@ const TestForm = (): JSX.Element => (
         <Label htmlFor='price'>Price</Label>
         <RangeSlider id='price' min={0} max={100} />
       </div>
-    </fieldset> */}
+    </fieldset>
     <Button type='submit'>Submit</Button>
   </form>
 );
+
+describe.concurrent('Components / Label', () => {
+  describe.concurrent('A11y', () => {
+    it('should provide accessible name to any form control associated by `htmlFor`', () => {
+      const inputLabels = [
+        'Your email',
+        'Your password',
+        'Remember me',
+        'Enable notifications',
+        'Upload file',
+        'United States',
+        'Your message',
+        'Price',
+      ];
+
+      const { getByLabelText } = render(<TestForm />);
+
+      inputLabels.forEach((label) => expect(getByLabelText(label)).toHaveAccessibleName(label));
+    });
+  });
+});
