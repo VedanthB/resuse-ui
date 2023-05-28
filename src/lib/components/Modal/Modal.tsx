@@ -14,7 +14,7 @@ import type { ReuseUIModalFooterTheme } from './ModalFooter';
 import { ModalFooter } from './ModalFooter';
 import type { ReuseUIModalHeaderTheme } from './ModalHeader';
 import { ModalHeader } from './ModalHeader';
-import useKeyDown from '~/lib/hooks';
+import useKeyDown from '../../hooks';
 
 export interface ReuseUIModalTheme {
   root: ReuseUIModalRootTheme;
