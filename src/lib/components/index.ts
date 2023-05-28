@@ -27,6 +27,7 @@ export * from './RangeSlider';
 export * from './Select';
 export * from './Footer';
 export * from './ListGroup';
+export * from './Modal';
 
 export type DeepPartial<T> = T extends object
   ? {
