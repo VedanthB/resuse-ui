@@ -31,6 +31,7 @@ import {
   ReuseUIFooterTheme,
   ReuseUIListGroupTheme,
   ReuseUIModalTheme,
+  ReuseUIPaginationTheme,
 } from '..';
 
 export type CustomReuseUITheme = DeepPartial<ReuseUITheme>;
@@ -52,6 +53,7 @@ export interface ReuseUITheme {
   listGroup: ReuseUIListGroupTheme;
   modal: ReuseUIModalTheme;
   navbar: ReuseUINavbarTheme;
+  pagination: ReuseUIPaginationTheme;
   radio: ReuseUIRadioTheme;
   rangeSlider: ReuseUIRangeSliderTheme;
   sidebar: ReuseUISidebarTheme;
