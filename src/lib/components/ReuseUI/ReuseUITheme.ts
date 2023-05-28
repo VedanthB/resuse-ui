@@ -28,6 +28,7 @@ import {
   ReuseUIRadioTheme,
   ReuseUIRangeSliderTheme,
   ReuseUISelectTheme,
+  ReuseUIFooterTheme,
 } from '..';
 
 export type CustomReuseUITheme = DeepPartial<ReuseUITheme>;
@@ -51,6 +52,8 @@ export interface ReuseUITheme {
   rangeSlider: ReuseUIRangeSliderTheme;
   sidebar: ReuseUISidebarTheme;
   fileInput: ReuseUIFileInputTheme;
+  footer: ReuseUIFooterTheme;
+
   textInput: ReuseUITextInputTheme;
   helperText: ReuseUIHelperTextTheme;
   toggleSwitch: ReuseUIToggleSwitchTheme;

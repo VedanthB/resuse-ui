@@ -25,6 +25,7 @@ export * from './Label';
 export * from './Radio';
 export * from './RangeSlider';
 export * from './Select';
+export * from './Footer';
 
 export type DeepPartial<T> = T extends object
   ? {
