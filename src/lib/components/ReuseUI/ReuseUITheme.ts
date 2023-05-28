@@ -29,6 +29,7 @@ import {
   ReuseUIRangeSliderTheme,
   ReuseUISelectTheme,
   ReuseUIFooterTheme,
+  ReuseUIListGroupTheme,
 } from '..';
 
 export type CustomReuseUITheme = DeepPartial<ReuseUITheme>;
@@ -47,13 +48,13 @@ export interface ReuseUITheme {
   checkbox: ReuseUICheckboxTheme;
   darkThemeToggle: ReuseUIDarkThemeToggleTheme;
   dropdown: ReuseUIDropdownTheme;
+  listGroup: ReuseUIListGroupTheme;
   navbar: ReuseUINavbarTheme;
   radio: ReuseUIRadioTheme;
   rangeSlider: ReuseUIRangeSliderTheme;
   sidebar: ReuseUISidebarTheme;
   fileInput: ReuseUIFileInputTheme;
   footer: ReuseUIFooterTheme;
-
   textInput: ReuseUITextInputTheme;
   helperText: ReuseUIHelperTextTheme;
   toggleSwitch: ReuseUIToggleSwitchTheme;
