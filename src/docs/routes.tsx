@@ -21,7 +21,7 @@ import {
   // HiMinus,
   // HiOutlineChevronDoubleRight,
   // HiOutlineClock,
-  // HiPencilAlt,
+  HiPencilAlt,
   // HiStar,
   // HiTable,
   HiUser,
@@ -38,6 +38,7 @@ import CardPage from './pages/CardPage';
 import DashboardPage from './pages/DashboardPage';
 import CarouselPage from './pages/CarouselPage';
 import DropdownPage from './pages/DropdownPage';
+import FormsPage from './pages/FormsPage';
 
 export type ComponentCardItem = {
   className: string;
@@ -171,17 +172,17 @@ export const routes: RouteProps[] = [
       images: { light: 'dropdown-light.svg', dark: 'dropdown-dark.svg' },
     },
   },
-  //   {
-  //     title: 'Forms',
-  //     icon: HiPencilAlt,
-  //     href: '/forms',
-  //     component: <FormsPage />,
-  //     group: false,
-  //     card: {
-  //       className: 'w-40',
-  //       images: { light: 'forms-light.svg', dark: 'forms-dark.svg' },
-  //     },
-  //   },
+  {
+    title: 'Forms',
+    icon: HiPencilAlt,
+    href: '/forms',
+    component: <FormsPage />,
+    group: false,
+    card: {
+      className: 'w-40',
+      images: { light: 'forms-light.svg', dark: 'forms-dark.svg' },
+    },
+  },
   //   {
   //     title: 'Footer',
   //     icon: HiMinus,
