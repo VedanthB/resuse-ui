@@ -12,6 +12,7 @@ import {
   HiBadgeCheck,
   HiBell,
   HiChevronDoubleRight,
+  HiClipboardList,
   // HiClipboardList,
   HiCollection,
   HiCreditCard,
@@ -41,6 +42,7 @@ import CarouselPage from './pages/CarouselPage';
 import DropdownPage from './pages/DropdownPage';
 import FormsPage from './pages/FormsPage';
 import FooterPage from './pages/FooterPage';
+import ListGroupPage from './pages/ListGroupPage';
 
 export type ComponentCardItem = {
   className: string;
@@ -196,17 +198,17 @@ export const routes: RouteProps[] = [
       images: { light: 'footer-light.svg', dark: 'footer-dark.svg' },
     },
   },
-  //   {
-  //     title: 'List group',
-  //     icon: HiClipboardList,
-  //     href: '/list-group',
-  //     component: <ListGroupPage />,
-  //     group: false,
-  //     card: {
-  //       className: 'w-36',
-  //       images: { light: 'list-group-light.svg', dark: 'list-group-dark.svg' },
-  //     },
-  //   },
+  {
+    title: 'List group',
+    icon: HiClipboardList,
+    href: '/list-group',
+    component: <ListGroupPage />,
+    group: false,
+    card: {
+      className: 'w-36',
+      images: { light: 'list-group-light.svg', dark: 'list-group-dark.svg' },
+    },
+  },
   //   {
   //     title: 'Modal',
   //     icon: HiDeviceTablet,
