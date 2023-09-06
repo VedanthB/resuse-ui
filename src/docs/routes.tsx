@@ -18,6 +18,7 @@ import {
   // HiDeviceTablet,
   HiDuplicate,
   HiHome,
+  HiMinus,
   // HiMinus,
   // HiOutlineChevronDoubleRight,
   // HiOutlineClock,
@@ -39,6 +40,7 @@ import DashboardPage from './pages/DashboardPage';
 import CarouselPage from './pages/CarouselPage';
 import DropdownPage from './pages/DropdownPage';
 import FormsPage from './pages/FormsPage';
+import FooterPage from './pages/FooterPage';
 
 export type ComponentCardItem = {
   className: string;
@@ -183,17 +185,17 @@ export const routes: RouteProps[] = [
       images: { light: 'forms-light.svg', dark: 'forms-dark.svg' },
     },
   },
-  //   {
-  //     title: 'Footer',
-  //     icon: HiMinus,
-  //     href: '/footer',
-  //     component: <FooterPage />,
-  //     group: false,
-  //     card: {
-  //       className: 'w-40',
-  //       images: { light: 'footer-light.svg', dark: 'footer-dark.svg' },
-  //     },
-  //   },
+  {
+    title: 'Footer',
+    icon: HiMinus,
+    href: '/footer',
+    component: <FooterPage />,
+    group: false,
+    card: {
+      className: 'w-40',
+      images: { light: 'footer-light.svg', dark: 'footer-dark.svg' },
+    },
+  },
   //   {
   //     title: 'List group',
   //     icon: HiClipboardList,
