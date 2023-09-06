@@ -22,7 +22,7 @@ import {
   HiHome,
   HiMinus,
   // HiMinus,
-  // HiOutlineChevronDoubleRight,
+  HiOutlineChevronDoubleRight,
   // HiOutlineClock,
   HiPencilAlt,
   // HiStar,
@@ -46,6 +46,7 @@ import FooterPage from './pages/FooterPage';
 import ListGroupPage from './pages/ListGroupPage';
 import ModalPage from './pages/ModalPage';
 import NavbarPage from './pages/NavbarPage';
+import PaginationPage from './pages/PaginationPage';
 
 export type ComponentCardItem = {
   className: string;
@@ -234,17 +235,17 @@ export const routes: RouteProps[] = [
       images: { light: 'navbars-light.svg', dark: 'navbars-dark.svg' },
     },
   },
-  //   {
-  //     title: 'Pagination',
-  //     icon: HiOutlineChevronDoubleRight,
-  //     href: '/pagination',
-  //     component: <PaginationPage />,
-  //     group: false,
-  //     card: {
-  //       className: 'w-36',
-  //       images: { light: 'pagination-light.svg', dark: 'pagination-dark.svg' },
-  //     },
-  //   },
+  {
+    title: 'Pagination',
+    icon: HiOutlineChevronDoubleRight,
+    href: '/pagination',
+    component: <PaginationPage />,
+    group: false,
+    card: {
+      className: 'w-36',
+      images: { light: 'pagination-light.svg', dark: 'pagination-dark.svg' },
+    },
+  },
   //   {
   //     title: 'Progress',
   //     icon: AiOutlineLoading3Quarters,
