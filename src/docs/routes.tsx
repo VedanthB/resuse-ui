@@ -5,7 +5,7 @@ import { BsImages } from 'react-icons/bs';
 // BsImages
 import { BsCreditCard2FrontFill } from 'react-icons/bs';
 // import { FaBars, FaSpinner } from 'react-icons/fa';
-// import { FiNavigation } from 'react-icons/fi';
+import { FiNavigation } from 'react-icons/fi';
 import {
   // HiAnnotation,
   HiArrowCircleDown,
@@ -45,6 +45,7 @@ import FormsPage from './pages/FormsPage';
 import FooterPage from './pages/FooterPage';
 import ListGroupPage from './pages/ListGroupPage';
 import ModalPage from './pages/ModalPage';
+import NavbarPage from './pages/NavbarPage';
 
 export type ComponentCardItem = {
   className: string;
@@ -222,17 +223,17 @@ export const routes: RouteProps[] = [
       images: { light: 'modal-light.svg', dark: 'modal-dark.svg' },
     },
   },
-  //   {
-  //     title: 'Navbars',
-  //     icon: FiNavigation,
-  //     href: '/navbars',
-  //     component: <NavbarPage />,
-  //     group: false,
-  //     card: {
-  //       className: 'w-56',
-  //       images: { light: 'navbars-light.svg', dark: 'navbars-dark.svg' },
-  //     },
-  //   },
+  {
+    title: 'Navbars',
+    icon: FiNavigation,
+    href: '/navbars',
+    component: <NavbarPage />,
+    group: false,
+    card: {
+      className: 'w-56',
+      images: { light: 'navbars-light.svg', dark: 'navbars-dark.svg' },
+    },
+  },
   //   {
   //     title: 'Pagination',
   //     icon: HiOutlineChevronDoubleRight,
