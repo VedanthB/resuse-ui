@@ -16,6 +16,7 @@ import {
   // HiClipboardList,
   HiCollection,
   HiCreditCard,
+  HiDeviceTablet,
   // HiDeviceTablet,
   HiDuplicate,
   HiHome,
@@ -43,6 +44,7 @@ import DropdownPage from './pages/DropdownPage';
 import FormsPage from './pages/FormsPage';
 import FooterPage from './pages/FooterPage';
 import ListGroupPage from './pages/ListGroupPage';
+import ModalPage from './pages/ModalPage';
 
 export type ComponentCardItem = {
   className: string;
@@ -209,17 +211,17 @@ export const routes: RouteProps[] = [
       images: { light: 'list-group-light.svg', dark: 'list-group-dark.svg' },
     },
   },
-  //   {
-  //     title: 'Modal',
-  //     icon: HiDeviceTablet,
-  //     href: '/modal',
-  //     component: <ModalPage />,
-  //     group: false,
-  //     card: {
-  //       className: 'w-36',
-  //       images: { light: 'modal-light.svg', dark: 'modal-dark.svg' },
-  //     },
-  //   },
+  {
+    title: 'Modal',
+    icon: HiDeviceTablet,
+    href: '/modal',
+    component: <ModalPage />,
+    group: false,
+    card: {
+      className: 'w-36',
+      images: { light: 'modal-light.svg', dark: 'modal-dark.svg' },
+    },
+  },
   //   {
   //     title: 'Navbars',
   //     icon: FiNavigation,
