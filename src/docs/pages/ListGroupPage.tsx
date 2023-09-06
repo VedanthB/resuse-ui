@@ -7,8 +7,9 @@ import { HiCloudDownload, HiInbox, HiOutlineAdjustments, HiUserCircle } from 're
 const ListGroupPage: FC = () => {
   const pageContent: PageContent = {
     title: 'ListGroup',
-    description: '',
-    usage: () => `import { ListGroupPage } from 'reuseui-react';`,
+    description:
+      'Get started with the list group component to show a list of elements and menu items inside of an unordered list item built with React and Tailwind CSS',
+    usage: () => `import { ListGroup } from 'reuseui-react';`,
   };
 
   const examples: CodeExample[] = [
