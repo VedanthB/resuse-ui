@@ -34,8 +34,9 @@ import {
   ReuseUIPaginationTheme,
   ReuseUIProgressTheme,
   ReuseUIRatingTheme,
+  ReuseUITabTheme,
+  ReuseUITableTheme,
 } from '..';
-import { ReuseUITabTheme } from '../Tab';
 
 export type CustomReuseUITheme = DeepPartial<ReuseUITheme>;
 
@@ -70,6 +71,7 @@ export interface ReuseUITheme {
   toggleSwitch: ReuseUIToggleSwitchTheme;
   textarea: ReuseUITextareaTheme;
   label: ReuseUILabelTheme;
+  table: ReuseUITableTheme;
   spinner: {
     base: string;
     color: SpinnerColors;

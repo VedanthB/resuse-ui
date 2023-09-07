@@ -31,6 +31,8 @@ export * from './ListGroup';
 export * from './Modal';
 export * from './Pagination';
 export * from './Progress';
+export * from './Tab/Tabs';
+export * from './Table';
 
 export type DeepPartial<T> = T extends object
   ? {
