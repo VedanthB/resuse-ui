@@ -35,6 +35,7 @@ import {
   ReuseUIProgressTheme,
   ReuseUIRatingTheme,
 } from '..';
+import { ReuseUITabTheme } from '../Tab';
 
 export type CustomReuseUITheme = DeepPartial<ReuseUITheme>;
 
@@ -61,6 +62,7 @@ export interface ReuseUITheme {
   rangeSlider: ReuseUIRangeSliderTheme;
   rating: ReuseUIRatingTheme;
   sidebar: ReuseUISidebarTheme;
+  tab: ReuseUITabTheme;
   fileInput: ReuseUIFileInputTheme;
   footer: ReuseUIFooterTheme;
   textInput: ReuseUITextInputTheme;
