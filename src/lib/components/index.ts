@@ -33,6 +33,7 @@ export * from './Pagination';
 export * from './Progress';
 export * from './Tab/Tabs';
 export * from './Table';
+export * from './Timeline';
 
 export type DeepPartial<T> = T extends object
   ? {
