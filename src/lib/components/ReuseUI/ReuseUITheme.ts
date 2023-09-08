@@ -36,6 +36,7 @@ import {
   ReuseUIRatingTheme,
   ReuseUITabTheme,
   ReuseUITableTheme,
+  ReuseUITimelineTheme,
 } from '..';
 
 export type CustomReuseUITheme = DeepPartial<ReuseUITheme>;
@@ -90,6 +91,7 @@ export interface ReuseUITheme {
   select: ReuseUISelectTheme;
   breadcrumb: ReuseUIBreadcrumbTheme;
   tooltip: ReuseUIFloatingTheme;
+  timeline: ReuseUITimelineTheme;
 }
 
 export interface ReuseUIBoolean {
