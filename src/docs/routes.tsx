@@ -25,6 +25,7 @@ import {
   HiOutlineChevronDoubleRight,
   // HiOutlineClock,
   HiPencilAlt,
+  HiStar,
   // HiStar,
   // HiTable,
   HiUser,
@@ -48,6 +49,7 @@ import ModalPage from './pages/ModalPage';
 import NavbarPage from './pages/NavbarPage';
 import PaginationPage from './pages/PaginationPage';
 import ProgressPage from './pages/ProgressPage';
+import RatingPage from './pages/RatingPage';
 
 export type ComponentCardItem = {
   className: string;
@@ -258,17 +260,17 @@ export const routes: RouteProps[] = [
       images: { light: 'progress-light.svg', dark: 'progress-dark.svg' },
     },
   },
-  //   {
-  //     title: 'Rating',
-  //     icon: HiStar,
-  //     href: '/rating',
-  //     component: <RatingPage />,
-  //     group: false,
-  //     card: {
-  //       className: 'w-40',
-  //       images: { light: 'rating-light.svg', dark: 'rating-dark.svg' },
-  //     },
-  //   },
+  {
+    title: 'Rating',
+    icon: HiStar,
+    href: '/rating',
+    component: <RatingPage />,
+    group: false,
+    card: {
+      className: 'w-40',
+      images: { light: 'rating-light.svg', dark: 'rating-dark.svg' },
+    },
+  },
   //   {
   //     title: 'Sidebar',
   //     icon: FaBars,
