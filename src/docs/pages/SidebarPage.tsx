@@ -189,7 +189,7 @@ const SidebarPage: FC = () => {
                 </button>
               </div>
               <p className='mb-3 text-sm text-blue-900 dark:text-blue-400'>
-                Preview the new Flowbite dashboard navigation! You can turn the new navigation off
+                Preview the new ResueUI dashboard navigation! You can turn the new navigation off
                 for a limited time in your profile.
               </p>
               <a
@@ -208,8 +208,8 @@ const SidebarPage: FC = () => {
       code: (
         <div className='w-fit'>
           <Sidebar aria-label='Sidebar with logo branding example'>
-            <Sidebar.Logo href='#' img='favicon.png' imgAlt='Flowbite logo'>
-              Flowbite
+            <Sidebar.Logo href='#' img='favicon.png' imgAlt='ResueUI logo'>
+              ResueUI
             </Sidebar.Logo>
             <Sidebar.Items>
               <Sidebar.ItemGroup>
