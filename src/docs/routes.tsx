@@ -1,5 +1,5 @@
 import type { ComponentProps, FC, ReactNode } from 'react';
-// import { AiOutlineLoading3Quarters } from 'react-icons/ai';
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 // import { BiNotification } from 'react-icons/bi';
 import { BsImages } from 'react-icons/bs';
 // BsImages
@@ -47,6 +47,7 @@ import ListGroupPage from './pages/ListGroupPage';
 import ModalPage from './pages/ModalPage';
 import NavbarPage from './pages/NavbarPage';
 import PaginationPage from './pages/PaginationPage';
+import ProgressPage from './pages/ProgressPage';
 
 export type ComponentCardItem = {
   className: string;
@@ -246,17 +247,17 @@ export const routes: RouteProps[] = [
       images: { light: 'pagination-light.svg', dark: 'pagination-dark.svg' },
     },
   },
-  //   {
-  //     title: 'Progress',
-  //     icon: AiOutlineLoading3Quarters,
-  //     href: '/progress',
-  //     component: <ProgressPage />,
-  //     group: false,
-  //     card: {
-  //       className: 'w-36',
-  //       images: { light: 'progress-light.svg', dark: 'progress-dark.svg' },
-  //     },
-  //   },
+  {
+    title: 'Progress',
+    icon: AiOutlineLoading3Quarters,
+    href: '/progress',
+    component: <ProgressPage />,
+    group: false,
+    card: {
+      className: 'w-36',
+      images: { light: 'progress-light.svg', dark: 'progress-dark.svg' },
+    },
+  },
   //   {
   //     title: 'Rating',
   //     icon: HiStar,
