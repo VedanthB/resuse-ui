@@ -37,6 +37,7 @@ import {
   ReuseUITabTheme,
   ReuseUITableTheme,
   ReuseUITimelineTheme,
+  ReuseUIToastTheme,
 } from '..';
 
 export type CustomReuseUITheme = DeepPartial<ReuseUITheme>;
@@ -73,6 +74,7 @@ export interface ReuseUITheme {
   textarea: ReuseUITextareaTheme;
   label: ReuseUILabelTheme;
   table: ReuseUITableTheme;
+  toast: ReuseUIToastTheme;
   spinner: {
     base: string;
     color: SpinnerColors;
