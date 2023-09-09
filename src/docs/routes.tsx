@@ -4,7 +4,7 @@ import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { BsImages } from 'react-icons/bs';
 // BsImages
 import { BsCreditCard2FrontFill } from 'react-icons/bs';
-// import { FaBars, FaSpinner } from 'react-icons/fa';
+import { FaBars } from 'react-icons/fa';
 import { FiNavigation } from 'react-icons/fi';
 import {
   // HiAnnotation,
@@ -50,6 +50,7 @@ import NavbarPage from './pages/NavbarPage';
 import PaginationPage from './pages/PaginationPage';
 import ProgressPage from './pages/ProgressPage';
 import RatingPage from './pages/RatingPage';
+import SidebarPage from './pages/SidebarPage';
 
 export type ComponentCardItem = {
   className: string;
@@ -271,17 +272,17 @@ export const routes: RouteProps[] = [
       images: { light: 'rating-light.svg', dark: 'rating-dark.svg' },
     },
   },
-  //   {
-  //     title: 'Sidebar',
-  //     icon: FaBars,
-  //     href: '/sidebar',
-  //     component: <SidebarPage />,
-  //     group: false,
-  //     card: {
-  //       className: 'w-16',
-  //       images: { light: 'sidebar-light.svg', dark: 'sidebar-dark.svg' },
-  //     },
-  //   },
+  {
+    title: 'Sidebar',
+    icon: FaBars,
+    href: '/sidebar',
+    component: <SidebarPage />,
+    group: false,
+    card: {
+      className: 'w-16',
+      images: { light: 'sidebar-light.svg', dark: 'sidebar-dark.svg' },
+    },
+  },
   //   {
   //     title: 'Spinners',
   //     icon: FaSpinner,
