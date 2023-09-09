@@ -35,6 +35,7 @@ export * from './Tab/Tabs';
 export * from './Table';
 export * from './Timeline';
 export * from './Toast';
+export * from './Spinner/Spinner';
 
 export type DeepPartial<T> = T extends object
   ? {

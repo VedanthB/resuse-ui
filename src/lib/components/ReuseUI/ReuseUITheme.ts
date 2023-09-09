@@ -14,8 +14,6 @@ import {
   ReuseUINavbarTheme,
   ReuseUISidebarTheme,
   ReuseUIFloatingTheme,
-  SpinnerColors,
-  SpinnerSizes,
   ReuseUICarouselTheme,
   ReuseUIDropdownTheme,
   ReuseUICheckboxTheme,
@@ -38,6 +36,7 @@ import {
   ReuseUITableTheme,
   ReuseUITimelineTheme,
   ReuseUIToastTheme,
+  ReuseUISpinnerTheme,
 } from '..';
 
 export type CustomReuseUITheme = DeepPartial<ReuseUITheme>;
@@ -75,21 +74,7 @@ export interface ReuseUITheme {
   label: ReuseUILabelTheme;
   table: ReuseUITableTheme;
   toast: ReuseUIToastTheme;
-  spinner: {
-    base: string;
-    color: SpinnerColors;
-    light: {
-      off: {
-        base: string;
-        color: SpinnerColors;
-      };
-      on: {
-        base: string;
-        color: SpinnerColors;
-      };
-    };
-    size: SpinnerSizes;
-  };
+  spinner: ReuseUISpinnerTheme;
   select: ReuseUISelectTheme;
   breadcrumb: ReuseUIBreadcrumbTheme;
   tooltip: ReuseUIFloatingTheme;
