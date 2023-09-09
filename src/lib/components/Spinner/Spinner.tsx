@@ -1,12 +1,24 @@
 import classNames from 'classnames';
 import type { ComponentProps, FC } from 'react';
+import type { DeepPartial } from '..';
+import { mergeDeep } from '../../helpers/mergeDeep';
+import type { ReuseUIColors, ReuseUISizes } from '../ReuseUI/ReuseUITheme';
 import { useTheme } from '../ReuseUI';
-import { ReuseUIColors, ReuseUISizes } from '../ReuseUI/ReuseUITheme';
 
-export interface SpinnerProps extends Omit<ComponentProps<'span'>, 'color'> {
-  color?: keyof SpinnerColors;
-  light?: boolean;
-  size?: keyof SpinnerSizes;
+export interface ReuseUISpinnerTheme {
+  base: string;
+  color: SpinnerColors;
+  light: {
+    off: {
+      base: string;
+      color: SpinnerColors;
+    };
+    on: {
+      base: string;
+      color: SpinnerColors;
+    };
+  };
+  size: SpinnerSizes;
 }
 
 export interface SpinnerColors
@@ -21,18 +33,28 @@ export interface SpinnerSizes extends Pick<ReuseUISizes, 'xs' | 'sm' | 'md' | 'l
   [key: string]: string;
 }
 
+export interface SpinnerProps extends Omit<ComponentProps<'span'>, 'color'> {
+  color?: keyof SpinnerColors;
+  light?: boolean;
+  size?: keyof SpinnerSizes;
+  theme?: DeepPartial<ReuseUISpinnerTheme>;
+}
+
 export const Spinner: FC<SpinnerProps> = ({
+  className,
   color = 'info',
   light,
   size = 'md',
-  className,
+  theme: customTheme = {},
   ...props
-}): JSX.Element => {
-  const theme = useTheme().theme.spinner;
+}) => {
+  const theme = mergeDeep(useTheme().theme.spinner, customTheme);
 
   return (
     <span role='status' {...props}>
       <svg
+        fill='none'
+        viewBox='0 0 100 101'
         className={classNames(
           theme.base,
           theme.color[color],
@@ -41,8 +63,6 @@ export const Spinner: FC<SpinnerProps> = ({
           theme.size[size],
           className,
         )}
-        fill='none'
-        viewBox='0 0 100 101'
       >
         <path
           d='M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z'
