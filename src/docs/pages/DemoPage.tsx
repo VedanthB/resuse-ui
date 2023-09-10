@@ -14,6 +14,7 @@ export type CodeExample = {
   code: ReactNode;
   showCode?: boolean;
   codeClassName?: string;
+  rawCode?: string;
   codeStringifierOptions?: Options;
 };
 

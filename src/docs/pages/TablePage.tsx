@@ -5,8 +5,9 @@ import { Checkbox, Table } from '~/lib';
 
 const TablePage: FC = () => {
   const pageContent: PageContent = {
-    title: '',
-    description: '',
+    title: 'Tabs',
+    description:
+      'Get started with the table component to show data such as text, numbers, images, and links using a structured set of data based on rows and columns based on React',
     usage: () => `import { Table } from 'reuseui-react';`,
   };
 
