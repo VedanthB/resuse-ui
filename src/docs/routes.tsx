@@ -59,6 +59,8 @@ import { MdColorLens, MdTab } from 'react-icons/md';
 import TabsPage from './pages/TabsPage';
 import TimelinePage from './pages/TimelinePage';
 import ThemePage from './pages/ThemePage';
+import { BiNotification } from 'react-icons/bi';
+import ToastPage from './pages/ToastPage';
 
 export type ComponentCardItem = {
   className: string;
@@ -346,17 +348,17 @@ export const routes: RouteProps[] = [
       images: { light: 'tabs-light.svg', dark: 'tabs-dark.svg' },
     },
   },
-  //   {
-  //     title: 'Toast',
-  //     icon: BiNotification,
-  //     href: '/toast',
-  //     component: <ToastPage />,
-  //     group: false,
-  //     card: {
-  //       className: 'w-36',
-  //       images: { light: 'toast-light.svg', dark: 'toast-dark.svg' },
-  //     },
-  //   },
+  {
+    title: 'Toast',
+    icon: BiNotification,
+    href: '/toast',
+    component: <ToastPage />,
+    group: false,
+    card: {
+      className: 'w-36',
+      images: { light: 'toast-light.svg', dark: 'toast-dark.svg' },
+    },
+  },
   //   {
   //     title: 'Tooltips',
   //     icon: HiAnnotation,
