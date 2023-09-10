@@ -4,7 +4,7 @@ import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { BsImages } from 'react-icons/bs';
 // BsImages
 import { BsCreditCard2FrontFill } from 'react-icons/bs';
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaSpinner } from 'react-icons/fa';
 import { FiNavigation } from 'react-icons/fi';
 import {
   // HiAnnotation,
@@ -51,6 +51,7 @@ import PaginationPage from './pages/PaginationPage';
 import ProgressPage from './pages/ProgressPage';
 import RatingPage from './pages/RatingPage';
 import SidebarPage from './pages/SidebarPage';
+import SpinnerPage from './pages/SpinnerPage';
 
 export type ComponentCardItem = {
   className: string;
@@ -283,17 +284,17 @@ export const routes: RouteProps[] = [
       images: { light: 'sidebar-light.svg', dark: 'sidebar-dark.svg' },
     },
   },
-  //   {
-  //     title: 'Spinners',
-  //     icon: FaSpinner,
-  //     href: '/spinners',
-  //     component: <SpinnersPage />,
-  //     group: false,
-  //     card: {
-  //       className: 'w-36',
-  //       images: { light: 'spinners-light.svg', dark: 'spinners-dark.svg' },
-  //     },
-  //   },
+  {
+    title: 'Spinners',
+    icon: FaSpinner,
+    href: '/spinners',
+    component: <SpinnerPage />,
+    group: false,
+    card: {
+      className: 'w-36',
+      images: { light: 'spinners-light.svg', dark: 'spinners-dark.svg' },
+    },
+  },
   //   {
   //     title: 'Tables',
   //     icon: HiTable,
