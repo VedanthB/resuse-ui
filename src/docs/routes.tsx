@@ -23,6 +23,7 @@ import {
   HiMinus,
   // HiMinus,
   HiOutlineChevronDoubleRight,
+  HiOutlineClock,
   // HiOutlineClock,
   HiPencilAlt,
   HiStar,
@@ -56,6 +57,7 @@ import SpinnerPage from './pages/SpinnerPage';
 import TablePage from './pages/TablePage';
 import { MdTab } from 'react-icons/md';
 import TabsPage from './pages/TabsPage';
+import TimelinePage from './pages/TimelinePage';
 
 export type ComponentCardItem = {
   className: string;
@@ -321,17 +323,17 @@ export const routes: RouteProps[] = [
       images: { light: 'tabs-light.svg', dark: 'tabs-dark.svg' },
     },
   },
-  //   {
-  //     title: 'Timeline',
-  //     icon: HiOutlineClock,
-  //     href: '/timeline',
-  //     component: <TimelinePage />,
-  //     group: false,
-  //     card: {
-  //       className: 'w-24',
-  //       images: { light: 'timeline-light.svg', dark: 'timeline-dark.svg' },
-  //     },
-  //   },
+  {
+    title: 'Timeline',
+    icon: HiOutlineClock,
+    href: '/timeline',
+    component: <TimelinePage />,
+    group: false,
+    card: {
+      className: 'w-24',
+      images: { light: 'timeline-light.svg', dark: 'timeline-dark.svg' },
+    },
+  },
   //   {
   //     title: 'Theme',
   //     icon: MdColorLens,
