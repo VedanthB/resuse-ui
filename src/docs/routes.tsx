@@ -7,6 +7,7 @@ import { BsCreditCard2FrontFill } from 'react-icons/bs';
 import { FaBars, FaSpinner } from 'react-icons/fa';
 import { FiNavigation } from 'react-icons/fi';
 import {
+  HiAnnotation,
   // HiAnnotation,
   HiArrowCircleDown,
   HiBadgeCheck,
@@ -61,6 +62,7 @@ import TimelinePage from './pages/TimelinePage';
 import ThemePage from './pages/ThemePage';
 import { BiNotification } from 'react-icons/bi';
 import ToastPage from './pages/ToastPage';
+import TooltipPage from './pages/TooltipPage';
 
 export type ComponentCardItem = {
   className: string;
@@ -359,15 +361,15 @@ export const routes: RouteProps[] = [
       images: { light: 'toast-light.svg', dark: 'toast-dark.svg' },
     },
   },
-  //   {
-  //     title: 'Tooltips',
-  //     icon: HiAnnotation,
-  //     href: '/tooltips',
-  //     component: <TooltipsPage />,
-  //     group: false,
-  //     card: {
-  //       className: 'w-24',
-  //       images: { light: 'tooltips-light.svg', dark: 'tooltips-dark.svg' },
-  //     },
-  //   },
+  {
+    title: 'Tooltips',
+    icon: HiAnnotation,
+    href: '/tooltips',
+    component: <TooltipPage />,
+    group: false,
+    card: {
+      className: 'w-24',
+      images: { light: 'tooltips-light.svg', dark: 'tooltips-dark.svg' },
+    },
+  },
 ];
