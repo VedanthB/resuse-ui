@@ -1,39 +1,30 @@
 import type { ComponentProps, FC, ReactNode } from 'react';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
-// import { BiNotification } from 'react-icons/bi';
 import { BsImages } from 'react-icons/bs';
-// BsImages
 import { BsCreditCard2FrontFill } from 'react-icons/bs';
 import { FaBars, FaSpinner } from 'react-icons/fa';
 import { FiNavigation } from 'react-icons/fi';
 import {
   HiAnnotation,
-  // HiAnnotation,
   HiArrowCircleDown,
   HiBadgeCheck,
   HiBell,
   HiChevronDoubleRight,
   HiClipboardList,
-  // HiClipboardList,
   HiCollection,
   HiCreditCard,
   HiDeviceTablet,
-  // HiDeviceTablet,
   HiDuplicate,
   HiHome,
   HiMinus,
-  // HiMinus,
   HiOutlineChevronDoubleRight,
   HiOutlineClock,
-  // HiOutlineClock,
   HiPencilAlt,
   HiStar,
   HiTable,
-  // HiStar,
-  // HiTable,
   HiUser,
 } from 'react-icons/hi';
-// import { MdColorLens, MdTab } from 'react-icons/md';
+
 import AccordionPage from './pages/AccordionPage';
 import AlertsPage from './pages/AlertsPage';
 import AvatarPage from './pages/AvatarPage';
