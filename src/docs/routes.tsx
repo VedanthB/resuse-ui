@@ -55,9 +55,10 @@ import RatingPage from './pages/RatingPage';
 import SidebarPage from './pages/SidebarPage';
 import SpinnerPage from './pages/SpinnerPage';
 import TablePage from './pages/TablePage';
-import { MdTab } from 'react-icons/md';
+import { MdColorLens, MdTab } from 'react-icons/md';
 import TabsPage from './pages/TabsPage';
 import TimelinePage from './pages/TimelinePage';
+import ThemePage from './pages/ThemePage';
 
 export type ComponentCardItem = {
   className: string;
@@ -334,17 +335,17 @@ export const routes: RouteProps[] = [
       images: { light: 'timeline-light.svg', dark: 'timeline-dark.svg' },
     },
   },
-  //   {
-  //     title: 'Theme',
-  //     icon: MdColorLens,
-  //     href: '/theme',
-  //     component: <ThemePage />,
-  //     group: false,
-  //     card: {
-  //       className: 'w-64',
-  //       images: { light: 'tabs-light.svg', dark: 'tabs-dark.svg' },
-  //     },
-  //   },
+  {
+    title: 'Theme',
+    icon: MdColorLens,
+    href: '/theme',
+    component: <ThemePage />,
+    group: false,
+    card: {
+      className: 'w-64',
+      images: { light: 'tabs-light.svg', dark: 'tabs-dark.svg' },
+    },
+  },
   //   {
   //     title: 'Toast',
   //     icon: BiNotification,
