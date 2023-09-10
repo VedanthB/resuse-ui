@@ -54,6 +54,8 @@ import RatingPage from './pages/RatingPage';
 import SidebarPage from './pages/SidebarPage';
 import SpinnerPage from './pages/SpinnerPage';
 import TablePage from './pages/TablePage';
+import { MdTab } from 'react-icons/md';
+import TabsPage from './pages/TabsPage';
 
 export type ComponentCardItem = {
   className: string;
@@ -308,17 +310,17 @@ export const routes: RouteProps[] = [
       images: { light: 'tables-light.svg', dark: 'tables-dark.svg' },
     },
   },
-  //   {
-  //     title: 'Tabs',
-  //     icon: MdTab,
-  //     href: '/tabs',
-  //     component: <TabsPage />,
-  //     group: false,
-  //     card: {
-  //       className: 'w-64',
-  //       images: { light: 'tabs-light.svg', dark: 'tabs-dark.svg' },
-  //     },
-  //   },
+  {
+    title: 'Tabs',
+    icon: MdTab,
+    href: '/tabs',
+    component: <TabsPage />,
+    group: false,
+    card: {
+      className: 'w-64',
+      images: { light: 'tabs-light.svg', dark: 'tabs-dark.svg' },
+    },
+  },
   //   {
   //     title: 'Timeline',
   //     icon: HiOutlineClock,
