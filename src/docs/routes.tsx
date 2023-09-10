@@ -26,6 +26,7 @@ import {
   // HiOutlineClock,
   HiPencilAlt,
   HiStar,
+  HiTable,
   // HiStar,
   // HiTable,
   HiUser,
@@ -52,6 +53,7 @@ import ProgressPage from './pages/ProgressPage';
 import RatingPage from './pages/RatingPage';
 import SidebarPage from './pages/SidebarPage';
 import SpinnerPage from './pages/SpinnerPage';
+import TablePage from './pages/TablePage';
 
 export type ComponentCardItem = {
   className: string;
@@ -295,17 +297,17 @@ export const routes: RouteProps[] = [
       images: { light: 'spinners-light.svg', dark: 'spinners-dark.svg' },
     },
   },
-  //   {
-  //     title: 'Tables',
-  //     icon: HiTable,
-  //     href: '/tables',
-  //     component: <TablePage />,
-  //     group: false,
-  //     card: {
-  //       className: 'w-36',
-  //       images: { light: 'tables-light.svg', dark: 'tables-dark.svg' },
-  //     },
-  //   },
+  {
+    title: 'Tables',
+    icon: HiTable,
+    href: '/tables',
+    component: <TablePage />,
+    group: false,
+    card: {
+      className: 'w-36',
+      images: { light: 'tables-light.svg', dark: 'tables-dark.svg' },
+    },
+  },
   //   {
   //     title: 'Tabs',
   //     icon: MdTab,
