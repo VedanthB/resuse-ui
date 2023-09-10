@@ -1,38 +1,30 @@
 import type { ComponentProps, FC, ReactNode } from 'react';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
-// import { BiNotification } from 'react-icons/bi';
 import { BsImages } from 'react-icons/bs';
-// BsImages
 import { BsCreditCard2FrontFill } from 'react-icons/bs';
 import { FaBars, FaSpinner } from 'react-icons/fa';
 import { FiNavigation } from 'react-icons/fi';
 import {
-  // HiAnnotation,
+  HiAnnotation,
   HiArrowCircleDown,
   HiBadgeCheck,
   HiBell,
   HiChevronDoubleRight,
   HiClipboardList,
-  // HiClipboardList,
   HiCollection,
   HiCreditCard,
   HiDeviceTablet,
-  // HiDeviceTablet,
   HiDuplicate,
   HiHome,
   HiMinus,
-  // HiMinus,
   HiOutlineChevronDoubleRight,
   HiOutlineClock,
-  // HiOutlineClock,
   HiPencilAlt,
   HiStar,
   HiTable,
-  // HiStar,
-  // HiTable,
   HiUser,
 } from 'react-icons/hi';
-// import { MdColorLens, MdTab } from 'react-icons/md';
+
 import AccordionPage from './pages/AccordionPage';
 import AlertsPage from './pages/AlertsPage';
 import AvatarPage from './pages/AvatarPage';
@@ -61,6 +53,7 @@ import TimelinePage from './pages/TimelinePage';
 import ThemePage from './pages/ThemePage';
 import { BiNotification } from 'react-icons/bi';
 import ToastPage from './pages/ToastPage';
+import TooltipPage from './pages/TooltipPage';
 
 export type ComponentCardItem = {
   className: string;
@@ -359,15 +352,15 @@ export const routes: RouteProps[] = [
       images: { light: 'toast-light.svg', dark: 'toast-dark.svg' },
     },
   },
-  //   {
-  //     title: 'Tooltips',
-  //     icon: HiAnnotation,
-  //     href: '/tooltips',
-  //     component: <TooltipsPage />,
-  //     group: false,
-  //     card: {
-  //       className: 'w-24',
-  //       images: { light: 'tooltips-light.svg', dark: 'tooltips-dark.svg' },
-  //     },
-  //   },
+  {
+    title: 'Tooltips',
+    icon: HiAnnotation,
+    href: '/tooltips',
+    component: <TooltipPage />,
+    group: false,
+    card: {
+      className: 'w-24',
+      images: { light: 'tooltips-light.svg', dark: 'tooltips-dark.svg' },
+    },
+  },
 ];
