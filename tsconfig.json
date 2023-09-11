@@ -21,6 +21,7 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "incremental": true,
+    "typeRoots": ["./dist/index.d.ts", "node_modules/@types"],
     "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"]
