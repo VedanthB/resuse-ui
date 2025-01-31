@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import type { ComponentProps, FC } from 'react';
-import { GoThreeBars } from 'react-icons/go';
+import { VscThreeBars } from 'react-icons/vsc';
 import { DeepPartial } from '..';
 import { mergeDeep } from '../../helpers/mergeDeep';
 import { useTheme } from '../ReuseUI/ThemeContext';
@@ -17,7 +17,7 @@ export interface NavbarToggleProps extends ComponentProps<'button'> {
 }
 
 export const NavbarToggle: FC<NavbarToggleProps> = ({
-  barIcon: BarIcon = GoThreeBars,
+  barIcon: BarIcon = VscThreeBars,
   theme: customTheme = {},
   className,
   ...props

@@ -19,6 +19,10 @@ export default defineConfig({
     globals: true,
     setupFiles: 'src/setup-tests.ts',
   },
+  server: {
+    host: 'localhost', // or true, or '0.0.0.0'
+    port: 5173,
+  },
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/lib/index.ts'),
