@@ -8,10 +8,8 @@ import { useTheme } from '../ReuseUI/ThemeContext';
 import { Tooltip } from '../Tooltip';
 import { useSidebarContext } from './SidebarContext';
 import { useSidebarItemContext } from './SidebarItemContext';
-import type {  LinkProps } from 'react-router-dom';
-import  { Link } from 'react-router-dom';
-
-
+import type { LinkProps } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export interface ReuseUISidebarItemTheme {
   active: string;
@@ -44,10 +42,10 @@ export interface SidebarItemBaseProps extends Omit<ComponentProps<'div'>, 'ref'>
 // ✅ Conditionally allow 'to' only when 'as' is 'Link'
 export type SidebarItemProps = SidebarItemBaseProps & {
   as?: ElementType;
-} & ( 
-  { as: typeof Link; to: LinkProps['to'] } | // ✅ If `as={Link}`, require `to`
-  { as?: Exclude<ElementType, typeof Link>; to?: never } // ✅ Otherwise, forbid `to`
-);
+} & (
+    | { as: typeof Link; to: LinkProps['to'] } // ✅ If `as={Link}`, require `to`
+    | { as?: Exclude<ElementType, typeof Link>; to?: never }
+  ); // ✅ Otherwise, forbid `to`
 
 export interface SidebarItemLabelColors extends Pick<ReuseUIColors, 'gray'> {
   [key: string]: string;
@@ -146,14 +144,15 @@ const SidebarItem = forwardRef<HTMLDivElement, SidebarItemProps>(
               })}
             {isCollapsed && !Icon && (
               <span className={theme.collapsed?.noIcon ?? ''}>
-                {(typeof children === 'string' ? children.charAt(0).toLocaleUpperCase() : '?') ?? '?'}
+                {(typeof children === 'string' ? children.charAt(0).toLocaleUpperCase() : '?') ??
+                  '?'}
               </span>
             )}
             {!isCollapsed && <Children id={id}>{children as ReactNode}</Children>}
             {!isCollapsed && label && (
               <Badge
                 color={labelColor as keyof BadgeColors}
-                data-testid="ReuseUI-sidebar-label"
+                data-testid='ReuseUI-sidebar-label'
                 hidden={isCollapsed}
                 className={theme.label ?? ''}
               >
