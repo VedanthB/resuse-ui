@@ -1,7 +1,6 @@
 import classNames from 'classnames';
-import type { ComponentProps, ElementType, FC, PropsWithChildren, ReactNode } from 'react';
-import { forwardRef, useId } from 'react';
-import type { DeepPartial } from '..';
+import React, { forwardRef, useId, ElementType, ReactNode, ComponentProps } from 'react';
+import type { BadgeColors, DeepPartial } from '..';
 import { mergeDeep } from '../../helpers/mergeDeep';
 import { Badge } from '../Badge';
 import type { ReuseUIColors } from '../ReuseUI/ReuseUITheme';
@@ -28,49 +27,48 @@ export interface ReuseUISidebarItemTheme {
 }
 
 export interface SidebarItemProps
-  extends PropsWithChildren,
-    Omit<ComponentProps<'div'>, 'ref'>,
-    Record<string, unknown> {
+  extends Omit<ComponentProps<'div'>, 'ref'> {
   active?: boolean;
   as?: ElementType;
   href?: string;
-  icon?: FC<ComponentProps<'svg'>>;
+  icon?: ElementType; // ✅ Ensures `Icon` is a valid JSX element type
   label?: string;
   labelColor?: keyof SidebarItemLabelColors;
   theme?: DeepPartial<ReuseUISidebarItemTheme>;
+  children?: ReactNode;
 }
 
 export interface SidebarItemLabelColors extends Pick<ReuseUIColors, 'gray'> {
   [key: string]: string;
 }
 
-const ListItem: FC<
-  PropsWithChildren<{ id: string; isCollapsed: boolean; tooltipChildren: ReactNode | undefined }>
-> = ({ id, isCollapsed, tooltipChildren, children: wrapperChildren }) => (
+const ListItem: React.FC<{
+  id: string;
+  isCollapsed: boolean;
+  tooltipChildren: ReactNode;
+  children: ReactNode; // ✅ Explicitly define children
+}> = ({ id, isCollapsed, tooltipChildren, children }) => (
   <li>
     {isCollapsed ? (
-      <Tooltip
-        content={<TooltipContent id={id}>{tooltipChildren}</TooltipContent>}
-        placement='right'
-      >
-        {wrapperChildren}
+      <Tooltip content={<TooltipContent id={id}>{tooltipChildren}</TooltipContent>} placement="right">
+        {children}
       </Tooltip>
     ) : (
-      wrapperChildren
+      children
     )}
   </li>
 );
 
-const TooltipContent: FC<PropsWithChildren<{ id: string }>> = ({ id, children }) => (
+const TooltipContent: React.FC<{ id: string; children: ReactNode }> = ({ id, children }) => (
   <Children id={id}>{children}</Children>
 );
 
-const Children: FC<PropsWithChildren<{ id: string }>> = ({ id, children }) => {
+const Children: React.FC<{ id: string; children: ReactNode }> = ({ id, children }) => {
   const theme = useTheme().theme.sidebar.item;
 
   return (
     <span
-      data-testid='ReuseUI-sidebar-item-content'
+      data-testid="ReuseUI-sidebar-item-content"
       id={`ReuseUI-sidebar-item-${id}`}
       className={classNames(theme.content.base)}
     >
@@ -79,11 +77,11 @@ const Children: FC<PropsWithChildren<{ id: string }>> = ({ id, children }) => {
   );
 };
 
-const SidebarItem = forwardRef<Element, SidebarItemProps>(
+const SidebarItem = forwardRef<HTMLDivElement, SidebarItemProps>(
   (
     {
       active: isActive,
-      as: Component = 'a',
+      as: Component = 'a', // ✅ Ensures `Component` is an `ElementType`
       children,
       className,
       icon: Icon,
@@ -92,53 +90,58 @@ const SidebarItem = forwardRef<Element, SidebarItemProps>(
       theme: customTheme = {},
       ...props
     },
-    ref,
+    ref
   ) => {
     const id = useId();
     const { isCollapsed } = useSidebarContext();
     const { isInsideCollapse } = useSidebarItemContext();
-    const theme = mergeDeep(useTheme().theme.sidebar.item, customTheme);
+    const theme: ReuseUISidebarItemTheme = mergeDeep(
+      useTheme().theme.sidebar.item,
+      customTheme as DeepPartial<ReuseUISidebarItemTheme>
+    );
 
     return (
-      <ListItem id={id} isCollapsed={isCollapsed} tooltipChildren={children}>
-        <Component
-          aria-labelledby={`ReuseUI-sidebar-item-${id}`}
-          ref={ref}
-          className={classNames(
-            theme.base,
-            isActive && theme.active,
-            !isCollapsed && isInsideCollapse && theme.collapsed?.insideCollapse,
-            className,
-          )}
-          {...props}
-        >
-          {Icon && (
-            <Icon
-              aria-hidden
-              data-testid='ReuseUI-sidebar-item-icon'
-              className={classNames(theme.icon?.base, isActive && theme.icon?.active)}
-            />
-          )}
-          {isCollapsed && !Icon && (
-            <span className={theme.collapsed?.noIcon}>
-              {(children as string).charAt(0).toLocaleUpperCase() ?? '?'}
-            </span>
-          )}
-          {!isCollapsed && <Children id={id}>{children}</Children>}
-          {!isCollapsed && label && (
-            <Badge
-              color={labelColor}
-              data-testid='ReuseUI-sidebar-label'
-              hidden={isCollapsed}
-              className={theme.label}
-            >
-              {label}
-            </Badge>
-          )}
-        </Component>
+      <ListItem id={id} isCollapsed={isCollapsed} tooltipChildren={children as ReactNode}>
+        {React.createElement(
+          Component as ElementType, // ✅ Ensures `Component` is correctly used in JSX
+          {
+            'aria-labelledby': `ReuseUI-sidebar-item-${id}`,
+            ref,
+            className: classNames(
+              theme.base ?? '',
+              isActive ? theme.active ?? '' : '',
+              !isCollapsed && isInsideCollapse ? theme.collapsed?.insideCollapse ?? '' : '',
+              className ?? ''
+            ),
+            ...props,
+          },
+          <>
+            {Icon && React.createElement(Icon, { // ✅ Ensures `Icon` is used properly
+              'aria-hidden': true,
+              'data-testid': 'ReuseUI-sidebar-item-icon',
+              className: classNames(theme.icon?.base ?? '', isActive ? theme.icon?.active ?? '' : ''),
+            })}
+            {isCollapsed && !Icon && (
+              <span className={theme.collapsed?.noIcon ?? ''}>
+                {(typeof children === 'string' ? children.charAt(0).toLocaleUpperCase() : '?') ?? '?'}
+              </span>
+            )}
+            {!isCollapsed && <Children id={id}>{children as ReactNode}</Children>}
+            {!isCollapsed && label && (
+              <Badge
+                color={labelColor as keyof BadgeColors}
+                data-testid="ReuseUI-sidebar-label"
+                hidden={isCollapsed}
+                className={theme.label ?? ''}
+              >
+                {typeof label === 'string' ? label : String(label)}
+              </Badge>
+            )}
+          </>
+        )}
       </ListItem>
     );
-  },
+  }
 );
 
 SidebarItem.displayName = 'Sidebar.Item';
