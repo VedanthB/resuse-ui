@@ -8,6 +8,10 @@ import { useTheme } from '../ReuseUI/ThemeContext';
 import { Tooltip } from '../Tooltip';
 import { useSidebarContext } from './SidebarContext';
 import { useSidebarItemContext } from './SidebarItemContext';
+import type {  LinkProps } from 'react-router-dom';
+import  { Link } from 'react-router-dom';
+
+
 
 export interface ReuseUISidebarItemTheme {
   active: string;
@@ -26,16 +30,24 @@ export interface ReuseUISidebarItemTheme {
   label: string;
 }
 
-export interface SidebarItemProps extends Omit<ComponentProps<'div'>, 'ref'> {
+export interface SidebarItemBaseProps extends Omit<ComponentProps<'div'>, 'ref'> {
   active?: boolean;
   as?: ElementType;
   href?: string;
-  icon?: ElementType; // ✅ Ensures `Icon` is a valid JSX element type
+  icon?: ElementType;
   label?: string;
   labelColor?: keyof SidebarItemLabelColors;
   theme?: DeepPartial<ReuseUISidebarItemTheme>;
   children?: ReactNode;
 }
+
+// ✅ Conditionally allow 'to' only when 'as' is 'Link'
+export type SidebarItemProps = SidebarItemBaseProps & {
+  as?: ElementType;
+} & ( 
+  { as: typeof Link; to: LinkProps['to'] } | // ✅ If `as={Link}`, require `to`
+  { as?: Exclude<ElementType, typeof Link>; to?: never } // ✅ Otherwise, forbid `to`
+);
 
 export interface SidebarItemLabelColors extends Pick<ReuseUIColors, 'gray'> {
   [key: string]: string;
@@ -90,6 +102,7 @@ const SidebarItem = forwardRef<HTMLDivElement, SidebarItemProps>(
       label,
       labelColor = 'info',
       theme: customTheme = {},
+      to, // ✅ Extract `to` from props
       ...props
     },
     ref,
@@ -101,6 +114,9 @@ const SidebarItem = forwardRef<HTMLDivElement, SidebarItemProps>(
       useTheme().theme.sidebar.item,
       customTheme as DeepPartial<ReuseUISidebarItemTheme>,
     );
+
+    // ✅ Ensure `to` is passed ONLY if `Component` is `Link`
+    const extraProps = Component === Link ? { to } : {};
 
     return (
       <ListItem id={id} isCollapsed={isCollapsed} tooltipChildren={children as ReactNode}>
@@ -115,12 +131,12 @@ const SidebarItem = forwardRef<HTMLDivElement, SidebarItemProps>(
               !isCollapsed && isInsideCollapse ? theme.collapsed?.insideCollapse ?? '' : '',
               className ?? '',
             ),
+            ...extraProps, // ✅ Pass `to` only if `Component === Link`
             ...props,
           },
           <>
             {Icon &&
               React.createElement(Icon, {
-                // ✅ Ensures `Icon` is used properly
                 'aria-hidden': true,
                 'data-testid': 'ReuseUI-sidebar-item-icon',
                 className: classNames(
@@ -130,15 +146,14 @@ const SidebarItem = forwardRef<HTMLDivElement, SidebarItemProps>(
               })}
             {isCollapsed && !Icon && (
               <span className={theme.collapsed?.noIcon ?? ''}>
-                {(typeof children === 'string' ? children.charAt(0).toLocaleUpperCase() : '?') ??
-                  '?'}
+                {(typeof children === 'string' ? children.charAt(0).toLocaleUpperCase() : '?') ?? '?'}
               </span>
             )}
             {!isCollapsed && <Children id={id}>{children as ReactNode}</Children>}
             {!isCollapsed && label && (
               <Badge
                 color={labelColor as keyof BadgeColors}
-                data-testid='ReuseUI-sidebar-label'
+                data-testid="ReuseUI-sidebar-label"
                 hidden={isCollapsed}
                 className={theme.label ?? ''}
               >
