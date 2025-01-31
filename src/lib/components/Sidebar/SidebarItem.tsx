@@ -26,8 +26,7 @@ export interface ReuseUISidebarItemTheme {
   label: string;
 }
 
-export interface SidebarItemProps
-  extends Omit<ComponentProps<'div'>, 'ref'> {
+export interface SidebarItemProps extends Omit<ComponentProps<'div'>, 'ref'> {
   active?: boolean;
   as?: ElementType;
   href?: string;
@@ -50,7 +49,10 @@ const ListItem: React.FC<{
 }> = ({ id, isCollapsed, tooltipChildren, children }) => (
   <li>
     {isCollapsed ? (
-      <Tooltip content={<TooltipContent id={id}>{tooltipChildren}</TooltipContent>} placement="right">
+      <Tooltip
+        content={<TooltipContent id={id}>{tooltipChildren}</TooltipContent>}
+        placement='right'
+      >
         {children}
       </Tooltip>
     ) : (
@@ -68,7 +70,7 @@ const Children: React.FC<{ id: string; children: ReactNode }> = ({ id, children 
 
   return (
     <span
-      data-testid="ReuseUI-sidebar-item-content"
+      data-testid='ReuseUI-sidebar-item-content'
       id={`ReuseUI-sidebar-item-${id}`}
       className={classNames(theme.content.base)}
     >
@@ -90,14 +92,14 @@ const SidebarItem = forwardRef<HTMLDivElement, SidebarItemProps>(
       theme: customTheme = {},
       ...props
     },
-    ref
+    ref,
   ) => {
     const id = useId();
     const { isCollapsed } = useSidebarContext();
     const { isInsideCollapse } = useSidebarItemContext();
     const theme: ReuseUISidebarItemTheme = mergeDeep(
       useTheme().theme.sidebar.item,
-      customTheme as DeepPartial<ReuseUISidebarItemTheme>
+      customTheme as DeepPartial<ReuseUISidebarItemTheme>,
     );
 
     return (
@@ -111,37 +113,43 @@ const SidebarItem = forwardRef<HTMLDivElement, SidebarItemProps>(
               theme.base ?? '',
               isActive ? theme.active ?? '' : '',
               !isCollapsed && isInsideCollapse ? theme.collapsed?.insideCollapse ?? '' : '',
-              className ?? ''
+              className ?? '',
             ),
             ...props,
           },
           <>
-            {Icon && React.createElement(Icon, { // ✅ Ensures `Icon` is used properly
-              'aria-hidden': true,
-              'data-testid': 'ReuseUI-sidebar-item-icon',
-              className: classNames(theme.icon?.base ?? '', isActive ? theme.icon?.active ?? '' : ''),
-            })}
+            {Icon &&
+              React.createElement(Icon, {
+                // ✅ Ensures `Icon` is used properly
+                'aria-hidden': true,
+                'data-testid': 'ReuseUI-sidebar-item-icon',
+                className: classNames(
+                  theme.icon?.base ?? '',
+                  isActive ? theme.icon?.active ?? '' : '',
+                ),
+              })}
             {isCollapsed && !Icon && (
               <span className={theme.collapsed?.noIcon ?? ''}>
-                {(typeof children === 'string' ? children.charAt(0).toLocaleUpperCase() : '?') ?? '?'}
+                {(typeof children === 'string' ? children.charAt(0).toLocaleUpperCase() : '?') ??
+                  '?'}
               </span>
             )}
             {!isCollapsed && <Children id={id}>{children as ReactNode}</Children>}
             {!isCollapsed && label && (
               <Badge
                 color={labelColor as keyof BadgeColors}
-                data-testid="ReuseUI-sidebar-label"
+                data-testid='ReuseUI-sidebar-label'
                 hidden={isCollapsed}
                 className={theme.label ?? ''}
               >
                 {typeof label === 'string' ? label : String(label)}
               </Badge>
             )}
-          </>
+          </>,
         )}
       </ListItem>
     );
-  }
+  },
 );
 
 SidebarItem.displayName = 'Sidebar.Item';
