@@ -10,11 +10,14 @@ const DashboardPage: FC = () => {
   return (
     <div className='mx-auto max-w-screen-xl p-4 lg:p-12 lg:text-center'>
       <h2 className='mb-4 text-2xl font-bold text-gray-900 dark:text-white lg:text-center lg:text-4xl lg:font-extrabold lg:leading-snug 2xl:px-48'>
-        Tailwind CSS Components
+        Build Stunning Interfaces with <span className='font-bold'>Tailwind CSS UI Components</span>
       </h2>
       <p className='mb-10 text-lg font-normal text-gray-500 dark:text-gray-400 lg:mb-16 lg:text-center lg:text-xl xl:px-64'>
-        Explore the whole collection of open-source web components and interactive elements built
-        with the utility classes from Tailwind CSS
+        Explore a collection of <span className='font-bold'>ready-to-use</span>, fully responsive UI
+        components powered by
+        <span className='font-bold'> Tailwind CSS</span>. From interactive buttons and modals to
+        dynamic forms and navigation elements, speed up your workflow with pre-designed,
+        utility-first elements.
       </p>
       <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3'>
         {routes.map(({ title, href, card }, index) => {
@@ -36,12 +39,12 @@ const DashboardPage: FC = () => {
                 <img
                   className={classNames(className, 'dark:hidden')}
                   src={getImageUrl(images.light)}
-                  alt='Alerts'
+                  alt={`${title} Light Mode Preview`}
                 />
                 <img
                   className={classNames(className, 'hidden dark:block')}
                   src={getImageUrl(images.dark)}
-                  alt='Alerts'
+                  alt={`${title} Dark Mode Preview`}
                 />
               </div>
             </Link>

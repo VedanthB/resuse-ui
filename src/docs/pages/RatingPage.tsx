@@ -7,13 +7,14 @@ const RatingPage: FC = () => {
   const pageContent: PageContent = {
     title: 'Rating',
     description:
-      'Get started with the rating component from ReuseUI React to show testimonials and user reviews of your products using stars, labels and advanced layouts',
+      'Use the Rating component to display user reviews and testimonials with star ratings, labels, and advanced layouts.',
     usage: () => `import { Rating } from 'reuseui-react';`,
   };
 
   const examples: CodeExample[] = [
     {
-      title: 'Default rating',
+      title: 'Default Rating',
+      content: 'A simple star rating component with 4 filled stars and 1 empty star.',
       code: (
         <Rating>
           <Rating.Star />
@@ -25,7 +26,8 @@ const RatingPage: FC = () => {
       ),
     },
     {
-      title: 'Rating with text',
+      title: 'Rating with Text',
+      content: 'Adds a text label indicating the rating score.',
       code: (
         <Rating>
           <Rating.Star />
@@ -38,7 +40,8 @@ const RatingPage: FC = () => {
       ),
     },
     {
-      title: 'Rating count',
+      title: 'Rating with Count and Reviews',
+      content: 'Displays the numerical rating, a separator dot, and a clickable review count link.',
       code: (
         <Rating>
           <Rating.Star />
@@ -54,7 +57,9 @@ const RatingPage: FC = () => {
       ),
     },
     {
-      title: 'Star sizing',
+      title: 'Star Sizing',
+      content:
+        'Demonstrates different sizes for the star rating component: small, medium, and large.',
       code: (
         <>
           <Rating>
@@ -82,7 +87,8 @@ const RatingPage: FC = () => {
       ),
     },
     {
-      title: 'Advanced rating',
+      title: 'Advanced Rating with Breakdown',
+      content: 'Shows a breakdown of ratings with percentage-filled bars for each star level.',
       code: (
         <>
           <Rating>

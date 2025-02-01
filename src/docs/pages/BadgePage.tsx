@@ -6,25 +6,25 @@ import { DemoPage } from './DemoPage';
 
 const BadgesPage: FC = () => {
   const pageContent: PageContent = {
-    title: 'Badges',
+    title: 'Badges – Status Indicators & Labels',
     description:
-      'The badge component can be used to complement other elements such as buttons or text elements as a label or to show the count of a given data, such as the number of comments for an article or how much time has passed by since a comment has been made. Alternatively, badges can also be used as standalone elements that link to a certain page by using the anchor tag instead of a `span` element.',
+      'Badges are versatile UI elements used to display counts, labels, statuses, or indicators for components such as buttons, text, or navigation items. They can also serve as standalone elements linking to other pages using an anchor tag instead of a `span` element.',
     usage: () => `import { Badge } from 'reuseui-react';
-    
+
 export default function App() {
-return (
+  return (
     <>
-     <Badge>Default</Badge>
+      <Badge>Default</Badge>
     </>
-  )
+  );
 }`,
   };
 
   const examples: CodeExample[] = [
     {
-      title: 'Default badge',
+      title: 'Basic Badge',
       content:
-        'Use the following badge elements to indicate counts or labels inside or outside components.',
+        'Use badges to highlight information such as labels, counts, or statuses. These can be used inside or outside components.',
       code: (
         <div className='flex flex-wrap gap-2'>
           <Badge color='info'>Default</Badge>
@@ -39,8 +39,8 @@ return (
       ),
     },
     {
-      title: 'Large badge',
-      content: 'Use the `text-sm` to create a larger variant of the badges.',
+      title: 'Large Badges',
+      content: 'Apply the `text-sm` class to create a larger badge variant for better visibility.',
       code: (
         <div className='flex flex-wrap gap-2'>
           <Badge color='info' size='sm'>
@@ -71,8 +71,8 @@ return (
       ),
     },
     {
-      title: 'Badges as links',
-      content: 'You can also use badges as anchor elements to link to another page.',
+      title: 'Clickable Badges',
+      content: 'Turn badges into interactive elements by linking them to another page.',
       code: (
         <div className='flex flex-wrap items-center gap-2'>
           <Badge href='/badges'>Default</Badge>
@@ -83,8 +83,8 @@ return (
       ),
     },
     {
-      title: 'Badges with icon',
-      content: 'You can also use SVG icons inside the badge elements.',
+      title: 'Badges with Icons',
+      content: 'Enhance badges with icons to indicate status or additional context.',
       code: (
         <div className='flex flex-wrap gap-2'>
           <Badge icon={HiCheck}>2 minutes ago</Badge>
@@ -95,8 +95,8 @@ return (
       ),
     },
     {
-      title: 'Badge with icon only',
-      content: 'Alternatively you can also use badges which indicate only a SVG icon.',
+      title: 'Icon-Only Badges',
+      content: 'Use badges as standalone icons for minimalist visual indicators.',
       code: (
         <div className='flex flex-wrap items-center gap-2'>
           <Badge icon={HiCheck} />

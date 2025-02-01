@@ -6,15 +6,16 @@ import { DemoPage } from './DemoPage';
 
 const BreadcrumbPage: FC = () => {
   const pageContent: PageContent = {
-    title: 'Breadcrumb',
+    title: 'Breadcrumb Navigation',
     description:
-      'The breadcrumb component is an important part of any website or application that can be used to show the current location of a page in a hierarchical structure of pages. ReuseUI includes two styles of breadcrumb elements, one that has a transparent background and a few more that come with a background in different colors.',
-    usage: () => `import { Breadcrumb } from 'ReuseUI-react';`,
+      'Breadcrumbs help users navigate a website’s hierarchy by providing a clear path to previous pages. ReuseUI offers customizable breadcrumb components, including a minimalist transparent style and variants with solid backgrounds for better visibility.',
+    usage: () => `import { Breadcrumb } from 'reuseui-react';`,
   };
 
   const examples: CodeExample[] = [
     {
-      title: 'Default breadcrumb',
+      title: 'Basic Breadcrumb',
+      content: 'A simple breadcrumb trail for easy navigation within a website’s structure.',
       code: (
         <Breadcrumb aria-label='Default breadcrumb example'>
           <Breadcrumb.Item href='#' icon={HiHome}>
@@ -26,7 +27,8 @@ const BreadcrumbPage: FC = () => {
       ),
     },
     {
-      title: 'Solid background',
+      title: 'Breadcrumb with Background',
+      content: 'Add a solid background to the breadcrumb for better contrast and readability.',
       code: (
         <Breadcrumb
           aria-label='Solid background breadcrumb example'

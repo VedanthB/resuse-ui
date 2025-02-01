@@ -40,12 +40,14 @@ WithA11yImage.storyName = 'With image with alt text';
 
 WithA11yImage.args = {
   imgAlt: 'Meaningful alt text for an image that is not purely decorative',
-  imgSrc: 'https://flowbite.com/docs/images/blog/image-1.jpg', //TODO: update links
+  imgSrc:
+    'https://res.cloudinary.com/supertramp69420/image/upload/v1626209468/test/lpsgs9q6wjklcdtozrey.jpg', //TODO: update links
 };
 
 export const WithDecorativeImage = Template.bind({});
 WithDecorativeImage.storyName = 'With decorative image';
 
 WithDecorativeImage.args = {
-  imgSrc: 'https://flowbite.com/docs/images/blog/image-1.jpg', //TODO: update links
+  imgSrc:
+    'https://res.cloudinary.com/supertramp69420/image/upload/v1626209468/test/lpsgs9q6wjklcdtozrey.jpg', //TODO: update links
 };

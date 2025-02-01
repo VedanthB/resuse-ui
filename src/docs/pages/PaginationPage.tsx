@@ -13,17 +13,19 @@ const PaginationPage: FC = () => {
   const pageContent: PageContent = {
     title: 'Pagination',
     description:
-      'Get started with the pagination component to indicate the number of pages with number, link, and control buttons and allow the user to navigate through these pages',
+      'The Pagination component provides navigation controls for multi-page content, including numbered pages, previous/next buttons, and different layouts to suit table and list views.',
     usage: () => `import { Pagination } from 'reuseui-react';`,
   };
 
   const examples: CodeExample[] = [
     {
-      title: 'Default pagination',
+      title: 'Default Pagination',
+      content: 'A basic pagination component with numbered pages.',
       code: <Pagination currentPage={currentPage} totalPages={100} onPageChange={onPageChange} />,
     },
     {
-      title: 'Pagination with icons',
+      title: 'Pagination with Icons',
+      content: 'Pagination with arrow icons for better navigation visibility.',
       code: (
         <Pagination
           currentPage={currentPage}
@@ -34,7 +36,9 @@ const PaginationPage: FC = () => {
       ),
     },
     {
-      title: 'Previous and next',
+      title: 'Previous and Next Buttons Only',
+      content:
+        'A simpler pagination layout with only previous and next buttons, useful for compact navigation.',
       code: (
         <Pagination
           currentPage={currentPage}
@@ -45,7 +49,8 @@ const PaginationPage: FC = () => {
       ),
     },
     {
-      title: 'Previous and next with icons',
+      title: 'Previous and Next Buttons with Icons',
+      content: 'Adds icons to the previous and next buttons for better user experience.',
       code: (
         <Pagination
           currentPage={currentPage}
@@ -57,7 +62,8 @@ const PaginationPage: FC = () => {
       ),
     },
     {
-      title: 'Table data navigation',
+      title: 'Table Data Navigation',
+      content: 'A pagination layout specifically designed for tables with large data sets.',
       code: (
         <div className='flex items-center justify-center text-center'>
           <Pagination
@@ -70,7 +76,9 @@ const PaginationPage: FC = () => {
       ),
     },
     {
-      title: 'Table data navigation with icons',
+      title: 'Table Data Navigation with Icons',
+      content:
+        'A table pagination layout with icons for navigating through large sets of tabular data.',
       code: (
         <div className='flex items-center justify-center text-center'>
           <Pagination
@@ -84,7 +92,9 @@ const PaginationPage: FC = () => {
       ),
     },
     {
-      title: "Change 'Previous' and 'Next' text",
+      title: 'Custom Previous and Next Button Labels',
+      content:
+        'Customizes the text for the previous and next buttons, making navigation more descriptive.',
       code: (
         <div className='flex items-center justify-center text-center'>
           <Pagination
@@ -95,7 +105,7 @@ const PaginationPage: FC = () => {
             totalPages={1000}
             previousLabel='Go back'
             nextLabel='Go forward'
-          ></Pagination>
+          />
         </div>
       ),
     },

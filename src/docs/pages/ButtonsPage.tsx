@@ -8,302 +8,198 @@ const ButtonsPage: FC = () => {
   const pageContent: PageContent = {
     title: 'Button',
     description:
-      'Use the button component inside forms, as links, social login, payment options with support for multiple styles, colors, sizes, gradients, and shadows. The button component is probably the most widely used element in any user interface or website as it can be used to launch an action but also to link to other pages. ReuseUI provides a large variety of styles and sizes for the button component including outlined buttons, multiple colors, sizes, buttons with icons, and more.',
+      'The Button component is one of the most commonly used UI elements for triggering actions, navigating, and submitting forms. ReuseUI provides a variety of button styles, including solid, outlined, gradient, and icon buttons, along with multiple sizes and interaction states.',
     usage: () => `import { Button } from 'reuseui-react';`,
   };
 
   const examples: CodeExample[] = [
     {
-      title: 'Default button',
+      title: 'Basic Buttons',
+      content: 'Standard buttons in various colors for different actions.',
       code: (
         <div className='flex flex-wrap gap-2'>
-          <div>
-            <Button>Default</Button>
-          </div>
-          <div>
-            <Button color='gray'>Gray</Button>
-          </div>
-          <div>
-            <Button color='dark'>Dark</Button>
-          </div>
-          <div>
-            <Button color='light'>Light</Button>
-          </div>
-          <div>
-            <Button color='success'>Success</Button>
-          </div>
-          <div>
-            <Button color='failure'>Failure</Button>
-          </div>
-          <div>
-            <Button color='warning'>Warning</Button>
-          </div>
-          <div>
-            <Button color='purple'>Purple</Button>
-          </div>
+          <Button>Default</Button>
+          <Button color='gray'>Gray</Button>
+          <Button color='dark'>Dark</Button>
+          <Button color='light'>Light</Button>
+          <Button color='success'>Success</Button>
+          <Button color='failure'>Failure</Button>
+          <Button color='warning'>Warning</Button>
+          <Button color='purple'>Purple</Button>
         </div>
       ),
-      codeClassName: 'dark:!bg-gray-900',
     },
     {
-      title: 'Button pills',
+      title: 'Pill-shaped Buttons',
+      content: 'Use the `pill` prop to create rounded buttons.',
       code: (
         <div className='flex flex-wrap gap-2'>
-          <div>
-            <Button color='gray' pill>
-              Gray
-            </Button>
-          </div>
-          <div>
-            <Button color='dark' pill>
-              Dark
-            </Button>
-          </div>
-          <div>
-            <Button color='light' pill>
-              Light
-            </Button>
-          </div>
-          <div>
-            <Button color='success' pill>
-              Success
-            </Button>
-          </div>
-          <div>
-            <Button color='failure' pill>
-              Failure
-            </Button>
-          </div>
-          <div>
-            <Button color='warning' pill>
-              Warning
-            </Button>
-          </div>
-          <div>
-            <Button color='purple' pill>
-              Purple
-            </Button>
-          </div>
+          <Button color='gray' pill>
+            Gray
+          </Button>
+          <Button color='dark' pill>
+            Dark
+          </Button>
+          <Button color='light' pill>
+            Light
+          </Button>
+          <Button color='success' pill>
+            Success
+          </Button>
+          <Button color='failure' pill>
+            Failure
+          </Button>
+          <Button color='warning' pill>
+            Warning
+          </Button>
+          <Button color='purple' pill>
+            Purple
+          </Button>
         </div>
       ),
-      codeClassName: 'dark:!bg-gray-900',
     },
     {
-      title: 'Gradient Monochrome',
+      title: 'Gradient Monochrome Buttons',
+      content: 'Apply single-tone gradient backgrounds using `gradientMonochrome`.',
       code: (
         <div className='flex flex-wrap gap-2'>
-          <div>
-            <Button gradientMonochrome='info'>Info</Button>
-          </div>
-          <div>
-            <Button gradientMonochrome='success'>Success</Button>
-          </div>
-          <div>
-            <Button gradientMonochrome='cyan'>Cyan</Button>
-          </div>
-          <div>
-            <Button gradientMonochrome='teal'>Teal</Button>
-          </div>
-          <div>
-            <Button gradientMonochrome='lime'>Lime</Button>
-          </div>
-          <div>
-            <Button gradientMonochrome='failure'>Failure</Button>
-          </div>
-          <div>
-            <Button gradientMonochrome='pink'>Pink</Button>
-          </div>
-          <div>
-            <Button gradientMonochrome='purple'>Purple</Button>
-          </div>
+          <Button gradientMonochrome='info'>Info</Button>
+          <Button gradientMonochrome='success'>Success</Button>
+          <Button gradientMonochrome='cyan'>Cyan</Button>
+          <Button gradientMonochrome='teal'>Teal</Button>
+          <Button gradientMonochrome='lime'>Lime</Button>
+          <Button gradientMonochrome='failure'>Failure</Button>
+          <Button gradientMonochrome='pink'>Pink</Button>
+          <Button gradientMonochrome='purple'>Purple</Button>
         </div>
       ),
-      codeClassName: 'dark:!bg-gray-900',
     },
     {
-      title: 'Gradient duo-tone',
+      title: 'Gradient Duo-tone Buttons',
+      content: 'Dual-tone gradient buttons for a more dynamic look.',
       code: (
         <div className='flex flex-wrap gap-2'>
-          <div>
-            <Button gradientDuoTone='purpleToBlue'>Purple to Blue</Button>
-          </div>
-          <div>
-            <Button gradientDuoTone='cyanToBlue'>Cyan to Blue</Button>
-          </div>
-          <div>
-            <Button gradientDuoTone='greenToBlue'>Green to Blue</Button>
-          </div>
-          <div>
-            <Button gradientDuoTone='purpleToPink'>Purple to Pink</Button>
-          </div>
-          <div>
-            <Button gradientDuoTone='pinkToOrange'>Pink to Orange</Button>
-          </div>
-          <div>
-            <Button gradientDuoTone='tealToLime'>Teal to Lime</Button>
-          </div>
-          <div>
-            <Button gradientDuoTone='redToYellow'>Red to Yellow</Button>
-          </div>
+          <Button gradientDuoTone='purpleToBlue'>Purple to Blue</Button>
+          <Button gradientDuoTone='cyanToBlue'>Cyan to Blue</Button>
+          <Button gradientDuoTone='greenToBlue'>Green to Blue</Button>
+          <Button gradientDuoTone='purpleToPink'>Purple to Pink</Button>
+          <Button gradientDuoTone='pinkToOrange'>Pink to Orange</Button>
+          <Button gradientDuoTone='tealToLime'>Teal to Lime</Button>
+          <Button gradientDuoTone='redToYellow'>Red to Yellow</Button>
         </div>
       ),
-      codeClassName: 'dark:!bg-gray-900',
     },
     {
-      title: 'Outline',
+      title: 'Outlined Buttons',
+      content: 'Buttons with an outline instead of a solid background.',
       code: (
-        <div className='flex flex-wrap items-center gap-2'>
-          <div>
-            <Button outline gradientDuoTone='purpleToBlue'>
-              Purple to Blue
-            </Button>
-          </div>
-          <div>
-            <Button outline gradientDuoTone='cyanToBlue'>
-              Cyan to Blue
-            </Button>
-          </div>
-          <div>
-            <Button outline gradientDuoTone='greenToBlue'>
-              Green to Blue
-            </Button>
-          </div>
-          <div>
-            <Button outline gradientDuoTone='purpleToPink'>
-              Purple to Pink
-            </Button>
-          </div>
-          <div>
-            <Button outline gradientDuoTone='pinkToOrange'>
-              Pink to Orange
-            </Button>
-          </div>
-          <div>
-            <Button outline gradientDuoTone='tealToLime'>
-              Teal to Lime
-            </Button>
-          </div>
-          <div>
-            <Button outline gradientDuoTone='redToYellow'>
-              Red to Yellow
-            </Button>
-          </div>
+        <div className='flex flex-wrap gap-2'>
+          <Button outline gradientDuoTone='purpleToBlue'>
+            Purple to Blue
+          </Button>
+          <Button outline gradientDuoTone='cyanToBlue'>
+            Cyan to Blue
+          </Button>
+          <Button outline gradientDuoTone='greenToBlue'>
+            Green to Blue
+          </Button>
+          <Button outline gradientDuoTone='purpleToPink'>
+            Purple to Pink
+          </Button>
+          <Button outline gradientDuoTone='pinkToOrange'>
+            Pink to Orange
+          </Button>
+          <Button outline gradientDuoTone='tealToLime'>
+            Teal to Lime
+          </Button>
+          <Button outline gradientDuoTone='redToYellow'>
+            Red to Yellow
+          </Button>
         </div>
       ),
-      codeClassName: 'dark:!bg-gray-900',
     },
     {
-      title: 'Button sizes',
+      title: 'Button Sizes',
+      content: 'Buttons available in different sizes for flexibility.',
       code: (
-        <div className='flex flex-wrap items-center gap-2'>
-          <div>
-            <Button size='xs'>Extra small</Button>
-          </div>
-          <div>
-            <Button size='sm'>Small</Button>
-          </div>
-          <div>
-            <Button size='md'>Base</Button>
-          </div>
-          <div>
-            <Button size='lg'>Large</Button>
-          </div>
-          <div>
-            <Button size='xl'>Extra large</Button>
-          </div>
+        <div className='flex flex-wrap gap-2'>
+          <Button size='xs'>Extra Small</Button>
+          <Button size='sm'>Small</Button>
+          <Button size='md'>Default</Button>
+          <Button size='lg'>Large</Button>
+          <Button size='xl'>Extra Large</Button>
         </div>
       ),
-      codeClassName: 'dark:!bg-gray-900',
     },
     {
-      title: 'Buttons with icon',
+      title: 'Buttons with Icons',
+      content: 'Buttons that include icons for better visual representation.',
       code: (
-        <div className='flex flex-wrap items-center gap-2'>
-          <div>
-            <Button>
-              <HiShoppingCart className='mr-2 h-5 w-5' />
-              Buy now
-            </Button>
-          </div>
-          <div>
-            <Button>
-              Choose plan
-              <HiOutlineArrowRight className='ml-2 h-5 w-5' />
-            </Button>
-          </div>
+        <div className='flex flex-wrap gap-2'>
+          <Button>
+            <HiShoppingCart className='mr-2 h-5 w-5' />
+            Buy now
+          </Button>
+          <Button>
+            Choose plan
+            <HiOutlineArrowRight className='ml-2 h-5 w-5' />
+          </Button>
         </div>
       ),
-      codeClassName: 'dark:!bg-gray-900',
     },
     {
-      title: 'Button with label',
+      title: 'Button with Label Badge',
+      content: 'Attach a label to a button to display additional information.',
       code: (
         <div className='w-3/12'>
           <Button label='2'>Messages</Button>
         </div>
       ),
-      codeClassName: 'dark:!bg-gray-900',
     },
     {
-      title: 'Icon buttons',
+      title: 'Icon Buttons',
+      content: 'Minimal buttons that only display an icon.',
       code: (
-        <div className='flex flex-wrap items-center gap-2'>
-          <div>
-            <Button>
-              <HiOutlineArrowRight className='h-6 w-6' />
-            </Button>
-          </div>
-          <div>
-            <Button pill>
-              <HiOutlineArrowRight className='h-6 w-6' />
-            </Button>
-          </div>
-          <div>
-            <Button outline>
-              <HiOutlineArrowRight className='h-6 w-6' />
-            </Button>
-          </div>
-          <div>
-            <Button outline pill>
-              <HiOutlineArrowRight className='h-6 w-6' />
-            </Button>
-          </div>
+        <div className='flex flex-wrap gap-2'>
+          <Button>
+            <HiOutlineArrowRight className='h-6 w-6' />
+          </Button>
+          <Button pill>
+            <HiOutlineArrowRight className='h-6 w-6' />
+          </Button>
+          <Button outline>
+            <HiOutlineArrowRight className='h-6 w-6' />
+          </Button>
+          <Button outline pill>
+            <HiOutlineArrowRight className='h-6 w-6' />
+          </Button>
         </div>
       ),
-      codeClassName: 'dark:!bg-gray-900',
     },
     {
-      title: 'Loader',
+      title: 'Loading Indicator (Spinner)',
+      content: 'Use a spinner inside a button to indicate a loading state.',
       code: (
-        <div className='flex flex-wrap items-center gap-2'>
-          <div>
-            <Button>
-              <div className='mr-3'>
-                <Spinner size='sm' light />
-              </div>
-              Loading ...
-            </Button>
-          </div>
-          <div>
-            <Button outline>
-              <div className='mr-3'>
-                <Spinner size='sm' light />
-              </div>
-              Loading ...
-            </Button>
-          </div>
+        <div className='flex flex-wrap gap-2'>
+          <Button>
+            <Spinner size='sm' light className='mr-3' />
+            Loading...
+          </Button>
+          <Button outline>
+            <Spinner size='sm' light className='mr-3' />
+            Loading...
+          </Button>
         </div>
       ),
-      codeClassName: 'dark:!bg-gray-900',
     },
     {
-      title: 'Disabled',
+      title: 'Disabled Button',
+      content: 'A button in a disabled state, preventing interaction.',
       code: (
         <div className='w-3/12'>
-          <Button disabled>Disabled button</Button>
+          <Button disabled>Disabled</Button>
         </div>
       ),
-      codeClassName: 'dark:!bg-gray-900',
     },
   ];
 

@@ -9,8 +9,10 @@ lerna-debug.log*
 
 tsconfig.tsbuildinfo
 
+env
 node_modules
-
+docs
+dist
 coverage
 
 dist

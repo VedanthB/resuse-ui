@@ -7,17 +7,20 @@ const ProgressPage: FC = () => {
   const pageContent: PageContent = {
     title: 'Progress',
     description:
-      'The progress bar component is used to show the completion rate of a given task in the form of a filled bar where you can also add a label indicating percentage',
+      'The Progress component visually represents the completion percentage of a task using a progress bar. It supports different sizes, colors, and label options for enhanced clarity.',
     usage: () => `import { Progress } from 'reuseui-react';`,
   };
 
   const examples: CodeExample[] = [
     {
-      title: 'Default Progress',
+      title: 'Default Progress Bar',
+      content: 'A simple progress bar displaying 45% completion.',
       code: <Progress progress={45} />,
     },
     {
-      title: 'Sizing',
+      title: 'Progress Bar Sizes',
+      content:
+        'The progress bar supports different sizes: small, default, large, and extra-large. This is useful for adjusting UI emphasis.',
       code: (
         <div className='flex flex-col gap-2'>
           <div className='text-base font-medium dark:text-white'>Small</div>
@@ -32,7 +35,9 @@ const ProgressPage: FC = () => {
       ),
     },
     {
-      title: 'Colors',
+      title: 'Progress Bar Colors',
+      content:
+        'Supports multiple colors including dark, blue, red, green, yellow, indigo, and purple to match different UI themes.',
       code: (
         <div className='flex flex-col gap-2'>
           <div className='text-base font-medium'>Dark</div>
@@ -53,7 +58,9 @@ const ProgressPage: FC = () => {
       ),
     },
     {
-      title: 'With labels',
+      title: 'Progress Bar with Labels',
+      content:
+        'Displays a label inside the progress bar to indicate completion percentage and task name.',
       code: (
         <Progress
           progress={50}
@@ -65,7 +72,9 @@ const ProgressPage: FC = () => {
       ),
     },
     {
-      title: 'Label positions',
+      title: 'Label Positioning',
+      content:
+        'Customizes label placement. The progress percentage is placed inside, while the text label appears outside.',
       code: (
         <Progress
           progress={45}

@@ -5,15 +5,16 @@ import { CodeExample, DemoPage, PageContent } from './DemoPage';
 
 const AccordionPage: FC = () => {
   const pageContent: PageContent = {
-    title: 'Accordion',
+    title: 'Accordion Component – Expandable Content Sections',
     description:
-      'The accordion component is a collection of vertically collapsing header and body elements that can be used to show and hide information based on the Tailwind CSS utility classes and JavaScript from ReuseUI. A popular use case would be the "Frequently Asked Questions" section of a website or page when you can show questions and answers for each child element.',
+      'The Accordion component provides a structured way to organize and display expandable content. Built with Tailwind CSS and designed for accessibility, this component enables users to toggle content visibility efficiently. It is ideal for FAQs, documentation, and settings panels.',
+
     usage: () => `import { Accordion } from 'reuseui-react';`,
   };
 
   const examples: CodeExample[] = [
     {
-      title: 'Default accordion',
+      title: 'Basic Accordion with Expandable Sections',
       content: '',
       code: (
         <Accordion>
@@ -21,75 +22,62 @@ const AccordionPage: FC = () => {
             <Accordion.Title>What is ReuseUI?</Accordion.Title>
             <Accordion.Content>
               <p className='mb-2 text-gray-500 dark:text-gray-400'>
-                ReuseUI is an open-source library of interactive components built on top of Tailwind
-                CSS including buttons, dropdowns, modals, navbars, and more.
+                ReuseUI is a modular UI component library built with React, TypeScript, and Tailwind
+                CSS. It offers pre-built, customizable components that enhance development
+                efficiency while maintaining accessibility and performance.
               </p>
               <p className='text-gray-500 dark:text-gray-400'>
-                Check out this guide to learn how to{' '}
+                Learn more in our{' '}
                 <a
-                  href='https://ReuseUI.com/docs/getting-started/introduction/'
+                  href='https://ReuseUI.com/docs/getting-started/introduction/' //TODO: update the link
                   className='text-blue-600 hover:underline dark:text-blue-500'
                 >
-                  get started
+                  documentation
                 </a>{' '}
-                and start developing websites even faster with components on top of Tailwind CSS.
+                and explore how ReuseUI can improve your development workflow.
               </p>
             </Accordion.Content>
           </Accordion.Panel>
           <Accordion.Panel>
-            <Accordion.Title>Is there a Figma file available?</Accordion.Title>
+            <Accordion.Title>How does ReuseUI handle theming?</Accordion.Title>
             <Accordion.Content>
               <p className='mb-2 text-gray-500 dark:text-gray-400'>
-                ReuseUI is first conceptualized and designed using the Figma software so everything
-                you see in the library has a design equivalent in our Figma file.
+                ReuseUI features a <span className='font-bold'>customizable theming system</span>{' '}
+                allowing developers to override styles while ensuring design consistency across
+                components.
               </p>
               <p className='text-gray-500 dark:text-gray-400'>
-                Check out the{' '}
+                The library employs a <span className='font-bold'>deep merge strategy</span>,
+                providing granular control over styling. Learn more about theming in our{' '}
                 <a
                   href='https://ReuseUI.com/figma/'
                   className='text-blue-600 hover:underline dark:text-blue-500'
                 >
-                  Figma design system
+                  theming guide
                 </a>{' '}
-                based on the utility classes from Tailwind CSS and components from ReuseUI.
               </p>
             </Accordion.Content>
           </Accordion.Panel>
           <Accordion.Panel>
-            <Accordion.Title>
-              What are the differences between ReuseUI and Tailwind UI?
-            </Accordion.Title>
+            <Accordion.Title>How is ReuseUI different from other UI libraries?</Accordion.Title>
             <Accordion.Content>
               <p className='mb-2 text-gray-500 dark:text-gray-400'>
-                The main difference is that the core components from ReuseUI are open source under
-                the MIT license, whereas Tailwind UI is a paid product. Another difference is that
-                ReuseUI relies on smaller and standalone components, whereas Tailwind UI offers
-                sections of pages.
-              </p>
-              <p className='mb-2 text-gray-500 dark:text-gray-400'>
-                However, we actually recommend using both ReuseUI, ReuseUI Pro, and even Tailwind UI
-                as there is no technical reason stopping you from using the best of two worlds.
-              </p>
-              <p className='mb-2 text-gray-500 dark:text-gray-400'>
-                Learn more about these technologies:
+                Unlike UI libraries such as MUI or Chakra UI, ReuseUI is tailored specifically for
+                <span className='font-bold'> Tailwind CSS users</span>, prioritizing a{' '}
+                <span className='font-bold'>lightweight modular, and composable</span>, approach.
               </p>
               <ul className='list-disc pl-5 text-gray-500 dark:text-gray-400'>
                 <li>
-                  <a
-                    href='https://ReuseUI.com/pro/'
-                    className='text-blue-600 hover:underline dark:text-blue-500'
-                  >
-                    ReuseUI Pro
-                  </a>
+                  <span className='font-bold'>Built-in Tailwind utility classes</span> for
+                  effortless styling.
                 </li>
                 <li>
-                  <a
-                    href='https://tailwindui.com/'
-                    rel='nofollow'
-                    className='text-blue-600 hover:underline dark:text-blue-500'
-                  >
-                    Tailwind UI
-                  </a>
+                  <span className='font-bold'>Flexible compound component architecture</span> for
+                  enhanced customization.
+                </li>
+                <li>
+                  <span className='font-bold'>Accessibility-focused design</span> including ARIA
+                  roles and keyboard navigation support.
                 </li>
               </ul>
             </Accordion.Content>
@@ -99,85 +87,23 @@ const AccordionPage: FC = () => {
       codeClassName: 'dark:!bg-gray-900',
     },
     {
-      title: 'Always open',
+      title: 'Accordion with Always-Visible Sections',
       content: '',
       code: (
         <Accordion alwaysOpen>
           <Accordion.Panel>
-            <Accordion.Title>What is ReuseUI?</Accordion.Title>
+            <Accordion.Title>What are compound components in ReuseUI</Accordion.Title>
             <Accordion.Content>
               <p className='mb-2 text-gray-500 dark:text-gray-400'>
-                ReuseUI is an open-source library of interactive components built on top of Tailwind
-                CSS including buttons, dropdowns, modals, navbars, and more.
+                ReuseUI utilizes the <span className='font-bold'>compound component pattern</span>,
+                allowing parent components to manage state while child components consume shared
+                context.
               </p>
               <p className='text-gray-500 dark:text-gray-400'>
-                Check out this guide to learn how to{' '}
-                <a
-                  href='https://ReuseUI.com/docs/getting-started/introduction/'
-                  className='text-blue-600 hover:underline dark:text-blue-500'
-                >
-                  get started
-                </a>{' '}
-                and start developing websites even faster with components on top of Tailwind CSS.
+                Example: Tabs.Group holds the active tab state, while{' '}
+                <code className='bg-gray-200 px-1 rounded'>Tabs.Item</code> dynamically updates
+                based on user interaction.
               </p>
-            </Accordion.Content>
-          </Accordion.Panel>
-          <Accordion.Panel>
-            <Accordion.Title>Is there a Figma file available?</Accordion.Title>
-            <Accordion.Content>
-              <p className='mb-2 text-gray-500 dark:text-gray-400'>
-                ReuseUI is first conceptualized and designed using the Figma software so everything
-                you see in the library has a design equivalent in our Figma file.
-              </p>
-              <p className='text-gray-500 dark:text-gray-400'>
-                Check out the{' '}
-                <a
-                  href='https://ReuseUI.com/figma/'
-                  className='text-blue-600 hover:underline dark:text-blue-500'
-                >
-                  Figma design system
-                </a>{' '}
-                based on the utility classes from Tailwind CSS and components from ReuseUI.
-              </p>
-            </Accordion.Content>
-          </Accordion.Panel>
-          <Accordion.Panel>
-            <Accordion.Title>
-              What are the differences between ReuseUI and Tailwind UI?
-            </Accordion.Title>
-            <Accordion.Content>
-              <p className='mb-2 text-gray-500 dark:text-gray-400'>
-                The main difference is that the core components from ReuseUI are open source under
-                the MIT license, whereas Tailwind UI is a paid product. Another difference is that
-                ReuseUI relies on smaller and standalone components, whereas Tailwind UI offers
-                sections of pages.
-              </p>
-              <p className='mb-2 text-gray-500 dark:text-gray-400'>
-                However, we actually recommend using both ReuseUI, ReuseUI Pro, and even Tailwind UI
-                as there is no technical reason stopping you from using the best of two worlds.
-              </p>
-              <p className='mb-2 text-gray-500 dark:text-gray-400'>
-                Learn more about these technologies:
-              </p>
-              <ul className='list-disc pl-5 text-gray-500 dark:text-gray-400'>
-                <li>
-                  <a
-                    href='https://ReuseUI.com/pro/'
-                    className='text-blue-600 hover:underline dark:text-blue-500'
-                  >
-                    ReuseUI Pro
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href='https://tailwindui.com/'
-                    rel='nofollow'
-                    className='text-blue-600 hover:underline dark:text-blue-500'
-                  >
-                    Tailwind UI
-                  </a>
-                </li>
-              </ul>
             </Accordion.Content>
           </Accordion.Panel>
         </Accordion>
@@ -185,85 +111,36 @@ const AccordionPage: FC = () => {
       codeClassName: 'dark:!bg-gray-900',
     },
     {
-      title: 'Flush accordion',
+      title: 'Borderless Accordion for Seamless Layouts',
       content: '',
       code: (
         <Accordion flush>
           <Accordion.Panel>
-            <Accordion.Title>What is ReuseUI?</Accordion.Title>
+            <Accordion.Title>How does ReuseUI ensure accessibility?</Accordion.Title>
             <Accordion.Content>
               <p className='mb-2 text-gray-500 dark:text-gray-400'>
-                ReuseUI is an open-source library of interactive components built on top of Tailwind
-                CSS including buttons, dropdowns, modals, navbars, and more.
+                Accessibility is a <span className='font-semibold'> bold</span> principle in
+                ReuseUI. Components include proper ARIA attributes, keyboard navigation, and focus
+                management to enhance usability.
               </p>
-              <p className='text-gray-500 dark:text-gray-400'>
-                Check out this guide to learn how to{' '}
-                <a
-                  href='https://ReuseUI.com/docs/getting-started/introduction/'
-                  className='text-blue-600 hover:underline dark:text-blue-500'
-                >
-                  get started
-                </a>{' '}
-                and start developing websites even faster with components on top of Tailwind CSS.
-              </p>
-            </Accordion.Content>
-          </Accordion.Panel>
-          <Accordion.Panel>
-            <Accordion.Title>Is there a Figma file available?</Accordion.Title>
-            <Accordion.Content>
-              <p className='mb-2 text-gray-500 dark:text-gray-400'>
-                ReuseUI is first conceptualized and designed using the Figma software so everything
-                you see in the library has a design equivalent in our Figma file.
-              </p>
-              <p className='text-gray-500 dark:text-gray-400'>
-                Check out the{' '}
-                <a
-                  href='https://ReuseUI.com/figma/'
-                  className='text-blue-600 hover:underline dark:text-blue-500'
-                >
-                  Figma design system
-                </a>{' '}
-                based on the utility classes from Tailwind CSS and components from ReuseUI.
-              </p>
-            </Accordion.Content>
-          </Accordion.Panel>
-          <Accordion.Panel>
-            <Accordion.Title>
-              What are the differences between ReuseUI and Tailwind UI?
-            </Accordion.Title>
-            <Accordion.Content>
-              <p className='mb-2 text-gray-500 dark:text-gray-400'>
-                The main difference is that the core components from ReuseUI are open source under
-                the MIT license, whereas Tailwind UI is a paid product. Another difference is that
-                ReuseUI relies on smaller and standalone components, whereas Tailwind UI offers
-                sections of pages.
-              </p>
-              <p className='mb-2 text-gray-500 dark:text-gray-400'>
-                However, we actually recommend using both ReuseUI, ReuseUI Pro, and even Tailwind UI
-                as there is no technical reason stopping you from using the best of two worlds.
-              </p>
-              <p className='mb-2 text-gray-500 dark:text-gray-400'>
-                Learn more about these technologies:
-              </p>
+
               <ul className='list-disc pl-5 text-gray-500 dark:text-gray-400'>
                 <li>
-                  <a
-                    href='https://ReuseUI.com/pro/'
-                    className='text-blue-600 hover:underline dark:text-blue-500'
-                  >
-                    ReuseUI Pro
-                  </a>
+                  <span className='font-bold'>Modals</span> trap focus and close when pressing{' '}
+                  <code className='bg-gray-200 px-1 rounded'>Escape</code>
                 </li>
                 <li>
-                  <a
-                    href='https://tailwindui.com/'
-                    rel='nofollow'
-                    className='text-blue-600 hover:underline dark:text-blue-500'
-                  >
-                    Tailwind UI
-                  </a>
+                  <span className='font-bold'>Tabs</span> support{' '}
+                  <code className='bg-gray-200 px-1 rounded mr-2'>Arrow</code>
+                  key navigation.
+                </li>
+                <li>
+                  <span className='font-bold'>Accordions</span> use{' '}
+                  <code className='bg-gray-200 px-1 rounded mr-2'> aria-expanded</code> attributes
+                  for screen readers.
                 </li>
               </ul>
+              <p className='text-gray-500 dark:text-gray-400'></p>
             </Accordion.Content>
           </Accordion.Panel>
         </Accordion>
@@ -271,85 +148,36 @@ const AccordionPage: FC = () => {
       codeClassName: 'dark:!bg-gray-900',
     },
     {
-      title: 'Arrow style',
+      title: 'Accordion with Custom Arrow Indicators',
       content: '',
       code: (
         <Accordion arrowIcon={HiOutlineArrowCircleDown}>
           <Accordion.Panel>
-            <Accordion.Title>What is ReuseUI?</Accordion.Title>
+            <Accordion.Title>How does ReuseUI ensure accessibility?</Accordion.Title>
             <Accordion.Content>
               <p className='mb-2 text-gray-500 dark:text-gray-400'>
-                ReuseUI is an open-source library of interactive components built on top of Tailwind
-                CSS including buttons, dropdowns, modals, navbars, and more.
+                Accessibility is a <span className='font-semibold'> bold</span> principle in
+                ReuseUI. Components include proper ARIA attributes, keyboard navigation, and focus
+                management to enhance usability.
               </p>
-              <p className='text-gray-500 dark:text-gray-400'>
-                Check out this guide to learn how to{' '}
-                <a
-                  href='https://ReuseUI.com/docs/getting-started/introduction/'
-                  className='text-blue-600 hover:underline dark:text-blue-500'
-                >
-                  get started
-                </a>{' '}
-                and start developing websites even faster with components on top of Tailwind CSS.
-              </p>
-            </Accordion.Content>
-          </Accordion.Panel>
-          <Accordion.Panel>
-            <Accordion.Title>Is there a Figma file available?</Accordion.Title>
-            <Accordion.Content>
-              <p className='mb-2 text-gray-500 dark:text-gray-400'>
-                ReuseUI is first conceptualized and designed using the Figma software so everything
-                you see in the library has a design equivalent in our Figma file.
-              </p>
-              <p className='text-gray-500 dark:text-gray-400'>
-                Check out the{' '}
-                <a
-                  href='https://ReuseUI.com/figma/'
-                  className='text-blue-600 hover:underline dark:text-blue-500'
-                >
-                  Figma design system
-                </a>{' '}
-                based on the utility classes from Tailwind CSS and components from ReuseUI.
-              </p>
-            </Accordion.Content>
-          </Accordion.Panel>
-          <Accordion.Panel>
-            <Accordion.Title>
-              What are the differences between ReuseUI and Tailwind UI?
-            </Accordion.Title>
-            <Accordion.Content>
-              <p className='mb-2 text-gray-500 dark:text-gray-400'>
-                The main difference is that the core components from ReuseUI are open source under
-                the MIT license, whereas Tailwind UI is a paid product. Another difference is that
-                ReuseUI relies on smaller and standalone components, whereas Tailwind UI offers
-                sections of pages.
-              </p>
-              <p className='mb-2 text-gray-500 dark:text-gray-400'>
-                However, we actually recommend using both ReuseUI, ReuseUI Pro, and even Tailwind UI
-                as there is no technical reason stopping you from using the best of two worlds.
-              </p>
-              <p className='mb-2 text-gray-500 dark:text-gray-400'>
-                Learn more about these technologies:
-              </p>
+
               <ul className='list-disc pl-5 text-gray-500 dark:text-gray-400'>
                 <li>
-                  <a
-                    href='https://ReuseUI.com/pro/'
-                    className='text-blue-600 hover:underline dark:text-blue-500'
-                  >
-                    ReuseUI Pro
-                  </a>
+                  <span className='font-bold'>Modals</span> trap focus and close when pressing{' '}
+                  <code className='bg-gray-200 px-1 rounded'>Escape</code>
                 </li>
                 <li>
-                  <a
-                    href='https://tailwindui.com/'
-                    rel='nofollow'
-                    className='text-blue-600 hover:underline dark:text-blue-500'
-                  >
-                    Tailwind UI
-                  </a>
+                  <span className='font-bold'>Tabs</span> support{' '}
+                  <code className='bg-gray-200 px-1 rounded mr-2'>Arrow</code>
+                  key navigation.
+                </li>
+                <li>
+                  <span className='font-bold'>Accordions</span> use{' '}
+                  <code className='bg-gray-200 px-1 rounded mr-2'> aria-expanded</code> attributes
+                  for screen readers.
                 </li>
               </ul>
+              <p className='text-gray-500 dark:text-gray-400'></p>
             </Accordion.Content>
           </Accordion.Panel>
         </Accordion>

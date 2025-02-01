@@ -7,21 +7,23 @@ const TooltipPage: FC = () => {
   const pageContent: PageContent = {
     title: 'Tooltip',
     description:
-      'Use the tooltip component to show a descriptive text when hovering over an element such as a button and customize the content and style with React and Tailwind CSS',
+      'Use the tooltip component to display descriptive text when hovering over an element, such as a button. Customize content, placement, styles, and animations with React and Tailwind CSS.',
     usage: () => `import { Tooltips } from 'reuseui-react';`,
   };
 
   const examples: CodeExample[] = [
     {
-      title: 'Using tooltips',
+      title: 'Basic Tooltip',
+      content: 'A simple tooltip that appears when hovering over an element.',
       code: (
         <Tooltip content='Tooltip content'>
-          <Button>Default tooltip</Button>
+          <Button>Hover me</Button>
         </Tooltip>
       ),
     },
     {
-      title: 'Tooltip styles',
+      title: 'Tooltip Styles',
+      content: 'Tooltips with light and dark styles.',
       code: (
         <div className='flex gap-2'>
           <Tooltip content='Tooltip content' style='light'>
@@ -34,7 +36,8 @@ const TooltipPage: FC = () => {
       ),
     },
     {
-      title: 'Placement',
+      title: 'Tooltip Placement',
+      content: 'Position tooltips in different directions.',
       code: (
         <div className='flex gap-2'>
           <Tooltip content='Tooltip content' placement='top'>
@@ -54,6 +57,7 @@ const TooltipPage: FC = () => {
     },
     {
       title: 'Triggering',
+      content: 'Tooltips can be triggered by hover or click events.',
       code: (
         <div className='flex gap-2'>
           <Tooltip content='Tooltip content' trigger='hover'>
@@ -66,7 +70,8 @@ const TooltipPage: FC = () => {
       ),
     },
     {
-      title: 'Animation',
+      title: 'Animations',
+      content: 'Customize tooltip animation speed.',
       code: (
         <div className='flex gap-2'>
           <Tooltip content='Tooltip content' animation={false}>
@@ -88,10 +93,11 @@ const TooltipPage: FC = () => {
       ),
     },
     {
-      title: 'Disable arrow',
+      title: 'Disable Arrow',
+      content: 'Tooltips can be displayed without an arrow.',
       code: (
         <Tooltip content='Tooltip content' arrow={false}>
-          <Button>Default tooltip</Button>
+          <Button>No Arrow</Button>
         </Tooltip>
       ),
     },

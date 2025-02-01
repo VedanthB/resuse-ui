@@ -8,18 +8,20 @@ const NavbarPage: FC = () => {
   const pageContent: PageContent = {
     title: 'Navbar',
     description:
-      'Use the navbar component to show navigation menu items and links on the top side of your page based on multiple styles and options built with React and Tailwind CSS',
+      'The Navbar component allows you to display a navigation bar at the top of your page with various styles and interactive elements. It supports branding, navigation links, dropdown menus, and buttons for enhanced user interaction.',
     usage: () => `import { Navbar } from 'reuseui-react';`,
   };
 
   const examples: CodeExample[] = [
     {
-      title: 'Default navbar',
+      title: 'Default Navbar',
+      content:
+        'A simple navigation bar with a brand logo and menu links. This example demonstrates the default appearance with a collapsible menu.',
       code: (
         <Navbar fluid rounded>
           <Navbar.Brand as={Link} to='/navbars'>
             <img
-              src='https://flowbite.com/docs/images/logo.svg'
+              src='https://res.cloudinary.com/supertramp69420/image/upload/v1738450370/b2229a89-3f15-489d-a4b6-acb6e43c586e_removalai_preview_ghtgic.png'
               className='mr-3 h-6 sm:h-9'
               alt='ReuseUI Logo'
             />
@@ -41,15 +43,16 @@ const NavbarPage: FC = () => {
           </Navbar.Collapse>
         </Navbar>
       ),
-      codeClassName: 'dark:!bg-gray-900',
     },
     {
-      title: 'Navbar with CTA button',
+      title: 'Navbar with CTA Button',
+      content:
+        'A navbar with a call-to-action (CTA) button, commonly used to encourage user engagement, such as signing up or getting started.',
       code: (
         <Navbar fluid rounded>
           <Navbar.Brand href='https://ReuseUI.com/'>
             <img
-              src='https://flowbite.com/docs/images/logo.svg'
+              src='https://res.cloudinary.com/supertramp69420/image/upload/v1738450370/b2229a89-3f15-489d-a4b6-acb6e43c586e_removalai_preview_ghtgic.png'
               className='mr-3 h-6 sm:h-9'
               alt='ReuseUI Logo'
             />
@@ -72,15 +75,16 @@ const NavbarPage: FC = () => {
           </Navbar.Collapse>
         </Navbar>
       ),
-      codeClassName: 'dark:!bg-gray-900',
     },
     {
-      title: 'Navbar with dropdown',
+      title: 'Navbar with User Dropdown',
+      content:
+        'This example demonstrates a navbar with a user avatar dropdown menu, ideal for authenticated user interactions like profile management and logout.',
       code: (
         <Navbar fluid rounded>
           <Navbar.Brand href='https://ReuseUI.com/'>
             <img
-              src='https://flowbite.com/docs/images/logo.svg'
+              src='https://res.cloudinary.com/supertramp69420/image/upload/v1738450370/b2229a89-3f15-489d-a4b6-acb6e43c586e_removalai_preview_ghtgic.png'
               className='mr-3 h-6 sm:h-9'
               alt='ReuseUI Logo'
             />
@@ -95,14 +99,14 @@ const NavbarPage: FC = () => {
               label={
                 <Avatar
                   alt='User settings'
-                  img='https://flowbite.com/docs/images/people/profile-picture-5.jpg'
+                  img='https://res.cloudinary.com/supertramp69420/image/upload/v1738448777/Watercolor3_ajahhc.png'
                   rounded
                 />
               }
             >
               <Dropdown.Header>
-                <span className='block text-sm'>Bonnie Green</span>
-                <span className='block truncate text-sm font-medium'>name@ReuseUI.com</span>
+                <span className='block text-sm'>Vedanth Bora</span>
+                <span className='block truncate text-sm font-medium'>name@gmail.com</span>
               </Dropdown.Header>
               <Dropdown.Item>Dashboard</Dropdown.Item>
               <Dropdown.Item>Settings</Dropdown.Item>
@@ -123,7 +127,6 @@ const NavbarPage: FC = () => {
           </Navbar.Collapse>
         </Navbar>
       ),
-      codeClassName: 'dark:!bg-gray-900',
     },
   ];
 

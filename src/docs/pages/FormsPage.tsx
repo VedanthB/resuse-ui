@@ -10,9 +10,7 @@ import {
   Label,
   Radio,
   RangeSlider,
-  Select,
   TextInput,
-  Textarea,
   ToggleSwitch,
 } from '../../lib';
 
@@ -23,20 +21,22 @@ const FormsPage: FC = () => {
   const pageContent: PageContent = {
     title: 'Forms',
     description:
-      'Get started with the Forms component to show a list of menu items when clicking on the trigger element based on multiple layouts, styles, and placements The Forms component can be used to show a list of menu items when clicking on an element such as a button and hiding it when focusing outside of the triggering element.',
+      'The Forms component includes a set of input elements such as text fields, checkboxes, radio buttons, dropdowns, and more. Easily build interactive forms with validation, accessibility, and custom styling using ReuseUI and Tailwind CSS.',
     usage: () => `import { Forms } from 'reuseui-react';`,
   };
 
   const examples: CodeExample[] = [
     {
-      title: 'Form example',
+      title: 'Basic Form',
+      content:
+        'A simple form with email and password fields, along with a "Remember me" checkbox and submit button.',
       code: (
         <form className='flex flex-col gap-4'>
           <div>
             <div className='mb-2 block'>
               <Label htmlFor='email1' value='Your email' />
             </div>
-            <TextInput id='email1' type='email' placeholder='name@flowbite.com' required />
+            <TextInput id='email1' type='email' placeholder='name@gmail.com' required />
           </div>
           <div>
             <div className='mb-2 block'>
@@ -54,6 +54,8 @@ const FormsPage: FC = () => {
     },
     {
       title: 'Input Sizing',
+      content:
+        'Demonstrates different input sizes (small, medium, and large) for better UI adaptability.',
       code: (
         <div className='flex flex-col gap-4'>
           <div>
@@ -78,7 +80,9 @@ const FormsPage: FC = () => {
       ),
     },
     {
-      title: 'Disabled inputs',
+      title: 'Disabled Inputs',
+      content:
+        'Inputs that are either disabled or read-only, preventing user interaction while displaying data.',
       code: (
         <div className='flex flex-col gap-4'>
           <Label htmlFor='disabledInput1'>API token</Label>
@@ -95,42 +99,9 @@ const FormsPage: FC = () => {
       ),
     },
     {
-      title: 'Shadow inputs',
-      code: (
-        <form className='flex flex-col gap-4'>
-          <div>
-            <div className='mb-2 block'>
-              <Label htmlFor='email2' value='Your email' />
-            </div>
-            <TextInput id='email2' type='email' placeholder='name@flowbite.com' required shadow />
-          </div>
-          <div>
-            <div className='mb-2 block'>
-              <Label htmlFor='password2' value='Your password' />
-            </div>
-            <TextInput id='password2' type='password' required shadow />
-          </div>
-          <div>
-            <div className='mb-2 block'>
-              <Label htmlFor='repeat-password' value='Repeat password' />
-            </div>
-            <TextInput id='repeat-password' type='password' required shadow />
-          </div>
-          <div className='flex items-center gap-2'>
-            <Checkbox id='agree' />
-            <Label htmlFor='agree'>
-              I agree with the&nbsp;
-              <a href='/forms' className='text-blue-600 hover:underline dark:text-blue-500'>
-                terms and conditions
-              </a>
-            </Label>
-          </div>
-          <Button type='submit'>Register new account</Button>
-        </form>
-      ),
-    },
-    {
-      title: 'Helper text',
+      title: 'Helper Text',
+      content:
+        'Adds an additional helper text below an input field to provide extra information or guidance.',
       code: (
         <div>
           <div className='mb-2 block'>
@@ -139,7 +110,7 @@ const FormsPage: FC = () => {
           <TextInput
             id='email3'
             type='email'
-            placeholder='name@flowbite.com'
+            placeholder='name@gmail.com'
             required
             helperText={
               <>
@@ -158,41 +129,9 @@ const FormsPage: FC = () => {
       ),
     },
     {
-      title: 'Input element with icon on the left side',
-      code: (
-        <div>
-          <div className='mb-2 block'>
-            <Label htmlFor='email4' value='Your email' />
-          </div>
-          <TextInput
-            id='email4'
-            type='email'
-            icon={HiMail}
-            placeholder='name@flowbite.com'
-            required
-          />
-        </div>
-      ),
-    },
-    {
-      title: 'Input element with icon on the right side',
-      code: (
-        <div>
-          <div className='mb-2 block'>
-            <Label htmlFor='email4' value='Your email' />
-          </div>
-          <TextInput
-            id='email4'
-            type='email'
-            rightIcon={HiMail}
-            placeholder='name@flowbite.com'
-            required
-          />
-        </div>
-      ),
-    },
-    {
-      title: 'Input element with icon on both sides',
+      title: 'Input with Icons',
+      content:
+        'Input elements with icons on the left, right, or both sides, improving visual clarity and usability.',
       code: (
         <div>
           <div className='mb-2 block'>
@@ -203,130 +142,18 @@ const FormsPage: FC = () => {
             type='email'
             icon={HiMail}
             rightIcon={HiMail}
-            placeholder='name@flowbite.com'
+            placeholder='name@gmail.com'
             required
           />
         </div>
       ),
     },
     {
-      title: 'Input element with addon',
-      code: (
-        <div>
-          <div className='mb-2 block'>
-            <Label htmlFor='username' value='Username' />
-          </div>
-          <TextInput id='username3' placeholder='Bonnie Green' required addon='@' />
-        </div>
-      ),
-    },
-    {
-      title: 'Success and error validation',
+      title: 'Checkbox Group',
+      content:
+        'Multiple checkboxes for user selection, useful for accepting terms, enabling features, or filtering content.',
       code: (
         <div className='flex flex-col gap-4'>
-          <div>
-            <div className='mb-2 block'>
-              <Label htmlFor='username3' color='success' value='Your name' />
-            </div>
-            <TextInput
-              id='username'
-              placeholder='Bonnie Green'
-              required
-              color='success'
-              helperText={
-                <>
-                  <span className='font-medium'>Alright!</span> Username available!
-                </>
-              }
-            />
-          </div>
-          <div>
-            <div className='mb-2 block'>
-              <Label htmlFor='username4' color='failure' value='Your name' />
-            </div>
-            <TextInput
-              id='username4'
-              placeholder='Bonnie Green'
-              required
-              color='failure'
-              helperText={
-                <>
-                  <span className='font-medium'>Oops!</span> Username already taken!
-                </>
-              }
-            />
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: 'Input colors',
-      code: (
-        <div className='flex flex-col gap-4'>
-          <div>
-            <div className='mb-2 block'>
-              <Label htmlFor='input-gray' color='gray' value='Gray' />
-            </div>
-            <TextInput id='input-gray' placeholder='Input Gray' required color='gray' />
-          </div>
-          <div>
-            <div className='mb-2 block'>
-              <Label htmlFor='input-info' color='info' value='Info' />
-            </div>
-            <TextInput id='input-info' placeholder='Input Info' required color='info' />
-          </div>
-          <div>
-            <div className='mb-2 block'>
-              <Label htmlFor='input-success' color='success' value='Success' />
-            </div>
-            <TextInput id='input-success' placeholder='Input Success' required color='success' />
-          </div>
-          <div>
-            <div className='mb-2 block'>
-              <Label htmlFor='input-failure' color='failure' value='Failure' />
-            </div>
-            <TextInput id='input-failure' placeholder='Input Failure' required color='failure' />
-          </div>
-          <div>
-            <div className='mb-2 block'>
-              <Label htmlFor='input-warning' color='warning' value='Warning' />
-            </div>
-            <TextInput id='input-warning' placeholder='Input Warning' required color='warning' />
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: 'Textarea',
-      code: (
-        <div id='textarea'>
-          <div className='mb-2 block'>
-            <Label htmlFor='comment' value='Your message' />
-          </div>
-          <Textarea id='comment' placeholder='Leave a comment...' required rows={4} />
-        </div>
-      ),
-    },
-    {
-      title: 'Select input',
-      code: (
-        <div id='select'>
-          <div className='mb-2 block'>
-            <Label htmlFor='countries' value='Select your country' />
-          </div>
-          <Select id='countries' required>
-            <option>United States</option>
-            <option>Canada</option>
-            <option>France</option>
-            <option>Germany</option>
-          </Select>
-        </div>
-      ),
-    },
-    {
-      title: 'Checkbox',
-      code: (
-        <div className='flex flex-col gap-4' id='checkbox'>
           <div className='flex items-center gap-2'>
             <Checkbox id='accept' defaultChecked />
             <Label htmlFor='accept'>
@@ -340,38 +167,15 @@ const FormsPage: FC = () => {
             <Checkbox id='promotion' />
             <Label htmlFor='promotion'>I want to get promotional offers</Label>
           </div>
-          <div className='flex items-center gap-2'>
-            <Checkbox id='age' />
-            <Label htmlFor='age'>I am 18 years or older</Label>
-          </div>
-          <div className='flex gap-2'>
-            <div className='flex h-5 items-center'>
-              <Checkbox id='shipping' />
-            </div>
-            <div className='flex flex-col'>
-              <Label htmlFor='shipping'>Free shipping via Flowbite</Label>
-              <div className='text-gray-500 dark:text-gray-300'>
-                <span className='text-xs font-normal'>
-                  For orders shipped from Flowbite from <span className='font-medium'>€ 25</span> in
-                  books or&nbsp;
-                  <span>€ 29</span> on other categories
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className='flex items-center gap-2'>
-            <Checkbox id='disabled' disabled />
-            <Label htmlFor='disabled' disabled>
-              Eligible for international shipping (disabled)
-            </Label>
-          </div>
         </div>
       ),
     },
     {
-      title: 'Radio',
+      title: 'Radio Buttons',
+      content:
+        'Allows users to select a single option from multiple choices, ideal for forms requiring exclusive selection.',
       code: (
-        <fieldset className='flex flex-col gap-4' id='radio'>
+        <fieldset className='flex flex-col gap-4'>
           <legend>Choose your favorite country</legend>
           <div className='flex items-center gap-2'>
             <Radio id='united-state' name='countries' value='USA' defaultChecked />
@@ -381,54 +185,37 @@ const FormsPage: FC = () => {
             <Radio id='germany' name='countries' value='Germany' />
             <Label htmlFor='germany'>Germany</Label>
           </div>
-          <div className='flex items-center gap-2'>
-            <Radio id='spain' name='countries' value='Spain' />
-            <Label htmlFor='spain'>Spain</Label>
-          </div>
-          <div className='flex items-center gap-2'>
-            <Radio id='uk' name='countries' value='United Kingdom' />
-            <Label htmlFor='uk'>United Kingdom</Label>
-          </div>
-          <div className='flex items-center gap-2'>
-            <Radio id='china' name='countries' value='China' disabled />
-            <Label htmlFor='china' disabled>
-              China (disabled)
-            </Label>
-          </div>
         </fieldset>
       ),
     },
     {
-      title: 'File upload',
+      title: 'File Upload',
+      content:
+        'Allows users to upload files with an optional helper text to guide them through the process.',
       code: (
-        <div id='fileUpload'>
+        <div>
           <div className='mb-2 block'>
             <Label htmlFor='file' value='Upload file' />
           </div>
-          <FileInput
-            id='file'
-            helperText='A profile picture is useful to confirm your are logged into your account'
-          />
+          <FileInput id='file' helperText='A profile picture is useful to confirm your identity.' />
         </div>
       ),
     },
     {
       title: 'Toggle Switch',
+      content:
+        'A simple toggle switch for enabling or disabling options, often used in settings panels.',
       code: (
-        <div className='flex flex-col gap-4' id='toggle'>
+        <div className='flex flex-col gap-4'>
           <ToggleSwitch checked={switch1} label='Toggle me' onChange={setSwitch1} />
           <ToggleSwitch checked={switch2} label='Toggle me (checked)' onChange={setSwitch2} />
-          <ToggleSwitch
-            checked={false}
-            disabled
-            label='Toggle me (disabled)'
-            onChange={() => undefined}
-          />
         </div>
       ),
     },
     {
       title: 'Range Slider',
+      content:
+        'A range input slider for selecting a numeric value within a predefined range, useful for settings like brightness or volume control.',
       code: (
         <div className='flex flex-col gap-4'>
           <div>
@@ -436,30 +223,6 @@ const FormsPage: FC = () => {
               <Label htmlFor='default-range' value='Default' />
             </div>
             <RangeSlider id='default-range' />
-          </div>
-          <div>
-            <div className='mb-1 block'>
-              <Label htmlFor='disbaled-range' value='Disabled' />
-            </div>
-            <RangeSlider id='disabled-range' disabled={true} />
-          </div>
-          <div>
-            <div className='mb-1 block'>
-              <Label htmlFor='sm-range' value='Small' />
-            </div>
-            <RangeSlider id='sm-range' sizing='sm' />
-          </div>
-          <div>
-            <div className='mb-1 block'>
-              <Label htmlFor='md-range' value='Medium' />
-            </div>
-            <RangeSlider id='md-range' sizing='md' />
-          </div>
-          <div>
-            <div className='mb-1 block'>
-              <Label htmlFor='lg-range' value='Large' />
-            </div>
-            <RangeSlider id='lg-range' sizing='lg' />
           </div>
         </div>
       ),

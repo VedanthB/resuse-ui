@@ -26,7 +26,7 @@ export const Root: FC = () => {
         <div className='flex items-center gap-2'>
           <a
             className='cursor-pointer rounded-lg p-2.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700'
-            href={`/storybook`}
+            href={`/storybook`} //TODO: add story book link
             title='Storybook'
             target='_blank'
             rel='noreferrer'
@@ -35,7 +35,7 @@ export const Root: FC = () => {
           </a>
           <a
             className='cursor-pointer rounded-lg p-2.5 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700'
-            href='https://github.com/'
+            href='https://github.com/VedanthB/resuse-ui' //TODO: add story book link
             title='Github Repository'
             target='_blank'
             rel='noreferrer'

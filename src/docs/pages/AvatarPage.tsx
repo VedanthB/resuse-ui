@@ -5,42 +5,46 @@ import { DemoPage } from './DemoPage';
 
 const AvatarPage: FC = () => {
   const pageContent: PageContent = {
-    title: 'Avatar',
+    title: 'Avatar – User Profile Representation',
     description:
-      'The avatar component can be used as a visual identifier for a user profile on your website and you can use the examples from ReuseUI to modify the styles and sizes of these components using the utility classes from Tailwind CSS.',
-    usage: () => `import { Avatar } from 'ResueUI-react';`,
+      'The Avatar component serves as a visual representation of user profiles. It is fully customizable with Tailwind CSS utility classes, allowing modifications to size, shape, and additional styling options. ReuseUI provides various avatar configurations, including placeholders, initials, and status indicators.',
+    usage: () => `import { Avatar } from 'reuseui-react';`,
   };
 
   const examples: CodeExample[] = [
     {
-      title: 'Default Avatar',
-      content: 'Use this example to create a circle and rounded avatar on an image element.',
-      code: (
-        <div className='flex flex-wrap gap-2'>
-          <Avatar img='https://ReuseUI.com/docs/images/people/profile-picture-5.jpg' rounded />
-          <Avatar img='https://ReuseUI.com/docs/images/people/profile-picture-5.jpg' />
-        </div>
-      ),
-    },
-    {
-      title: 'Bordered Avatar',
-      content:
-        'Apply a border around the avatar component you can use the `ring-{color}` class from Tailwind CSS.',
+      title: 'Basic Avatar',
+      content: 'A circular and square avatar for user profile images.',
       code: (
         <div className='flex flex-wrap gap-2'>
           <Avatar
-            img='https://flowbite.com/docs/images/people/profile-picture-5.jpg'
+            img='https://res.cloudinary.com/supertramp69420/image/upload/v1738448777/Watercolor3_ajahhc.png'
             rounded
-            bordered
           />
-          <Avatar img='https://flowbite.com/docs/images/people/profile-picture-5.jpg' bordered />
+          <Avatar img='https://res.cloudinary.com/supertramp69420/image/upload/v1738448777/Watercolor3_ajahhc.png' />
         </div>
       ),
     },
     {
-      title: 'Placeholder',
-      content:
-        'Use this example as a placeholder icon for the user profile when there is no custom image available.',
+      title: 'Avatar with Border',
+      content: 'Apply a subtle border around the avatar using Tailwind CSS `ring-{color}` classes.',
+      code: (
+        <div className='flex flex-wrap gap-2'>
+          <Avatar
+            img='https://res.cloudinary.com/supertramp69420/image/upload/v1738448777/Watercolor3_ajahhc.png'
+            rounded
+            bordered
+          />
+          <Avatar
+            img='https://res.cloudinary.com/supertramp69420/image/upload/v1738448777/Watercolor3_ajahhc.png'
+            bordered
+          />
+        </div>
+      ),
+    },
+    {
+      title: 'Placeholder Avatar',
+      content: 'Displays a default placeholder when no user image is provided.',
       code: (
         <div className='flex flex-wrap gap-2'>
           <Avatar />
@@ -49,8 +53,8 @@ const AvatarPage: FC = () => {
       ),
     },
     {
-      title: 'Placeholder Initials',
-      content: '',
+      title: 'Avatar with Initials',
+      content: 'Displays user initials when an image is not available.',
       code: (
         <div className='flex flex-wrap gap-2'>
           <Avatar placeholderInitials='RR' />
@@ -58,28 +62,27 @@ const AvatarPage: FC = () => {
       ),
     },
     {
-      title: 'Dot indicator',
-      content:
-        'Use a dot element relative to the avatar component as an indicator for the user (eg. online or offline status).',
+      title: 'Status Indicator',
+      content: 'Shows a small dot to represent the user’s online/offline status.',
       code: (
         <div className='flex flex-wrap gap-2'>
           <Avatar
-            img='https://flowbite.com/docs/images/people/profile-picture-5.jpg'
+            img='https://res.cloudinary.com/supertramp69420/image/upload/v1738448777/Watercolor3_ajahhc.png'
             status='online'
           />
           <Avatar
-            img='https://flowbite.com/docs/images/people/profile-picture-5.jpg'
+            img='https://res.cloudinary.com/supertramp69420/image/upload/v1738448777/Watercolor3_ajahhc.png'
             rounded
             status='busy'
             statusPosition='top-right'
           />
           <Avatar
-            img='https://flowbite.com/docs/images/people/profile-picture-5.jpg'
+            img='https://res.cloudinary.com/supertramp69420/image/upload/v1738448777/Watercolor3_ajahhc.png'
             status='offline'
             statusPosition='bottom-left'
           />
           <Avatar
-            img='https://flowbite.com/docs/images/people/profile-picture-5.jpg'
+            img='https://res.cloudinary.com/supertramp69420/image/upload/v1738448777/Watercolor3_ajahhc.png'
             rounded
             status='away'
             statusPosition='bottom-right'
@@ -88,56 +91,55 @@ const AvatarPage: FC = () => {
       ),
     },
     {
-      title: 'Stacked',
-      content:
-        'Use this example if you want to stack a group of users by overlapping the avatar components.',
+      title: 'Stacked Avatars',
+      content: 'Overlapping avatars to represent multiple users or teams.',
       code: (
         <>
           <Avatar.Group>
             <Avatar
-              img='https://flowbite.com/docs/images/people/profile-picture-1.jpg'
+              img='https://res.cloudinary.com/supertramp69420/image/upload/v1738448777/Watercolor3_ajahhc.png'
               rounded
               stacked
             />
             <Avatar
-              img='https://flowbite.com/docs/images/people/profile-picture-2.jpg'
+              img='https://res.cloudinary.com/supertramp69420/image/upload/v1738448850/00062-254488923_g5spen.png'
               rounded
               stacked
             />
             <Avatar
-              img='https://flowbite.com/docs/images/people/profile-picture-3.jpg'
-              rounded
-              stacked
-            />
-            <Avatar
-              img='https://flowbite.com/docs/images/people/profile-picture-4.jpg'
-              rounded
-              stacked
-            />
-            <Avatar
-              img='https://flowbite.com/docs/images/people/profile-picture-5.jpg'
+              img='https://res.cloudinary.com/supertramp69420/image/upload/v1738448872/GTA_wnrn1i.png'
               rounded
               stacked
             />
           </Avatar.Group>
           <Avatar.Group>
             <Avatar
-              img='https://flowbite.com/docs/images/people/profile-picture-1.jpg'
+              img='https://res.cloudinary.com/supertramp69420/image/upload/v1738448777/Watercolor3_ajahhc.png'
               rounded
               stacked
             />
             <Avatar
-              img='https://flowbite.com/docs/images/people/profile-picture-2.jpg'
+              img='https://res.cloudinary.com/supertramp69420/image/upload/v1738448850/00062-254488923_g5spen.png'
               rounded
               stacked
             />
             <Avatar
-              img='https://flowbite.com/docs/images/people/profile-picture-3.jpg'
+              img='https://res.cloudinary.com/supertramp69420/image/upload/v1738448872/GTA_wnrn1i.png'
               rounded
               stacked
             />
             <Avatar
-              img='https://flowbite.com/docs/images/people/profile-picture-4.jpg'
+              img='https://res.cloudinary.com/supertramp69420/image/upload/v1738448777/Watercolor3_ajahhc.png'
+              rounded
+              stacked
+            />
+            <Avatar
+              img='https://res.cloudinary.com/supertramp69420/image/upload/v1738448850/00062-254488923_g5spen.png'
+              rounded
+              stacked
+            />
+            <Avatar
+              img='https://res.cloudinary.com/supertramp69420/image/upload/v1738448872/GTA_wnrn1i.png'
               rounded
               stacked
             />
@@ -147,11 +149,13 @@ const AvatarPage: FC = () => {
       ),
     },
     {
-      title: 'Avatar text',
-      content:
-        'This example can be used if you want to show additional information in the form of text elements such as the users name and join date.',
+      title: 'Avatar with Text',
+      content: 'Includes additional user details like name and registration date.',
       code: (
-        <Avatar img='https://flowbite.com/docs/images/people/profile-picture-5.jpg' rounded>
+        <Avatar
+          img='https://res.cloudinary.com/supertramp69420/image/upload/v1738448777/Watercolor3_ajahhc.png'
+          rounded
+        >
           <div className='space-y-1 font-medium dark:text-white'>
             <div>Jese Leos</div>
             <div className='text-sm text-gray-500 dark:text-gray-400'>Joined in August 2014</div>
@@ -160,24 +164,40 @@ const AvatarPage: FC = () => {
       ),
     },
     {
-      title: 'Sizing',
-      content: 'Choose from multiple sizing options for the avatar component from this example.',
+      title: 'Avatar Sizing',
+      content: 'Different avatar sizes ranging from extra small to extra large.',
       code: (
         <div className='flex flex-wrap items-center gap-2'>
-          <Avatar img='https://flowbite.com/docs/images/people/profile-picture-5.jpg' size='xs' />
-          <Avatar img='https://flowbite.com/docs/images/people/profile-picture-5.jpg' size='sm' />
-          <Avatar img='https://flowbite.com/docs/images/people/profile-picture-5.jpg' size='md' />
-          <Avatar img='https://flowbite.com/docs/images/people/profile-picture-5.jpg' size='lg' />
-          <Avatar img='https://flowbite.com/docs/images/people/profile-picture-5.jpg' size='xl' />
+          <Avatar
+            img='https://res.cloudinary.com/supertramp69420/image/upload/v1738448777/Watercolor3_ajahhc.png'
+            size='xs'
+          />
+          <Avatar
+            img='https://res.cloudinary.com/supertramp69420/image/upload/v1738448777/Watercolor3_ajahhc.png'
+            size='sm'
+          />
+          <Avatar
+            img='https://res.cloudinary.com/supertramp69420/image/upload/v1738448777/Watercolor3_ajahhc.png'
+            size='md'
+          />
+          <Avatar
+            img='https://res.cloudinary.com/supertramp69420/image/upload/v1738448777/Watercolor3_ajahhc.png'
+            size='lg'
+          />
+          <Avatar
+            img='https://res.cloudinary.com/supertramp69420/image/upload/v1738448777/Watercolor3_ajahhc.png'
+            size='xl'
+          />
         </div>
       ),
     },
     {
-      title: 'Alternative text',
+      title: 'Avatar with Alternative Text',
+      content: 'Provides an accessible description for screen readers.',
       code: (
         <Avatar
-          alt='Default avatar with alt text'
-          img='https://flowbite.com/docs/images/people/profile-picture-5.jpg'
+          alt='Default avatar with alternative text'
+          img='https://res.cloudinary.com/supertramp69420/image/upload/v1738448777/Watercolor3_ajahhc.png'
           rounded
         />
       ),

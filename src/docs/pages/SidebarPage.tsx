@@ -17,13 +17,14 @@ const SidebarPage: FC = () => {
   const pageContent: PageContent = {
     title: 'Sidebar',
     description:
-      'Use the sidebar component to show a list of menu items including multi-level dropdown menu on the left or right side of your page for admin dashboards and applications',
+      'Use the Sidebar component to display a vertical navigation menu with multiple levels, separators, and interactive elements for dashboards and applications.',
     usage: () => `import { Sidebar } from 'reuseui-react';`,
   };
 
   const examples: CodeExample[] = [
     {
-      title: 'Default sidebar',
+      title: 'Default Sidebar',
+      content: 'A basic sidebar with multiple menu items.',
       code: (
         <div className='w-fit'>
           <Sidebar aria-label='Default sidebar example'>
@@ -57,7 +58,8 @@ const SidebarPage: FC = () => {
       ),
     },
     {
-      title: 'Multi-level dropdown',
+      title: 'Sidebar with Multi-Level Dropdown',
+      content: 'Includes a collapsible section under "E-commerce".',
       code: (
         <div className='w-fit'>
           <Sidebar aria-label='Sidebar with multi-level dropdown example'>
@@ -75,15 +77,6 @@ const SidebarPage: FC = () => {
                 <Sidebar.Item href='#' icon={HiUser}>
                   Users
                 </Sidebar.Item>
-                <Sidebar.Item href='#' icon={HiShoppingBag}>
-                  Products
-                </Sidebar.Item>
-                <Sidebar.Item href='#' icon={HiArrowSmRight}>
-                  Sign In
-                </Sidebar.Item>
-                <Sidebar.Item href='#' icon={HiTable}>
-                  Sign Up
-                </Sidebar.Item>
               </Sidebar.ItemGroup>
             </Sidebar.Items>
           </Sidebar>
@@ -91,7 +84,8 @@ const SidebarPage: FC = () => {
       ),
     },
     {
-      title: 'Content separator',
+      title: 'Sidebar with Content Separator',
+      content: 'Demonstrates grouping menu items with a content separator.',
       code: (
         <div className='w-fit'>
           <Sidebar aria-label='Sidebar with content separator example'>
@@ -100,32 +94,11 @@ const SidebarPage: FC = () => {
                 <Sidebar.Item href='#' icon={HiChartPie}>
                   Dashboard
                 </Sidebar.Item>
-                <Sidebar.Item href='#' icon={HiViewBoards}>
-                  Kanban
-                </Sidebar.Item>
                 <Sidebar.Item href='#' icon={HiInbox}>
                   Inbox
                 </Sidebar.Item>
-                <Sidebar.Item href='#' icon={HiUser}>
-                  Users
-                </Sidebar.Item>
-                <Sidebar.Item href='#' icon={HiShoppingBag}>
-                  Products
-                </Sidebar.Item>
-                <Sidebar.Item href='#' icon={HiArrowSmRight}>
-                  Sign In
-                </Sidebar.Item>
-                <Sidebar.Item href='#' icon={HiTable}>
-                  Sign Up
-                </Sidebar.Item>
               </Sidebar.ItemGroup>
               <Sidebar.ItemGroup>
-                <Sidebar.Item href='#' icon={HiChartPie}>
-                  Upgrade to Pro
-                </Sidebar.Item>
-                <Sidebar.Item href='#' icon={HiViewBoards}>
-                  Documentation
-                </Sidebar.Item>
                 <Sidebar.Item href='#' icon={BiBuoy}>
                   Help
                 </Sidebar.Item>
@@ -136,7 +109,8 @@ const SidebarPage: FC = () => {
       ),
     },
     {
-      title: 'CTA button',
+      title: 'Sidebar with CTA Button',
+      content: 'Includes a call-to-action section for promotions or upgrades.',
       code: (
         <div className='w-fit'>
           <Sidebar aria-label='Sidebar with call to action button example'>
@@ -145,23 +119,8 @@ const SidebarPage: FC = () => {
                 <Sidebar.Item href='#' icon={HiChartPie}>
                   Dashboard
                 </Sidebar.Item>
-                <Sidebar.Item href='#' icon={HiViewBoards}>
-                  Kanban
-                </Sidebar.Item>
                 <Sidebar.Item href='#' icon={HiInbox}>
                   Inbox
-                </Sidebar.Item>
-                <Sidebar.Item href='#' icon={HiUser}>
-                  Users
-                </Sidebar.Item>
-                <Sidebar.Item href='#' icon={HiShoppingBag}>
-                  Products
-                </Sidebar.Item>
-                <Sidebar.Item href='#' icon={HiArrowSmRight}>
-                  Sign In
-                </Sidebar.Item>
-                <Sidebar.Item href='#' icon={HiTable}>
-                  Sign Up
                 </Sidebar.Item>
               </Sidebar.ItemGroup>
             </Sidebar.Items>
@@ -170,33 +129,20 @@ const SidebarPage: FC = () => {
                 <Badge color='warning'>Beta</Badge>
                 <button
                   aria-label='Close'
-                  className='-m-1.5 ml-auto inline-flex h-6 w-6 rounded-lg bg-blue-50 p-1 text-blue-900 hover:bg-blue-200 focus:ring-2 focus:ring-blue-400 dark:bg-blue-900 dark:text-blue-400 dark:hover:bg-blue-800'
+                  className='ml-auto h-6 w-6 rounded-lg bg-blue-50 p-1 text-blue-900 hover:bg-blue-200 dark:bg-blue-900 dark:text-blue-400 dark:hover:bg-blue-800'
                   type='button'
                 >
-                  <svg
-                    aria-hidden
-                    className='h-4 w-4'
-                    fill='currentColor'
-                    viewBox='0 0 20 20'
-                    xmlns='http://www.w3.org/2000/svg'
-                  >
-                    <path
-                      fillRule='evenodd'
-                      d='M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z'
-                      clipRule='evenodd'
-                    />
-                  </svg>
+                  ✕
                 </button>
               </div>
               <p className='mb-3 text-sm text-blue-900 dark:text-blue-400'>
-                Preview the new ResueUI dashboard navigation! You can turn the new navigation off
-                for a limited time in your profile.
+                Preview the new navigation! You can disable it in your profile settings.
               </p>
               <a
                 className='text-sm text-blue-900 underline hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300'
                 href='#'
               >
-                Turn new navigation off
+                Turn off new navigation
               </a>
             </Sidebar.CTA>
           </Sidebar>
@@ -204,35 +150,21 @@ const SidebarPage: FC = () => {
       ),
     },
     {
-      title: 'Logo branding',
+      title: 'Sidebar with Logo Branding',
+      content: 'Adds a brand logo at the top of the sidebar.',
       code: (
         <div className='w-fit'>
           <Sidebar aria-label='Sidebar with logo branding example'>
-            <Sidebar.Logo href='#' img='favicon.png' imgAlt='ResueUI logo'>
-              ResueUI
+            <Sidebar.Logo href='#' img='favicon.png' imgAlt='ReuseUI logo'>
+              ReuseUI
             </Sidebar.Logo>
             <Sidebar.Items>
               <Sidebar.ItemGroup>
                 <Sidebar.Item href='#' icon={HiChartPie}>
                   Dashboard
                 </Sidebar.Item>
-                <Sidebar.Item href='#' icon={HiViewBoards}>
-                  Kanban
-                </Sidebar.Item>
                 <Sidebar.Item href='#' icon={HiInbox}>
                   Inbox
-                </Sidebar.Item>
-                <Sidebar.Item href='#' icon={HiUser}>
-                  Users
-                </Sidebar.Item>
-                <Sidebar.Item href='#' icon={HiShoppingBag}>
-                  Products
-                </Sidebar.Item>
-                <Sidebar.Item href='#' icon={HiArrowSmRight}>
-                  Sign In
-                </Sidebar.Item>
-                <Sidebar.Item href='#' icon={HiTable}>
-                  Sign Up
                 </Sidebar.Item>
               </Sidebar.ItemGroup>
             </Sidebar.Items>

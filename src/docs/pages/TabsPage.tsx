@@ -12,169 +12,149 @@ const TabsPage: FC = () => {
   const pageContent: PageContent = {
     title: 'Tabs',
     description:
-      'Get started with the tabs component from ReuseUI React to show a list of tab items where you can switch between them using multiple styles, colors and layouts',
+      'The Tabs component allows users to switch between different sections using multiple styles, icons, and layouts.',
     usage: () => `import { Tabs } from 'reuseui-react';`,
   };
 
   const examples: CodeExample[] = [
     {
-      title: 'Default tabs',
+      title: 'Default Tabs',
+      content: 'A simple tabs layout with basic navigation.',
       code: (
         <Tabs.Group aria-label='Default tabs' style='default'>
-          <Tabs.Item active title='Profile'>
-            Profile content
-          </Tabs.Item>
-          <Tabs.Item title='Dashboard'>Dashboard content</Tabs.Item>
-          <Tabs.Item title='Settings'>Settings content</Tabs.Item>
-          <Tabs.Item title='Contacts'>Contacts content</Tabs.Item>
+          {['Profile', 'Dashboard', 'Settings', 'Contacts'].map((tab, index) => (
+            <Tabs.Item key={index} title={tab} active={index === 0}>
+              {tab} content
+            </Tabs.Item>
+          ))}
           <Tabs.Item disabled title='Disabled'>
             Disabled content
           </Tabs.Item>
         </Tabs.Group>
       ),
-      codeClassName: 'dark:!bg-gray-900',
     },
     {
-      title: 'Tabs with underline',
+      title: 'Tabs with Underline',
+      content: 'Tabs styled with an underline indicator.',
       code: (
         <Tabs.Group aria-label='Tabs with underline' style='underline'>
-          <Tabs.Item title='Profile'>Profile content</Tabs.Item>
-          <Tabs.Item active title='Dashboard'>
-            Dashboard content
-          </Tabs.Item>
-          <Tabs.Item title='Settings'>Settings content</Tabs.Item>
-          <Tabs.Item title='Contacts'>Contacts content</Tabs.Item>
+          {['Profile', 'Dashboard', 'Settings', 'Contacts'].map((tab, index) => (
+            <Tabs.Item key={index} title={tab} active={index === 1}>
+              {tab} content
+            </Tabs.Item>
+          ))}
           <Tabs.Item disabled title='Disabled'>
             Disabled content
           </Tabs.Item>
         </Tabs.Group>
       ),
-      codeClassName: 'dark:!bg-gray-900',
     },
     {
-      title: 'Tabs with icons',
+      title: 'Tabs with Icons',
+      content: 'Tabs with icons for better visual distinction.',
       code: (
         <Tabs.Group aria-label='Tabs with icons' style='underline'>
-          <Tabs.Item title='Profile' icon={HiUserCircle}>
-            Profile content
-          </Tabs.Item>
-          <Tabs.Item active title='Dashboard' icon={MdDashboard}>
-            Dashboard content
-          </Tabs.Item>
-          <Tabs.Item title='Settings' icon={HiAdjustments}>
-            Settings content
-          </Tabs.Item>
-          <Tabs.Item title='Contacts' icon={HiClipboardList}>
-            Contacts content
-          </Tabs.Item>
+          {[
+            { title: 'Profile', icon: HiUserCircle },
+            { title: 'Dashboard', icon: MdDashboard },
+            { title: 'Settings', icon: HiAdjustments },
+            { title: 'Contacts', icon: HiClipboardList },
+          ].map((tab, index) => (
+            <Tabs.Item key={index} title={tab.title} icon={tab.icon} active={index === 1}>
+              {tab.title} content
+            </Tabs.Item>
+          ))}
           <Tabs.Item disabled title='Disabled'>
             Disabled content
           </Tabs.Item>
         </Tabs.Group>
       ),
-      codeClassName: 'dark:!bg-gray-900',
     },
     {
-      title: 'Pills tabs',
+      title: 'Pills Tabs',
+      content: 'Tabs styled as pill buttons.',
       code: (
         <Tabs.Group aria-label='Pills' style='pills'>
-          <Tabs.Item active title='Tab 1'>
-            Content 1
-          </Tabs.Item>
-          <Tabs.Item title='Tab 2'>Content 2</Tabs.Item>
-          <Tabs.Item title='Tab 3'>Content 3</Tabs.Item>
-          <Tabs.Item title='Tab 4'>Content 4</Tabs.Item>
+          {Array.from({ length: 4 }, (_, index) => (
+            <Tabs.Item key={index} title={`Tab ${index + 1}`} active={index === 0}>
+              Content {index + 1}
+            </Tabs.Item>
+          ))}
           <Tabs.Item disabled title='Tab 5'>
             Content 5
           </Tabs.Item>
         </Tabs.Group>
       ),
-      codeClassName: 'dark:!bg-gray-900',
     },
     {
-      title: 'Full width tabs',
+      title: 'Full Width Tabs',
+      content: 'Tabs that stretch across the entire width of their container.',
       code: (
         <Tabs.Group aria-label='Full width tabs' style='fullWidth'>
-          <Tabs.Item title='Profile'>Profile content</Tabs.Item>
-          <Tabs.Item title='Dashboard'>Dashboard content</Tabs.Item>
-          <Tabs.Item title='Settings'>Settings content</Tabs.Item>
-          <Tabs.Item title='Invoice'>Invoice content</Tabs.Item>
+          {['Profile', 'Dashboard', 'Settings', 'Invoice'].map((tab, index) => (
+            <Tabs.Item key={index} title={tab}>
+              {tab} content
+            </Tabs.Item>
+          ))}
         </Tabs.Group>
       ),
-      codeClassName: 'dark:!bg-gray-900',
     },
     {
-      title: 'Set active tab programmatically',
+      title: 'Programmatically Controlled Tabs',
+      content: 'Use buttons to change the active tab dynamically.',
       code: (
         <>
           <Tabs.Group
-            aria-label='Default tabs'
+            aria-label='Controlled tabs'
             style='default'
             ref={tabsRef}
             onActiveTabChange={(tab) => setActiveTab(tab)}
           >
-            <Tabs.Item active title='Profile'>
-              Profile content
-            </Tabs.Item>
-            <Tabs.Item title='Dashboard'>Dashboard content</Tabs.Item>
-            <Tabs.Item title='Settings'>Settings content</Tabs.Item>
-            <Tabs.Item title='Contacts'>Contacts content</Tabs.Item>
+            {['Profile', 'Dashboard', 'Settings', 'Contacts'].map((tab, index) => (
+              <Tabs.Item key={index} title={tab} active={index === 0}>
+                {tab} content
+              </Tabs.Item>
+            ))}
           </Tabs.Group>
-          <div>Active tab: {activeTab}</div>
-          <Button.Group>
-            <Button color='gray' onClick={() => tabsRef.current?.setActiveTab(0)}>
-              Profile
-            </Button>
-            <Button color='gray' onClick={() => tabsRef.current?.setActiveTab(1)}>
-              Dashboard
-            </Button>
-            <Button color='gray' onClick={() => tabsRef.current?.setActiveTab(2)}>
-              Settings
-            </Button>
-            <Button color='gray' onClick={() => tabsRef.current?.setActiveTab(3)}>
-              Contacts
-            </Button>
+          <div className='mt-3'>Active tab: {activeTab}</div>
+          <Button.Group className='mt-3'>
+            {['Profile', 'Dashboard', 'Settings', 'Contacts'].map((tab, index) => (
+              <Button key={index} color='gray' onClick={() => tabsRef.current?.setActiveTab(index)}>
+                {tab}
+              </Button>
+            ))}
           </Button.Group>
         </>
       ),
-      rawCode: `const Tabs: FC = () => {
+      rawCode: `const ControlledTabs: FC = () => {
         const [activeTab, setActiveTab] = useState<number>(0);
         const tabsRef = useRef<TabsRef>(null);
       
         return (
           <>
             <Tabs.Group
-              aria-label="Default tabs"
+              aria-label="Controlled tabs"
               style="default"
               ref={tabsRef}
               onActiveTabChange={tab => setActiveTab(tab)}
             >
-              <Tabs.Item active title="Profile">
-                Profile content
-              </Tabs.Item>
-              <Tabs.Item title="Dashboard">Dashboard content</Tabs.Item>
-              <Tabs.Item title="Settings">Settings content</Tabs.Item>
-              <Tabs.Item title="Contacts">Contacts content</Tabs.Item>
+              {['Profile', 'Dashboard', 'Settings', 'Contacts'].map((tab, index) => (
+                <Tabs.Item key={index} title={tab} active={index === 0}>
+                  {tab} content
+                </Tabs.Item>
+              ))}
             </Tabs.Group>
-            <div>Active tab: {activeTab}</div>
-            <Button.Group>
-              <Button color="gray" onClick={() => tabsRef.current?.setActiveTab(0)}>
-                Profile
-              </Button>
-              <Button color="gray" onClick={() => tabsRef.current?.setActiveTab(1)}>
-                Dashboard
-              </Button>
-              <Button color="gray" onClick={() => tabsRef.current?.setActiveTab(2)}>
-                Settings
-              </Button>
-              <Button color="gray" onClick={() => tabsRef.current?.setActiveTab(3)}>
-                Contacts
-              </Button>
+            <div className="mt-3">Active tab: {activeTab}</div>
+            <Button.Group className="mt-3">
+              {['Profile', 'Dashboard', 'Settings', 'Contacts'].map((tab, index) => (
+                <Button key={index} color="gray" onClick={() => tabsRef.current?.setActiveTab(index)}>
+                  {tab}
+                </Button>
+              ))}
             </Button.Group>
           </>
         );
       };`,
-      codeClassName: 'dark:!bg-gray-900',
     },
   ];
 

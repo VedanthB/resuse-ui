@@ -8,13 +8,14 @@ const ButtonGroupPage: FC = () => {
   const pageContent: PageContent = {
     title: 'Button Group',
     description:
-      'The button group component from ReuseUI can be used to stack together multiple buttons and links inside a single element.',
+      'The Button Group component allows you to group multiple buttons together, ensuring a consistent layout and spacing. It is useful for actions that are related and need to be visually connected.',
     usage: () => `import { Button } from 'reuseui-react';`,
   };
 
   const examples: CodeExample[] = [
     {
-      title: 'Default example',
+      title: 'Basic Button Group',
+      content: 'A simple button group with uniform styling for grouped actions.',
       code: (
         <Button.Group>
           <Button color='gray'>Profile</Button>
@@ -24,7 +25,8 @@ const ButtonGroupPage: FC = () => {
       ),
     },
     {
-      title: 'Group buttons with icons',
+      title: 'Button Group with Icons',
+      content: 'Enhance buttons with icons for better visual representation of actions.',
       code: (
         <Button.Group>
           <Button color='gray'>
@@ -43,7 +45,8 @@ const ButtonGroupPage: FC = () => {
       ),
     },
     {
-      title: 'All colors',
+      title: 'Color Variants',
+      content: 'Showcase different button color styles within a group.',
       code: (
         <div className='flex flex-wrap gap-2'>
           <Button.Group>
@@ -65,7 +68,8 @@ const ButtonGroupPage: FC = () => {
       ),
     },
     {
-      title: 'Outline',
+      title: 'Outlined Buttons',
+      content: 'Use an outline style to create a minimalistic button group.',
       code: (
         <div className='flex flex-wrap gap-2'>
           <Button.Group outline>
@@ -87,7 +91,8 @@ const ButtonGroupPage: FC = () => {
       ),
     },
     {
-      title: 'Outline with icons',
+      title: 'Outlined Buttons with Icons',
+      content: 'Combine an outlined style with icons for improved clarity and functionality.',
       code: (
         <div className='flex flex-wrap gap-2'>
           <Button.Group outline>
