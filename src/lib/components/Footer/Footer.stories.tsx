@@ -33,7 +33,7 @@ WithLogoFooter.args = {
     <div className='w-full p-6 text-center'>
       <div className='w-full justify-between sm:flex sm:items-center sm:justify-between'>
         <Footer.Brand
-          href='https://reuseUI.com' //TODO: update link here
+          href='https://resuse-ui.vercel.app/'
           src='https://reuseUI.com/docs/images/logo.svg'
           alt='ReuseUI Logo'
           name='ReuseUI'
@@ -60,7 +60,7 @@ WithSocialMediaFooter.args = {
       <div className='grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1'>
         <div>
           <Footer.Brand
-            href='https://reuseUI.com' // TODO: update link
+            href='https://resuse-ui.vercel.app/'
             src='https://reuseUI.com/docs/images/logo.svg'
             alt='ReuseUI Logo'
             name='ReuseUI'
