@@ -8,13 +8,15 @@ const DropdownPage: FC = () => {
   const pageContent: PageContent = {
     title: 'Dropdown',
     description:
-      'Get started with the dropdown component to show a list of menu items when clicking on the trigger element based on multiple layouts, styles, and placements The dropdown component can be used to show a list of menu items when clicking on an element such as a button and hiding it when focusing outside of the triggering element.',
+      'The Dropdown component provides an interactive way to display menu items in a compact, collapsible format. It can be used for navigation, settings, or quick actions triggered by a button or any other UI element. Customize layouts, styles, icons, and placements for a seamless user experience.',
     usage: () => `import { Dropdown } from 'reuseui-react';`,
   };
 
   const examples: CodeExample[] = [
     {
-      title: 'Dropdown example',
+      title: 'Basic Dropdown',
+      content:
+        'A simple dropdown that expands when clicked, revealing a list of menu items. Ideal for navigation menus or quick actions.',
       code: (
         <Dropdown label='Dropdown button' dismissOnClick={false}>
           <Dropdown.Item>Dashboard</Dropdown.Item>
@@ -25,7 +27,9 @@ const DropdownPage: FC = () => {
       ),
     },
     {
-      title: 'Dropdown divider',
+      title: 'Dropdown with Divider',
+      content:
+        'Use dividers to separate items within the dropdown, making it visually easier to differentiate sections.',
       code: (
         <Dropdown label='Dropdown button'>
           <Dropdown.Item>Dashboard</Dropdown.Item>
@@ -37,12 +41,14 @@ const DropdownPage: FC = () => {
       ),
     },
     {
-      title: 'Dropdown header',
+      title: 'Dropdown with Header',
+      content:
+        'A dropdown can include a header section with additional information, such as a user profile summary or metadata.',
       code: (
         <Dropdown label='Dropdown button'>
           <Dropdown.Header>
-            <span className='block text-sm'>Bonnie Green</span>
-            <span className='block truncate text-sm font-medium'>bonnie@flowbite.com</span>
+            <span className='block text-sm'>Vedanth Bora</span>
+            <span className='block truncate text-sm font-medium'>vedanthbora@gmail.com</span>
           </Dropdown.Header>
           <Dropdown.Item>Dashboard</Dropdown.Item>
           <Dropdown.Item>Settings</Dropdown.Item>
@@ -53,7 +59,9 @@ const DropdownPage: FC = () => {
       ),
     },
     {
-      title: 'Inline dropdown',
+      title: 'Inline Dropdown',
+      content:
+        'The inline dropdown appears within the flow of the page instead of as a popover. Useful for toolbars and in-line actions.',
       code: (
         <Dropdown label='Dropdown' inline>
           <Dropdown.Item>Dashboard</Dropdown.Item>
@@ -64,12 +72,14 @@ const DropdownPage: FC = () => {
       ),
     },
     {
-      title: 'Dropdown items with icon',
+      title: 'Dropdown with Icons',
+      content:
+        'Enhance dropdown items with icons for better visual representation. Icons can indicate action types and improve clarity.',
       code: (
         <Dropdown label='Dropdown'>
           <Dropdown.Header>
-            <span className='block text-sm'>Bonnie Green</span>
-            <span className='block truncate text-sm font-medium'>bonnie@flowbite.com</span>
+            <span className='block text-sm'>Vedanth Bora</span>
+            <span className='block truncate text-sm font-medium'>vedanthbora@gmail.com</span>
           </Dropdown.Header>
           <Dropdown.Item icon={HiViewGrid}>Dashboard</Dropdown.Item>
           <Dropdown.Item icon={HiCog}>Settings</Dropdown.Item>
@@ -80,7 +90,9 @@ const DropdownPage: FC = () => {
       ),
     },
     {
-      title: 'Dropdown item on click handler',
+      title: 'Dropdown with Click Handlers',
+      content:
+        'Each dropdown item can trigger an action when clicked. This is useful for performing quick operations without navigating to another page.',
       code: (
         <Dropdown label='Dropdown'>
           <Dropdown.Item onClick={() => alert('Dashboard!')}>Dashboard</Dropdown.Item>
@@ -91,7 +103,9 @@ const DropdownPage: FC = () => {
       ),
     },
     {
-      title: 'Sizing',
+      title: 'Dropdown Sizes',
+      content:
+        'Dropdowns can be adjusted for different sizes to match UI needs. This example shows both a small and large dropdown.',
       code: (
         <div className='flex items-center gap-4'>
           <Dropdown label='Small dropdown' size='sm'>
@@ -110,7 +124,9 @@ const DropdownPage: FC = () => {
       ),
     },
     {
-      title: 'Placement',
+      title: 'Dropdown Placement',
+      content:
+        'Position the dropdown in different directions based on available space and UI preferences. Options include top, right, bottom, and left placements.',
       code: (
         <div className='flex flex-col gap-4'>
           <div className='flex items-center gap-4'>

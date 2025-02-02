@@ -8,14 +8,15 @@ const FooterPage: FC = () => {
   const pageContent: PageContent = {
     title: 'Footer',
     description:
-      'Use the footer component at the end of your page to show content such as sitemap links, brand logo, social icons and more using React and Tailwind CSS',
+      'The Footer component is a structured section typically placed at the bottom of a page. It helps provide navigation, branding, legal links, and social media integration. Built with React and Tailwind CSS, it is fully customizable to fit different layouts and styles.',
     usage: () => `import { Footer } from 'reuseui-react';`,
   };
 
   const examples: CodeExample[] = [
     {
-      title: 'Default Footer',
-      content: '',
+      title: 'Basic Footer',
+      content:
+        'A simple footer with copyright information and quick navigation links. Suitable for minimal layouts.',
       code: (
         <Footer container>
           <Footer.Copyright href='#' by='ReuseUI™' year={2022} />
@@ -29,14 +30,16 @@ const FooterPage: FC = () => {
       ),
     },
     {
-      title: 'Footer with logo',
+      title: 'Footer with Logo',
+      content:
+        'This version includes a brand logo along with navigation links, reinforcing brand identity while maintaining clarity.',
       code: (
         <Footer container>
           <div className='w-full text-center'>
             <div className='w-full justify-between sm:flex sm:items-center sm:justify-between'>
               <Footer.Brand
-                href='https://flowbite.com'
-                src='https://flowbite.com/docs/images/logo.svg'
+                href='https://reuseUI.com' //TODO: update the link here
+                src='https://reuseUI.com/docs/images/logo.svg'
                 alt='ReuseUI Logo'
                 name='ReuseUI'
               />
@@ -54,31 +57,33 @@ const FooterPage: FC = () => {
       ),
     },
     {
-      title: 'Footer with social media icons',
+      title: 'Footer with Social Media Icons',
+      content:
+        'Enhance user engagement by including social media icons, allowing visitors to connect with external platforms directly.',
       code: (
         <Footer container>
           <div className='w-full'>
             <div className='grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1'>
               <div>
                 <Footer.Brand
-                  href='https://flowbite.com'
-                  src='https://flowbite.com/docs/images/logo.svg'
-                  alt='Flowbite Logo'
-                  name='Flowbite'
+                  href='https://reuseUI.com' //TODO: update the link here
+                  src='https://reuseUI.com/docs/images/logo.svg'
+                  alt='reuseUI Logo'
+                  name='reuseUI'
                 />
               </div>
               <div className='grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6'>
                 <div>
-                  <Footer.Title title='about' />
+                  <Footer.Title title='About' />
                   <Footer.LinkGroup col>
                     <Footer.Link href='#'>ReuseUI</Footer.Link>
                     <Footer.Link href='#'>Tailwind CSS</Footer.Link>
                   </Footer.LinkGroup>
                 </div>
                 <div>
-                  <Footer.Title title='Follow us' />
+                  <Footer.Title title='Follow Us' />
                   <Footer.LinkGroup col>
-                    <Footer.Link href='#'>Github</Footer.Link>
+                    <Footer.Link href='#'>GitHub</Footer.Link>
                     <Footer.Link href='#'>Discord</Footer.Link>
                   </Footer.LinkGroup>
                 </div>
@@ -107,7 +112,9 @@ const FooterPage: FC = () => {
       ),
     },
     {
-      title: 'Footer sitemap links',
+      title: 'Footer with Sitemap Links',
+      content:
+        'A structured sitemap with categorized links, making it easier for users to navigate different sections of a website.',
       code: (
         <Footer bgDark>
           <div className='w-full'>
@@ -122,7 +129,7 @@ const FooterPage: FC = () => {
                 </Footer.LinkGroup>
               </div>
               <div>
-                <Footer.Title title='help center' />
+                <Footer.Title title='Help Center' />
                 <Footer.LinkGroup col>
                   <Footer.Link href='#'>Discord Server</Footer.Link>
                   <Footer.Link href='#'>Twitter</Footer.Link>
@@ -131,7 +138,7 @@ const FooterPage: FC = () => {
                 </Footer.LinkGroup>
               </div>
               <div>
-                <Footer.Title title='legal' />
+                <Footer.Title title='Legal' />
                 <Footer.LinkGroup col>
                   <Footer.Link href='#'>Privacy Policy</Footer.Link>
                   <Footer.Link href='#'>Licensing</Footer.Link>
@@ -139,7 +146,7 @@ const FooterPage: FC = () => {
                 </Footer.LinkGroup>
               </div>
               <div>
-                <Footer.Title title='download' />
+                <Footer.Title title='Download' />
                 <Footer.LinkGroup col>
                   <Footer.Link href='#'>iOS</Footer.Link>
                   <Footer.Link href='#'>Android</Footer.Link>

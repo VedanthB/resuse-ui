@@ -10,11 +10,26 @@ export default {
 const Template: Story<CarouselProps> = (args) => (
   <div className='h-56 sm:h-64 xl:h-80 2xl:h-96'>
     <Carousel {...args}>
-      <img src='https://flowbite.com/docs/images/carousel/carousel-1.svg' alt='...' />
-      <img src='https://flowbite.com/docs/images/carousel/carousel-2.svg' alt='...' />
-      <img src='https://flowbite.com/docs/images/carousel/carousel-3.svg' alt='...' />
-      <img src='https://flowbite.com/docs/images/carousel/carousel-4.svg' alt='...' />
-      <img src='https://flowbite.com/docs/images/carousel/carousel-5.svg' alt='...' />
+      <img
+        src='https://res.cloudinary.com/supertramp69420/image/upload/v1738449525/carousel-1_n3vlkd.svg'
+        alt='Slide 1'
+      />
+      <img
+        src='https://res.cloudinary.com/supertramp69420/image/upload/v1738449525/carousel-2_cr55u1.svg'
+        alt='Slide 2'
+      />
+      <img
+        src='https://res.cloudinary.com/supertramp69420/image/upload/v1738449525/carousel-3_cu56mb.svg'
+        alt='Slide 3'
+      />
+      <img
+        src='https://res.cloudinary.com/supertramp69420/image/upload/v1738449525/carousel-4_h5vfqr.svg'
+        alt='Slide 4'
+      />
+      <img
+        src='https://res.cloudinary.com/supertramp69420/image/upload/v1738449525/carousel-5_rcdzxc.svg'
+        alt='Slide 5'
+      />
     </Carousel>
   </div>
 );

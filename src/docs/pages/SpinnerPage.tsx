@@ -7,17 +7,19 @@ const SpinnerPage: FC = () => {
   const pageContent: PageContent = {
     title: 'Spinner',
     description:
-      'Indicate a loading status when fetching data by using the spinner component built with React and animated with Tailwind CSS based on multiple colors and sizes',
+      'Use the Spinner component to indicate loading states while fetching data or performing background processes. Built with React and animated using Tailwind CSS.',
     usage: () => `import { Spinner } from 'reuseui-react';`,
   };
 
   const examples: CodeExample[] = [
     {
-      title: 'Default spinner',
+      title: 'Default Spinner',
+      content: 'A basic spinner with default styling.',
       code: <Spinner aria-label='Default status example' />,
     },
     {
-      title: 'Colors',
+      title: 'Spinner Colors',
+      content: 'Spinners in different colors: info, success, failure, warning, pink, and purple.',
       code: (
         <div className='flex flex-wrap gap-2'>
           <Spinner color='info' aria-label='Info spinner example' />
@@ -30,7 +32,8 @@ const SpinnerPage: FC = () => {
       ),
     },
     {
-      title: 'Sizing',
+      title: 'Spinner Sizing',
+      content: 'Different spinner sizes: extra small, small, medium, large, and extra large.',
       code: (
         <div className='flex flex-wrap items-center gap-2'>
           <Spinner aria-label='Extra small spinner example' size='xs' />
@@ -42,7 +45,8 @@ const SpinnerPage: FC = () => {
       ),
     },
     {
-      title: 'Alignment',
+      title: 'Spinner Alignment',
+      content: 'Examples of left, center, and right-aligned spinners.',
       code: (
         <div className='flex flex-col gap-2'>
           <div className='text-left'>
@@ -58,7 +62,8 @@ const SpinnerPage: FC = () => {
       ),
     },
     {
-      title: 'Buttons',
+      title: 'Spinner in Buttons',
+      content: 'Buttons with loading indicators using spinners.',
       code: (
         <div className='flex flex-row gap-3'>
           <Button>

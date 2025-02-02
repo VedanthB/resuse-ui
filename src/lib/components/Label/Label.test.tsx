@@ -19,7 +19,7 @@ const TestForm = (): JSX.Element => (
     </div>
     <div>
       <Label htmlFor='email'>Your email</Label>
-      <TextInput id='email' type='email' placeholder='name@flowbite.com' required />
+      <TextInput id='email' type='email' placeholder='name@gmail.com' required />
     </div>
     <div>
       <Label htmlFor='password'>Your password</Label>

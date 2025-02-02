@@ -13,7 +13,7 @@ export const DefaultAvatar = Template.bind({});
 DefaultAvatar.storyName = 'Default';
 DefaultAvatar.args = {
   alt: 'Your avatar',
-  img: 'https://flowbite.com/docs/images/people/profile-picture-5.jpg',
+  img: 'https://res.cloudinary.com/supertramp69420/image/upload/v1738448777/Watercolor3_ajahhc.png',
 };
 
 export const CustomImage: Story<AvatarProps> = (props) => (
@@ -24,13 +24,16 @@ export const CustomImage: Story<AvatarProps> = (props) => (
         <picture>
           <source
             media='(min-width: 900px)'
-            srcSet='https://flowbite.com/docs/images/people/profile-picture-3.jpg'
+            srcSet='https://res.cloudinary.com/supertramp69420/image/upload/v1738448777/Watercolor3_ajahhc.png'
           />
           <source
             media='(min-width: 480px)'
-            srcSet='https://flowbite.com/docs/images/people/profile-picture-4.jpg'
+            srcSet='https://res.cloudinary.com/supertramp69420/image/upload/v1738448777/Watercolor3_ajahhc.png'
           />
-          <img src='https://flowbite.com/docs/images/people/profile-picture-5.jpg' {...props} />
+          <img
+            src='https://res.cloudinary.com/supertramp69420/image/upload/v1738448777/Watercolor3_ajahhc.png'
+            {...props}
+          />
         </picture>
       )}
     />

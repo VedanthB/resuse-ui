@@ -6,26 +6,25 @@ import { DemoPage } from './DemoPage';
 
 const AlertsPage: FC = () => {
   const pageContent: PageContent = {
-    title: 'Alerts',
+    title: 'Alerts – Contextual Notifications for Users',
     description:
-      'Show contextual information to your users using alert elements based on Tailwind CSS. The alert component can be used to provide information to your users such as success or error messages, but also highlighted information complementing the normal flow of paragraphs and headers on a page. ReuseUI also includes dismissable alerts which can be hidden by the users by clicking on the close icon.',
+      'The Alert component provides contextual notifications to users. It is built with Tailwind CSS and can be used for displaying success messages, warnings, errors, and general information. ReuseUI supports customizable and dismissible alerts, allowing users to manage notifications efficiently.',
     usage: () => `import { Alert } from 'reuseui-react';`,
   };
 
   const alertText = (
     <span>
-      <span className='font-medium'>Info alert!</span> Change a few things up and try submitting
-      again.
+      <span className='font-medium'>Information:</span> Please check the details and try again.
     </span>
   );
 
   const examples: CodeExample[] = [
     {
-      title: 'Default alert',
+      title: 'Basic Alert',
       code: <Alert color='info'>{alertText}</Alert>,
     },
     {
-      title: 'Alerts with icon',
+      title: 'Alert with Icon',
       code: (
         <Alert color='failure' icon={HiInformationCircle}>
           {alertText}
@@ -33,7 +32,7 @@ const AlertsPage: FC = () => {
       ),
     },
     {
-      title: 'Dismissible alerts',
+      title: 'Dismissible Alert',
       code: (
         <Alert color='success' onDismiss={() => alert('Alert dismissed!')}>
           {alertText}
@@ -42,7 +41,7 @@ const AlertsPage: FC = () => {
       codeStringifierOptions: { functionValue: (fn) => fn },
     },
     {
-      title: 'Rounded',
+      title: 'Rounded Alert',
       code: (
         <Alert color='warning' rounded>
           {alertText}
@@ -50,7 +49,7 @@ const AlertsPage: FC = () => {
       ),
     },
     {
-      title: 'Border accent',
+      title: 'Alert with Border Accent',
       code: (
         <Alert color='warning' withBorderAccent>
           {alertText}
@@ -58,16 +57,15 @@ const AlertsPage: FC = () => {
       ),
     },
     {
-      title: 'Additional content',
+      title: 'Alert with Additional Content',
       code: (
         <Alert
           color='info'
           additionalContent={
             <>
               <div className='mt-2 mb-4 text-sm text-blue-700 dark:text-blue-800'>
-                More info about this info alert goes here. This example text is going to run a bit
-                longer so that you can see how spacing within an alert works with this kind of
-                content.
+                This alert provides more details and guidance on a particular action. The content
+                inside can be extended to include descriptions, buttons, and links.
               </div>
               <div className='flex'>
                 <button
@@ -75,7 +73,7 @@ const AlertsPage: FC = () => {
                   className='mr-2 inline-flex items-center rounded-lg bg-blue-700 px-3 py-1.5 text-center text-xs font-medium text-white hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-800 dark:hover:bg-blue-900'
                 >
                   <HiEye className='-ml-0.5 mr-2 h-4 w-4' />
-                  View more
+                  View Details
                 </button>
                 <button
                   type='button'
@@ -89,13 +87,13 @@ const AlertsPage: FC = () => {
           icon={HiInformationCircle}
         >
           <h3 className='text-lg font-medium text-blue-700 dark:text-blue-800'>
-            This is a info alert
+            Important Information
           </h3>
         </Alert>
       ),
     },
     {
-      title: 'All options',
+      title: 'Fully Customizable Alert',
       code: (
         <Alert
           color='success'
@@ -105,9 +103,8 @@ const AlertsPage: FC = () => {
           additionalContent={
             <>
               <div className='mt-2 mb-4 text-sm text-green-700 dark:text-green-800'>
-                More info about this info alert goes here. This example text is going to run a bit
-                longer so that you can see how spacing within an alert works with this kind of
-                content.
+                This alert contains extended details and additional actions. It helps in providing
+                users with clear instructions or status updates.
               </div>
               <div className='flex'>
                 <button
@@ -115,7 +112,7 @@ const AlertsPage: FC = () => {
                   className='mr-2 inline-flex items-center rounded-lg bg-green-700 px-3 py-1.5 text-center text-xs font-medium text-white hover:bg-green-800 focus:ring-4 focus:ring-green-300 dark:bg-green-800 dark:hover:bg-green-900'
                 >
                   <HiEye className='-ml-0.5 mr-2 h-4 w-4' />
-                  View more
+                  Learn More
                 </button>
                 <button
                   type='button'
@@ -129,7 +126,7 @@ const AlertsPage: FC = () => {
           icon={HiInformationCircle}
         >
           <h3 className='text-lg font-medium text-green-700 dark:text-green-800'>
-            This is a info alert
+            Success Notification
           </h3>
         </Alert>
       ),
