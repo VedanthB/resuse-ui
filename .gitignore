@@ -9,7 +9,7 @@ lerna-debug.log*
 
 tsconfig.tsbuildinfo
 
-env
+.env
 node_modules
 docs
 dist

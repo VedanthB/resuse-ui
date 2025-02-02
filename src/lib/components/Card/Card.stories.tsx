@@ -41,7 +41,7 @@ WithA11yImage.storyName = 'With image with alt text';
 WithA11yImage.args = {
   imgAlt: 'Meaningful alt text for an image that is not purely decorative',
   imgSrc:
-    'https://res.cloudinary.com/supertramp69420/image/upload/v1626209468/test/lpsgs9q6wjklcdtozrey.jpg', //TODO: update links
+    'https://res.cloudinary.com/supertramp69420/image/upload/v1626209468/test/lpsgs9q6wjklcdtozrey.jpg',
 };
 
 export const WithDecorativeImage = Template.bind({});
@@ -49,5 +49,5 @@ WithDecorativeImage.storyName = 'With decorative image';
 
 WithDecorativeImage.args = {
   imgSrc:
-    'https://res.cloudinary.com/supertramp69420/image/upload/v1626209468/test/lpsgs9q6wjklcdtozrey.jpg', //TODO: update links
+    'https://res.cloudinary.com/supertramp69420/image/upload/v1626209468/test/lpsgs9q6wjklcdtozrey.jpg',
 };
